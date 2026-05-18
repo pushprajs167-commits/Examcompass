@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>ExamCompass — India's Exam Preparation Guide</title>
-<meta name="description" content="Free exam preparation guide for UPSC, NEET, JEE, CAT, CLAT, GATE, SSC, IBPS. Best books, important topics, PYQ analysis — all in one place."/>
+<title>Your Complete Exam Guide | ExamCompass</title>
+<meta name="description" content="Best books, important topics & PYQ analysis for every major Indian exam — UPSC, NEET, JEE, CAT, CLAT, GATE, SSC CGL, IBPS PO. All in one place, completely free."/>
+<meta property="og:title" content="Your Complete Exam Guide | ExamCompass"/>
+<meta property="og:description" content="Best books, important topics & PYQ analysis for every major Indian exam — all in one place, completely free."/>
+<meta property="og:type" content="website"/>
 <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -123,9 +126,10 @@ nav{
   padding:2rem 2rem 6rem;
 }
 .section-label{
-  font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;
-  color:var(--muted);margin-bottom:1.5rem;
+  font-size:1.1rem;font-weight:700;letter-spacing:-0.3px;
+  color:var(--text);margin-bottom:1.5rem;
   display:flex;align-items:center;gap:0.8rem;
+  font-family:'Clash Display',sans-serif;
 }
 .section-label::after{content:'';flex:1;height:1px;background:var(--border)}
 
@@ -324,24 +328,23 @@ footer{
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-grid"></div>
-    <div class="hero-eyebrow">India's Free Exam Guide</div>
-    <h1>Padho <em>smart,</em><br/>rank karo.</h1>
-    <p class="hero-sub">Har exam ke liye best books, important topics aur PYQ analysis — ek jagah, bilkul free.</p>
+    <div class="hero-eyebrow">India's Free Exam Preparation Guide</div>
+    <h1>Your Complete<br/><em>Exam Guide</em></h1>
+    <p class="hero-sub">Best books, important topics & PYQ analysis for every major Indian exam — all in one place, completely free.</p>
     <div class="hero-stats">
       <div class="h-stat"><div class="h-num">8</div><div class="h-label">Exams</div></div>
       <div class="h-stat"><div class="h-num">100+</div><div class="h-label">Books</div></div>
       <div class="h-stat"><div class="h-num">500+</div><div class="h-label">PYQs</div></div>
-      <div class="h-stat"><div class="h-num">Free</div><div class="h-label">Always</div></div>
     </div>
-    <div class="scroll-hint">↓ Exam choose karo</div>
+    <div class="scroll-hint" style="font-size:1rem;margin-top:0.5rem;">↓ Choose Your Exam</div>
   </section>
 
   <div class="exams-section">
-    <div class="section-label">Exams</div>
+    <div class="section-label">All Exams</div>
     <div class="exams-grid" id="exams-grid"></div>
   </div>
 
-  <footer>ExamCompass · Free forever · Updated January 2025</footer>
+  <footer>ExamCompass · Free Forever · Updated January 2025</footer>
 </div>
 
 <!-- INNER PAGE -->
@@ -418,120 +421,120 @@ const DATA = {
   books:{
     upsc:{
       polity:[
-        {title:'Indian Polity',author:'M. Laxmikanth',tag:'must',note:'Bible of UPSC — must read'},
-        {title:'Introduction to Constitution of India',author:'D.D. Basu',tag:'ref',note:'Deep reference for Mains'},
-        {title:'Governance in India',author:'M. Laxmikanth',tag:'ok',note:'GS Paper II ke liye'},
+        {title:'Indian Polity',author:'M. Laxmikanth',tag:'must',note:'The most important book for UPSC — start here'},
+        {title:'Introduction to Constitution of India',author:'D.D. Basu',tag:'ref',note:'In-depth reference book for Mains'},
+        {title:'Governance in India',author:'M. Laxmikanth',tag:'ok',note:'Best for GS Paper II'},
       ],
       history:[
-        {title:"India's Struggle for Independence",author:'Bipan Chandra',tag:'must',note:'Modern history essential'},
-        {title:'Ancient & Medieval India',author:'Poonam Dalal Dahiya',tag:'must',note:'Best single book for both eras'},
-        {title:'NCERT History (6–12)',author:'NCERT',tag:'ok',note:'Foundation — pehle ye padho'},
+        {title:"India's Struggle for Independence",author:'Bipan Chandra',tag:'must',note:'Essential for Modern History'},
+        {title:'Ancient & Medieval India',author:'Poonam Dalal Dahiya',tag:'must',note:'Best single book covering both Ancient & Medieval'},
+        {title:'NCERT History (6–12)',author:'NCERT',tag:'ok',note:'Build your foundation here first'},
       ],
       geography:[
-        {title:'Certificate Physical & Human Geography',author:'Goh Cheng Leong',tag:'must',note:'Physical geo ke liye best'},
-        {title:'Geography of India',author:'Majid Husain',tag:'must',note:'Indian geo — very detailed'},
-        {title:'NCERT Geography (11–12)',author:'NCERT',tag:'ok',note:'Fundamentals ke liye'},
+        {title:'Certificate Physical & Human Geography',author:'Goh Cheng Leong',tag:'must',note:'Best for Physical Geography'},
+        {title:'Geography of India',author:'Majid Husain',tag:'must',note:'Most detailed book for Indian Geography'},
+        {title:'NCERT Geography (11–12)',author:'NCERT',tag:'ok',note:'For building fundamentals'},
       ],
       economy:[
-        {title:'Indian Economy',author:'Ramesh Singh',tag:'must',note:'GS III — standard book'},
-        {title:'Economic Survey (latest)',author:'Ministry of Finance',tag:'ok',note:'Free PDF — must for Mains'},
+        {title:'Indian Economy',author:'Ramesh Singh',tag:'must',note:'Standard book for GS Paper III'},
+        {title:'Economic Survey (latest)',author:'Ministry of Finance',tag:'ok',note:'Free PDF — essential for Mains'},
       ],
       environment:[
-        {title:'Environment & Ecology',author:'Majid Husain',tag:'must',note:'Prelims + Mains dono ke liye'},
-        {title:'Shankar IAS Environment',author:'Shankar IAS',tag:'ok',note:'Quick revision ke liye'},
+        {title:'Environment & Ecology',author:'Majid Husain',tag:'must',note:'Covers both Prelims and Mains'},
+        {title:'Shankar IAS Environment',author:'Shankar IAS',tag:'ok',note:'Best for quick revision'},
       ],
       science:[
         {title:'NCERT Science (6–10)',author:'NCERT',tag:'must',note:'Start yahan se'},
-        {title:'Science & Technology',author:'Ravi P. Agrahari',tag:'ok',note:'Current tech topics'},
+        {title:'Science & Technology',author:'Ravi P. Agrahari',tag:'ok',note:'Covers current technology topics'},
       ],
       ethics:[
         {title:'Ethics, Integrity & Aptitude',author:'G. Subba Rao',tag:'must',note:'GS IV standard book'},
-        {title:'Lexicon for Ethics',author:'Chronicle',tag:'ok',note:'Key terms & definitions'},
+        {title:'Lexicon for Ethics',author:'Chronicle',tag:'ok',note:'Covers key ethics terms & definitions'},
       ],
       current:[
-        {title:'The Hindu / Indian Express',author:'Daily Newspaper',tag:'must',note:'Roz padhna zaroori'},
-        {title:'Vision IAS Monthly CA',author:'Vision IAS',tag:'ok',note:'Monthly consolidation'},
+        {title:'The Hindu / Indian Express',author:'Daily Newspaper',tag:'must',note:'Must read daily — very important'},
+        {title:'Vision IAS Monthly CA',author:'Vision IAS',tag:'ok',note:'Monthly current affairs consolidation'},
       ],
     },
     neet:{
       physics:[
-        {title:'Concepts of Physics Vol 1 & 2',author:'H.C. Verma',tag:'must',note:'Theory ke liye gold standard'},
-        {title:'NCERT Physics (11–12)',author:'NCERT',tag:'must',note:'NEET directly NCERT se puchta hai'},
-        {title:'DC Pandey Physics for NEET',author:'DC Pandey',tag:'ok',note:'Problems ke liye best'},
+        {title:'Concepts of Physics Vol 1 & 2',author:'H.C. Verma',tag:'must',note:'Gold standard for theory'},
+        {title:'NCERT Physics (11–12)',author:'NCERT',tag:'must',note:'NEET questions come directly from NCERT'},
+        {title:'DC Pandey Physics for NEET',author:'DC Pandey',tag:'ok',note:'Best for practice problems'},
       ],
       chemistry:[
-        {title:'NCERT Chemistry (11–12)',author:'NCERT',tag:'must',note:'Inorganic NCERT se hi aata hai'},
-        {title:'Physical Chemistry',author:'N. Avasthi',tag:'ok',note:'Numerical problems ke liye'},
-        {title:'Organic Chemistry',author:'MS Chauhan',tag:'ok',note:'Mechanisms ke liye best'},
+        {title:'NCERT Chemistry (11–12)',author:'NCERT',tag:'must',note:'Inorganic chemistry comes directly from NCERT'},
+        {title:'Physical Chemistry',author:'N. Avasthi',tag:'ok',note:'Best for numerical problems'},
+        {title:'Organic Chemistry',author:'MS Chauhan',tag:'ok',note:'Best for reaction mechanisms'},
       ],
       biology:[
-        {title:'NCERT Biology (11–12)',author:'NCERT',tag:'must',note:'70% questions NCERT se aate hain'},
+        {title:'NCERT Biology (11–12)',author:'NCERT',tag:'must',note:'70% of questions are directly from NCERT'},
         {title:'Trueman\'s Biology Vol 1 & 2',author:'Trueman',tag:'must',note:'Detailed explanations'},
-        {title:'MTG Fingertips Biology',author:'MTG',tag:'ok',note:'Quick revision ke liye best'},
+        {title:'MTG Fingertips Biology',author:'MTG',tag:'ok',note:'Best for quick revision'},
       ],
     },
     jee:{
       physics:[
-        {title:'Concepts of Physics',author:'H.C. Verma',tag:'must',note:'Theory & basics ke liye'},
-        {title:'Problems in General Physics',author:'I.E. Irodov',tag:'ref',note:'Advanced problems — JEE Advanced'},
+        {title:'Concepts of Physics',author:'H.C. Verma',tag:'must',note:'Best for theory and basics'},
+        {title:'Problems in General Physics',author:'I.E. Irodov',tag:'ref',note:'For advanced problems — JEE Advanced level'},
         {title:'DC Pandey Mechanics',author:'DC Pandey',tag:'ok',note:'Topic-wise practice'},
       ],
       chemistry:[
-        {title:'NCERT Chemistry (11–12)',author:'NCERT',tag:'must',note:'Inorganic ke liye best base'},
-        {title:'Organic Chemistry',author:'Morrison & Boyd',tag:'ref',note:'Deep organic chemistry'},
-        {title:'Physical Chemistry',author:'O.P. Tandon',tag:'ok',note:'Numericals ke liye'},
+        {title:'NCERT Chemistry (11–12)',author:'NCERT',tag:'must',note:'Best base for Inorganic Chemistry'},
+        {title:'Organic Chemistry',author:'Morrison & Boyd',tag:'ref',note:'In-depth Organic Chemistry reference'},
+        {title:'Physical Chemistry',author:'O.P. Tandon',tag:'ok',note:'Best for numerical problems'},
       ],
       maths:[
-        {title:'Mathematics for JEE',author:'R.D. Sharma',tag:'must',note:'Comprehensive coverage'},
-        {title:'Calculus',author:'Amit M. Agarwal',tag:'ok',note:'Calculus ke liye best'},
-        {title:'Coordinate Geometry',author:'S.L. Loney',tag:'ref',note:'Advanced geometry problems'},
+        {title:'Mathematics for JEE',author:'R.D. Sharma',tag:'must',note:'Comprehensive coverage of all topics'},
+        {title:'Calculus',author:'Amit M. Agarwal',tag:'ok',note:'Best book for Calculus'},
+        {title:'Coordinate Geometry',author:'S.L. Loney',tag:'ref',note:'Best for advanced Coordinate Geometry'},
       ],
     },
     cat:{
       varc:[
-        {title:'How to Prepare for Verbal Ability',author:'Arun Sharma',tag:'must',note:'VA ke liye standard'},
+        {title:'How to Prepare for Verbal Ability',author:'Arun Sharma',tag:'must',note:'Standard book for Verbal Ability'},
         {title:'Word Power Made Easy',author:'Norman Lewis',tag:'must',note:'Vocabulary building essential'},
         {title:'High School Grammar',author:'Wren & Martin',tag:'ok',note:'Grammar basics'},
       ],
       dilr:[
-        {title:'How to Prepare for Data Interpretation',author:'Arun Sharma',tag:'must',note:'DI ke liye best book'},
-        {title:'Logical Reasoning & DI',author:'Nishit Sinha',tag:'ok',note:'Recent CAT pattern ke liye'},
+        {title:'How to Prepare for Data Interpretation',author:'Arun Sharma',tag:'must',note:'Best book for Data Interpretation'},
+        {title:'Logical Reasoning & DI',author:'Nishit Sinha',tag:'ok',note:'Aligned with recent CAT pattern'},
       ],
       qa:[
         {title:'Quantitative Aptitude for CAT',author:'Arun Sharma',tag:'must',note:'Most popular QA book'},
-        {title:'Quantitative Aptitude',author:'Nishit Sinha',tag:'ok',note:'Concept building ke liye'},
-        {title:'How to Prepare for QA',author:'Arun Sharma',tag:'ref',note:'Advanced practice'},
+        {title:'Quantitative Aptitude',author:'Nishit Sinha',tag:'ok',note:'Best for concept building'},
+        {title:'How to Prepare for QA',author:'Arun Sharma',tag:'ref',note:'For advanced practice'},
       ],
     },
     clat:{
       english:[
         {title:'Word Power Made Easy',author:'Norman Lewis',tag:'must',note:'Vocabulary must'},
-        {title:'High School Grammar & Composition',author:'Wren & Martin',tag:'ok',note:'Grammar ke liye'},
+        {title:'High School Grammar & Composition',author:'Wren & Martin',tag:'ok',note:'Best for Grammar'},
       ],
       gk:[
-        {title:'Manorama Yearbook',author:'Manorama',tag:'must',note:'Static GK ke liye best'},
-        {title:'The Hindu / Indian Express',author:'Daily',tag:'must',note:'Current affairs daily'},
+        {title:'Manorama Yearbook',author:'Manorama',tag:'must',note:'Best for Static GK'},
+        {title:'The Hindu / Indian Express',author:'Daily',tag:'must',note:'Must read daily for current affairs'},
       ],
       legal:[
-        {title:'Legal Aptitude for CLAT',author:'A.P. Bhardwaj',tag:'must',note:'Legal reasoning ke liye best'},
-        {title:'Universal Guide to CLAT',author:'Universal',tag:'ok',note:'Comprehensive guide'},
+        {title:'Legal Aptitude for CLAT',author:'A.P. Bhardwaj',tag:'must',note:'Best for Legal Reasoning'},
+        {title:'Universal Guide to CLAT',author:'Universal',tag:'ok',note:'Comprehensive all-in-one guide'},
       ],
       logical:[
-        {title:'Logical Reasoning',author:'R.S. Aggarwal',tag:'must',note:'Classic book — still relevant'},
-        {title:'A Modern Approach to Logical Reasoning',author:'R.S. Aggarwal',tag:'ok',note:'Pattern-based problems'},
+        {title:'Logical Reasoning',author:'R.S. Aggarwal',tag:'must',note:'Classic book — highly relevant for exams'},
+        {title:'A Modern Approach to Logical Reasoning',author:'R.S. Aggarwal',tag:'ok',note:'Best for pattern-based problems'},
       ],
       quant:[
-        {title:'Quantitative Aptitude',author:'R.S. Aggarwal',tag:'must',note:'Basic maths ke liye best'},
+        {title:'Quantitative Aptitude',author:'R.S. Aggarwal',tag:'must',note:'Best for Basic Mathematics'},
       ],
     },
     gate:{
       core:[
-        {title:'GATE subject-specific books',author:'Made Easy Publications',tag:'must',note:'Branch ke hisaab se choose karo'},
-        {title:'Previous Year GATE Papers',author:'ACE Engineering',tag:'must',note:'10 saal ke PYQs essential'},
+        {title:'GATE subject-specific books',author:'Made Easy Publications',tag:'must',note:'Choose based on your engineering branch'},
+        {title:'Previous Year GATE Papers',author:'ACE Engineering',tag:'must',note:'10 years of PYQs — absolutely essential'},
       ],
       aptitude:[
-        {title:'Quantitative Aptitude',author:'R.S. Aggarwal',tag:'ok',note:'Numerical aptitude ke liye'},
-        {title:'High School Grammar',author:'Wren & Martin',tag:'ok',note:'Verbal aptitude ke liye'},
+        {title:'Quantitative Aptitude',author:'R.S. Aggarwal',tag:'ok',note:'Best for Numerical Aptitude'},
+        {title:'High School Grammar',author:'Wren & Martin',tag:'ok',note:'Best for Verbal Aptitude'},
       ],
       engg_maths:[
         {title:'Higher Engineering Mathematics',author:'B.S. Grewal',tag:'must',note:'Engineering maths bible'},
@@ -540,38 +543,38 @@ const DATA = {
     },
     ssc:{
       reasoning:[
-        {title:'A Modern Approach to Verbal & Non-Verbal Reasoning',author:'R.S. Aggarwal',tag:'must',note:'SSC reasoning ke liye best'},
+        {title:'A Modern Approach to Verbal & Non-Verbal Reasoning',author:'R.S. Aggarwal',tag:'must',note:'Best for SSC Reasoning'},
         {title:'Analytical Reasoning',author:'M.K. Pandey',tag:'ok',note:'Pattern-based questions'},
       ],
       quant_ssc:[
         {title:'Quantitative Aptitude',author:'R.S. Aggarwal',tag:'must',note:'Arithmetic ka best book'},
-        {title:'Fast Track Arithmetic',author:'Rajesh Verma',tag:'ok',note:'Speed & shortcuts ke liye'},
+        {title:'Fast Track Arithmetic',author:'Rajesh Verma',tag:'ok',note:'Best for speed techniques & shortcuts'},
       ],
       english_ssc:[
-        {title:'Objective General English',author:'S.P. Bakshi',tag:'must',note:'SSC English ke liye standard'},
-        {title:'High School Grammar',author:'Wren & Martin',tag:'ok',note:'Grammar rules ke liye'},
+        {title:'Objective General English',author:'S.P. Bakshi',tag:'must',note:'Standard book for SSC English'},
+        {title:'High School Grammar',author:'Wren & Martin',tag:'ok',note:'Best for Grammar rules'},
       ],
       gk_ssc:[
-        {title:'Lucent\'s General Knowledge',author:'Lucent',tag:'must',note:'Static GK ke liye gold standard'},
+        {title:'Lucent\'s General Knowledge',author:'Lucent',tag:'must',note:'Gold standard for Static GK'},
         {title:'Manorama Yearbook',author:'Manorama',tag:'ok',note:'Current affairs + static'},
       ],
     },
     ibps:{
       reasoning_ibps:[
-        {title:'A Modern Approach to Verbal Reasoning',author:'R.S. Aggarwal',tag:'must',note:'Bank exams ke liye essential'},
+        {title:'A Modern Approach to Verbal Reasoning',author:'R.S. Aggarwal',tag:'must',note:'Essential for all Bank exams'},
         {title:'How to Crack Test of Reasoning',author:'Jaikishan',tag:'ok',note:'Puzzles & seating arrangement'},
       ],
       quant_ibps:[
         {title:'Quantitative Aptitude',author:'R.S. Aggarwal',tag:'must',note:'Bank maths ka bible'},
-        {title:'Data Interpretation',author:'Arun Sharma',tag:'ok',note:'DI ke liye best'},
+        {title:'Data Interpretation',author:'Arun Sharma',tag:'ok',note:'Best for Data Interpretation'},
       ],
       english_ibps:[
-        {title:'Objective General English',author:'S.P. Bakshi',tag:'must',note:'Bank English ke liye best'},
+        {title:'Objective General English',author:'S.P. Bakshi',tag:'must',note:'Best for Bank exam English'},
         {title:'Word Power Made Easy',author:'Norman Lewis',tag:'ok',note:'Vocabulary essential'},
       ],
       gk_ibps:[
-        {title:'Banking Awareness',author:'Arihant',tag:'must',note:'Banking GK ke liye must'},
-        {title:'Lucent\'s General Knowledge',author:'Lucent',tag:'ok',note:'Static GK ke liye'},
+        {title:'Banking Awareness',author:'Arihant',tag:'must',note:'Must-have for Banking GK'},
+        {title:'Lucent\'s General Knowledge',author:'Lucent',tag:'ok',note:'Best for Static GK'},
       ],
     },
   },
@@ -1365,7 +1368,7 @@ function renderBooks(c){
   const subs=DATA.subjects[state.examId]||[];
   const sub=subs.find(s=>s.id===state.subjectId);
   const books=(DATA.books[state.examId]||{})[state.subjectId]||[];
-  c.innerHTML=`<button class="back-btn" onclick="nav('subjects')">← Subjects</button>
+  c.innerHTML=`<button class="back-btn" onclick="nav('subjects')">← Back to Subjects</button>
   <div class="screen-label">${sub?.icon} ${sub?.name} — Books</div>
   <div class="books-list">${books.map(b=>`
     <div class="book-row" onclick="nav('topics',{subjectId:'${state.subjectId}',bookTitle:'${b.title.replace(/'/g,'\\\'')}'})">
@@ -1387,21 +1390,21 @@ function renderTopics(c){
   const topicData=((DATA.topics[state.examId]||{})[state.subjectId])||{prelims:[],mains:[]};
   const analysis=((DATA.analysis[state.examId]||{})[state.subjectId])||[];
 
-  const fl=f=>f==='h'?'Bahut Zyada':f==='m'?'Moderate':'Less';
+  const fl=f=>f==='h'?'Very High':f==='m'?'Moderate':'Low';
   const fc=f=>f==='h'?'fh':f==='m'?'fm':'fl';
 
   const prelRow=t=>`<div class="topic-row" onclick="nav('pyqs',{subjectId:'${state.subjectId}',bookTitle:'${(state.bookTitle||'').replace(/'/g,'\\\'') }',topicName:'${t.name.replace(/'/g,'\\\'')}'})"><span class="t-name">${t.name}</span><span class="freq ${fc(t.freq)}">${fl(t.freq)}</span></div>`;
 
-  const prelims=topicData.prelims?.length?topicData.prelims.map(prelRow).join(''):`<div class="no-prelims">Prelims mein alag topics nahi — MCQ based hai.</div>`;
-  const mains=topicData.mains?.length?topicData.mains.map(prelRow).join(''):`<div class="no-prelims">Mains nahi hai is exam mein.</div>`;
+  const prelims=topicData.prelims?.length?topicData.prelims.map(prelRow).join(''):`<div class="no-prelims">MCQ based — no separate topic list.</div>`;
+  const mains=topicData.mains?.length?topicData.mains.map(prelRow).join(''):`<div class="no-prelims">This exam does not have a Mains stage.</div>`;
 
   const bars=analysis.map(a=>`<div class="bar-row"><div class="bar-label">${a.l}</div><div class="bar-track"><div class="bar-fill" style="width:0%" data-pct="${a.p}%"></div></div><div class="bar-pct">${a.p}%</div></div>`).join('');
 
-  c.innerHTML=`<button class="back-btn" onclick="nav('books',{subjectId:'${state.subjectId}'})">← Books</button>
-  <div class="screen-label">${sub?.icon} ${sub?.name} — Topics (click topic to see PYQs)</div>
+  c.innerHTML=`<button class="back-btn" onclick="nav('books',{subjectId:'${state.subjectId}'})">← Back to Books</button>
+  <div class="screen-label">${sub?.icon} ${sub?.name} — Important Topics — Click a topic to see PYQs</div>
   <div class="topics-wrap">
-    <div class="topics-col"><div class="col-head">Prelims / Paper 1</div>${prelims}</div>
-    <div class="topics-col"><div class="col-head">Mains / Paper 2</div>${mains}</div>
+    <div class="topics-col"><div class="col-head">Prelims / Paper I</div>${prelims}</div>
+    <div class="topics-col"><div class="col-head">Mains / Paper II</div>${mains}</div>
   </div>
   <div class="analysis-box">
     <div class="analysis-title">📊 PYQ Weightage Analysis</div>
@@ -1427,10 +1430,10 @@ function renderPyqs(c){
         <div class="pyq-q">${p.q}</div>
         <div class="pyq-paper">${p.paper}</div>
       </div>
-    </div>`).join(''):`<div class="no-pyq">Is topic ke PYQs jald add honge.</div>`;
+    </div>`).join(''):`<div class="no-pyq">PYQs for this topic will be added soon.</div>`;
 
-  c.innerHTML=`<button class="back-btn" onclick="nav('topics',{subjectId:'${state.subjectId}',bookTitle:'${(state.bookTitle||'').replace(/'/g,'\\\'') }'})">← Topics</button>
-  <div class="screen-label">${sub?.icon} ${state.topicName} — Previous Year Questions</div>
+  c.innerHTML=`<button class="back-btn" onclick="nav('topics',{subjectId:'${state.subjectId}',bookTitle:'${(state.bookTitle||'').replace(/'/g,'\\\'') }'})">← Back to Topics</button>
+  <div class="screen-label">${sub?.icon} ${state.topicName} — Previous Year Questions (PYQs)</div>
   <div class="pyq-list">${rows}</div>`;
 }
 
