@@ -288,6 +288,9 @@ button,input{font-family:'Plus Jakarta Sans',sans-serif}
 .bc:hover{color:var(--blue)}
 .bc.active{color:var(--blue);font-weight:700}
 .bc-sep{color:var(--border)}
+.sticky-back{position:sticky;top:0;z-index:40;background:rgba(248,247,244,.97);backdrop-filter:blur(8px);padding:.55rem 1rem;border-bottom:1px solid var(--border)}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.82rem;color:var(--blue);cursor:pointer;background:none;border:none;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;padding:0;transition:opacity .15s}
+.back-btn:hover{opacity:.7}
 
 /* NOTES */
 .notes-cs{text-align:center;padding:3rem 1rem}
@@ -400,15 +403,15 @@ button,input{font-family:'Plus Jakarta Sans',sans-serif}
     </div>
   </div>
 
-  <div class="hsec">
+  <div class="hsec" id="cont-sec" style="display:none">
     <div class="shdr"><div class="stitle">Continue Preparation</div></div>
-    <div class="cont-card" onclick="openExam('upsc')">
-      <div class="cont-icon">🏛️</div>
+    <div class="cont-card" id="cont-card" onclick="continuePrep()">
+      <div class="cont-icon" id="cont-icon">🏛️</div>
       <div class="cont-info">
         <div class="cont-lbl">Resume where you left off</div>
-        <div class="cont-title">Polity – Indian Constitution</div>
-        <div class="cont-bar"><div class="cont-fill" style="width:65%"></div></div>
-        <div class="cont-pct">65% completed</div>
+        <div class="cont-title" id="cont-title">-</div>
+        <div class="cont-bar"><div class="cont-fill" id="cont-fill" style="width:0%"></div></div>
+        <div class="cont-pct" id="cont-pct">-</div>
       </div>
       <div class="cont-arr">›</div>
     </div>
@@ -462,6 +465,7 @@ button,input{font-family:'Plus Jakarta Sans',sans-serif}
 <!-- EXAM PAGE -->
 <div class="page" id="exam-page">
   <div class="bc-bar" id="exam-bc"></div>
+  <div class="sticky-back"><button class="back-btn" onclick="showPage('home')">← Back to Home</button></div>
   <div class="exam-hero">
     <div class="eh-top">
       <div class="eh-icon" id="eh-icon">⚖️</div>
@@ -1018,6 +1022,37 @@ const PYQS={
 
 let curExam='upsc', curSubj=null, curTopic=null;
 
+// CONTINUE PREPARATION TRACKING
+let lastVisit = JSON.parse(localStorage.getItem('ec_last') || 'null');
+
+function saveLastVisit(examId, subjectName, topicName, examIcon){
+  lastVisit = {examId, subjectName, topicName, examIcon};
+  try{ localStorage.setItem('ec_last', JSON.stringify(lastVisit)); }catch(e){}
+  updateContinueCard();
+}
+
+function updateContinueCard(){
+  if(!lastVisit) return;
+  const sec = document.getElementById('cont-sec');
+  if(sec) sec.style.display = 'block';
+  const t = document.getElementById('cont-title');
+  const pct = Math.round(Math.random()*30 + 40);
+  if(t) t.textContent = `${lastVisit.subjectName} – ${lastVisit.topicName}`;
+  const fill = document.getElementById('cont-fill');
+  if(fill) fill.style.width = pct + '%';
+  const cp = document.getElementById('cont-pct');
+  if(cp) cp.textContent = pct + '% completed';
+  const ci = document.getElementById('cont-icon');
+  if(ci) ci.textContent = lastVisit.examIcon || '📖';
+}
+
+function continuePrep(){
+  if(lastVisit) openExam(lastVisit.examId);
+}
+
+// Initialize continue card if exists
+updateContinueCard();
+
 // PAGE NAVIGATION
 function showPage(p){
   document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
@@ -1106,6 +1141,9 @@ function openTopicPYQ(subId,topicName){
   const ex=EXAMS.find(e=>e.id===curExam);
   const sub=(SUBJS[curExam]||[]).find(s=>s.id===subId);
   const topic=sub?.topics.find(t=>t.name===topicName);
+
+  // Save last visit for Continue Preparation
+  saveLastVisit(curExam, sub?.name || subId, topicName, ex?.icon || '📖');
   document.getElementById('tpyq-title').textContent=topicName;
   document.getElementById('tpyq-sub').textContent=`${ex?.name} · ${sub?.name}`;
   const pyqs=((PYQS[curExam]||{})[subId]||{})[topicName]||[];
