@@ -3,1453 +3,1209 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Your Complete Exam Guide | ExamCompass</title>
-<meta name="description" content="Best books, important topics & PYQ analysis for every major Indian exam — UPSC, NEET, JEE, CAT, CLAT, GATE, SSC CGL, IBPS PO. All in one place, completely free."/>
-<meta property="og:title" content="Your Complete Exam Guide | ExamCompass"/>
-<meta property="og:description" content="Best books, important topics & PYQ analysis for every major Indian exam — all in one place, completely free."/>
-<meta property="og:type" content="website"/>
-<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<title>ExamCompass — Your Complete Exam Preparation Guide</title>
+<meta name="description" content="Best books, important topics & PYQ analysis for UPSC, NEET, JEE, CAT, CLAT, GATE, SSC CGL, IBPS PO — all in one place, completely free."/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#08080a;
-  --surface:#111114;
-  --card:#18181d;
-  --border:#26262e;
-  --border2:#32323c;
-  --text:#f2f0ec;
-  --muted:#6b6975;
-  --muted2:#9b98a8;
-  --accent:#e8ff47;
-  --accent2:#ff6b35;
-  --green:#4ade80;
-  --blue:#60a5fa;
-  --purple:#c084fc;
+  --bg:#f7f6f3;--surface:#fff;--card:#f2f0eb;--border:#e8e4db;
+  --text:#18181b;--text2:#44403c;--muted:#78716c;--muted2:#a8a29e;
+  --blue:#2563eb;--blue-l:#eff6ff;--blue-m:#dbeafe;
+  --orange:#ea580c;--orange-l:#fff7ed;
+  --green:#16a34a;--green-l:#f0fdf4;
+  --s1:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);
+  --s2:0 4px 12px rgba(0,0,0,.08),0 2px 4px rgba(0,0,0,.04);
+  --s3:0 8px 24px rgba(0,0,0,.1),0 4px 8px rgba(0,0,0,.06);
+  --r:12px;--rs:8px;--rl:16px;
 }
-html{scroll-behavior:smooth}
-body{font-family:'Instrument Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;font-size:15px}
+button,input{font-family:'Plus Jakarta Sans',sans-serif}
+::-webkit-scrollbar{width:4px;height:4px}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
 
-/* SCROLLBAR */
-::-webkit-scrollbar{width:4px}
-::-webkit-scrollbar-track{background:var(--bg)}
-::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
+.page{display:none}.page.active{display:block}
 
 /* NAV */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:1000;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 2rem;height:56px;
-  background:rgba(8,8,10,0.85);
-  backdrop-filter:blur(20px);
-  border-bottom:1px solid var(--border);
-}
-.logo{
-  font-family:'Clash Display',sans-serif;
-  font-size:1.2rem;font-weight:700;letter-spacing:-0.5px;
-  display:flex;align-items:center;gap:8px;cursor:pointer;
-}
-.logo-dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
-.logo span{color:var(--accent)}
-.nav-right{display:flex;align-items:center;gap:1rem}
-.updated-badge{
-  display:flex;align-items:center;gap:6px;
-  font-size:0.72rem;color:var(--muted2);
-  background:var(--card);border:1px solid var(--border);
-  padding:4px 10px;border-radius:20px;
-}
-.live-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.topnav{position:fixed;top:0;left:0;right:0;z-index:200;height:52px;background:rgba(247,246,243,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 1rem}
+.nav-logo{font-size:1.1rem;font-weight:800;letter-spacing:-.5px;color:var(--text);display:flex;align-items:center;gap:7px;cursor:pointer;text-decoration:none}
+.nav-dot{width:22px;height:22px;border-radius:6px;background:var(--blue);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.6rem;font-weight:800}
+.nav-logo span{color:var(--blue)}
+.nav-right{display:flex;align-items:center;gap:.5rem}
+.nav-btn{width:36px;height:36px;border-radius:var(--rs);background:none;border:none;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:1.1rem;cursor:pointer;transition:background .15s}
+.nav-btn:hover{background:var(--card)}
+.upill{display:flex;align-items:center;gap:5px;font-size:.65rem;font-weight:600;color:var(--muted);background:var(--card);border:1px solid var(--border);padding:3px 9px;border-radius:20px}
+.upill-dot{width:5px;height:5px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
 
-/* HERO */
-.hero{
-  min-height:100vh;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  padding:6rem 2rem 4rem;
-  position:relative;overflow:hidden;
-  text-align:center;
-}
-.hero-bg{
-  position:absolute;inset:0;
-  background:
-    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(232,255,71,0.06) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 40% at 80% 50%, rgba(255,107,53,0.04) 0%, transparent 60%);
-}
-.hero-grid{
-  position:absolute;inset:0;
-  background-image:
-    linear-gradient(var(--border) 1px, transparent 1px),
-    linear-gradient(90deg, var(--border) 1px, transparent 1px);
-  background-size:60px 60px;
-  mask-image:radial-gradient(ellipse 80% 60% at 50% 50%, black 0%, transparent 70%);
-  opacity:0.3;
-}
-.hero-eyebrow{
-  font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--muted2);margin-bottom:1.5rem;
-  display:flex;align-items:center;gap:0.8rem;justify-content:center;
-}
-.hero-eyebrow::before,.hero-eyebrow::after{
-  content:'';display:block;width:30px;height:1px;background:var(--border2);
-}
-.hero h1{
-  font-family:'Clash Display',sans-serif;
-  font-size:clamp(2.8rem,6vw,5.5rem);
-  font-weight:700;line-height:1.05;
-  letter-spacing:-2px;margin-bottom:1.5rem;
-  position:relative;
-}
-.hero h1 em{font-style:normal;color:var(--accent)}
-.hero-sub{
-  font-size:1.05rem;color:var(--muted2);line-height:1.7;
-  max-width:500px;margin:0 auto 3rem;
-}
-.hero-stats{
-  display:flex;gap:3rem;justify-content:center;
-  margin-bottom:3.5rem;
-}
-.h-stat{}
-.h-num{
-  font-family:'Clash Display',sans-serif;
-  font-size:2rem;font-weight:700;color:var(--text);
-}
-.h-label{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-top:2px}
-.scroll-hint{
-  font-size:0.75rem;color:var(--muted);
-  display:flex;align-items:center;gap:0.5rem;justify-content:center;
-  animation:bounce 2s infinite;
-}
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+/* BOTTOM NAV */
+.bnav{position:fixed;bottom:0;left:0;right:0;z-index:200;height:60px;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-top:1px solid var(--border);display:flex;align-items:center}
+.bitem{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;cursor:pointer;padding:6px 0;color:var(--muted2);border:none;background:none;font-family:'Plus Jakarta Sans',sans-serif;transition:color .15s}
+.bitem.active{color:var(--blue)}
+.bicon{font-size:1.2rem;line-height:1}
+.blabel{font-size:.6rem;font-weight:600;letter-spacing:.02em}
 
-/* EXAMS SECTION */
-.exams-section{
-  max-width:1100px;margin:0 auto;
-  padding:2rem 2rem 6rem;
-}
-.section-label{
-  font-size:1.1rem;font-weight:700;letter-spacing:-0.3px;
-  color:var(--text);margin-bottom:1.5rem;
-  display:flex;align-items:center;gap:0.8rem;
-  font-family:'Clash Display',sans-serif;
-}
-.section-label::after{content:'';flex:1;height:1px;background:var(--border)}
+/* SIDEBAR */
+.soverlay{position:fixed;inset:0;z-index:300;background:rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:opacity .25s}
+.soverlay.open{opacity:1;pointer-events:all}
+.sidebar{position:fixed;top:0;left:-280px;bottom:0;z-index:301;width:280px;background:var(--surface);transition:left .28s cubic-bezier(.4,0,.2,1);overflow-y:auto;display:flex;flex-direction:column}
+.sidebar.open{left:0}
+.sb-head{padding:1rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.sb-close{width:32px;height:32px;border-radius:var(--rs);border:none;background:var(--card);display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--muted);cursor:pointer}
+.sb-search{padding:.8rem 1rem;border-bottom:1px solid var(--border)}
+.sb-sbox{display:flex;align-items:center;gap:.5rem;background:var(--card);border:1px solid var(--border);border-radius:var(--rs);padding:.5rem .7rem}
+.sb-sbox input{border:none;background:none;outline:none;font-size:.82rem;color:var(--text);width:100%}
+.sb-sec{padding:.6rem 0}
+.sb-sec-title{padding:.4rem 1rem;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);font-weight:700}
+.sb-link{display:flex;align-items:center;gap:.7rem;padding:.65rem 1rem;font-size:.85rem;color:var(--text2);cursor:pointer;transition:background .12s;border-left:3px solid transparent}
+.sb-link:hover{background:var(--card)}
+.sb-link.active{background:var(--blue-l);color:var(--blue);border-left-color:var(--blue);font-weight:600}
+.sb-div{height:1px;background:var(--border);margin:.3rem 0}
 
-.exams-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
-  gap:1px;background:var(--border);
-  border:1px solid var(--border);
-}
-.exam-card{
-  background:var(--surface);padding:1.8rem;
-  cursor:pointer;transition:background 0.15s;
-  position:relative;overflow:hidden;
-  display:flex;flex-direction:column;gap:0.8rem;
-}
-.exam-card:hover{background:var(--card)}
-.exam-card::before{
-  content:'';position:absolute;
-  top:0;left:0;right:0;height:2px;
-  background:var(--accent);
-  transform:scaleX(0);transform-origin:left;
-  transition:transform 0.25s ease;
-}
-.exam-card:hover::before{transform:scaleX(1)}
-.exam-icon{font-size:1.8rem}
-.exam-name{
-  font-family:'Clash Display',sans-serif;
-  font-size:1.2rem;font-weight:600;
-}
-.exam-full{font-size:0.78rem;color:var(--muted2);line-height:1.4}
-.exam-meta{
-  display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.3rem;
-}
-.emeta{
-  font-size:0.65rem;padding:2px 8px;border-radius:2px;
-  background:rgba(255,255,255,0.04);color:var(--muted2);
-  border:1px solid var(--border);
-}
-.exam-arrow{
-  position:absolute;right:1.2rem;bottom:1.2rem;
-  color:var(--accent);font-size:1rem;
-  opacity:0;transform:translateX(-6px);
-  transition:all 0.2s;
-}
-.exam-card:hover .exam-arrow{opacity:1;transform:translateX(0)}
+/* HOME */
+#home-page{padding-top:52px;padding-bottom:70px}
+.hero{padding:1.8rem 1rem 1.5rem;background:linear-gradient(135deg,#eff6ff 0%,#f7f6f3 50%,#fff7ed 100%);border-bottom:1px solid var(--border)}
+.hero-pill{display:inline-flex;align-items:center;gap:.4rem;font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--blue-l);border:1px solid var(--blue-m);padding:3px 10px;border-radius:20px;margin-bottom:.9rem}
+.hero h1{font-size:1.85rem;font-weight:800;line-height:1.15;letter-spacing:-.8px;color:var(--text);margin-bottom:.7rem}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.hero-sub{font-size:.88rem;color:var(--muted);line-height:1.65;margin-bottom:1.3rem;max-width:420px}
+.hero-btns{display:flex;gap:.6rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.btn-p{padding:.6rem 1.2rem;border-radius:var(--rs);background:var(--blue);color:#fff;font-size:.82rem;font-weight:700;border:none;transition:all .15s;display:flex;align-items:center;gap:.4rem;cursor:pointer}
+.btn-p:hover{background:#1d4ed8;transform:translateY(-1px);box-shadow:var(--s2)}
+.btn-s{padding:.6rem 1.2rem;border-radius:var(--rs);background:var(--surface);color:var(--text);font-size:.82rem;font-weight:600;border:1px solid var(--border);transition:all .15s;cursor:pointer}
+.btn-s:hover{border-color:var(--blue);color:var(--blue)}
 
-/* INNER PAGE */
-#inner-page{display:none;min-height:100vh;padding-top:56px}
+/* SEARCH */
+.srch-wrap{position:relative}
+.srch-bar{display:flex;align-items:center;gap:.6rem;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r);padding:.7rem 1rem;box-shadow:var(--s1);transition:border-color .15s,box-shadow .15s}
+.srch-bar:focus-within{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.srch-bar input{border:none;background:none;outline:none;font-size:.88rem;color:var(--text);flex:1}
+.srch-bar input::placeholder{color:var(--muted2)}
+.srch-go{background:var(--blue);color:#fff;border:none;border-radius:var(--rs);padding:.35rem .8rem;font-size:.75rem;font-weight:700;cursor:pointer;flex-shrink:0;transition:background .15s}
+.srch-go:hover{background:#1d4ed8}
+.srch-drop{position:absolute;top:calc(100% + 6px);left:0;right:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--s3);z-index:50;overflow:hidden;display:none}
+.srch-drop.show{display:block}
+.sdrop-item{padding:.65rem 1rem;cursor:pointer;display:flex;align-items:center;gap:.7rem;transition:background .12s;font-size:.83rem}
+.sdrop-item:hover{background:var(--card)}
+.sdrop-name{font-weight:600;color:var(--text)}
+.sdrop-cat{font-size:.7rem;color:var(--muted)}
 
-/* BREADCRUMB */
-.breadcrumb{
-  display:flex;align-items:center;gap:0.5rem;
-  padding:0.8rem 2rem;
-  border-bottom:1px solid var(--border);
-  font-size:0.75rem;color:var(--muted);
-  background:var(--surface);
-  position:sticky;top:56px;z-index:50;
-  overflow-x:auto;white-space:nowrap;
-}
-.bc{cursor:pointer;transition:color 0.2s;padding:2px 0}
-.bc:hover{color:var(--text)}
-.bc.active{color:var(--accent)}
-.bc-sep{color:var(--border2)}
+/* HOME SECTIONS */
+.hsec{padding:1.3rem 1rem}
+.shdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.stitle{font-size:1rem;font-weight:800;letter-spacing:-.3px}
+.slink{font-size:.75rem;font-weight:600;color:var(--blue);cursor:pointer}
 
-/* INNER CONTENT */
-.inner-content{max-width:1000px;margin:0 auto;padding:2rem}
-.screen-label{
-  font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;
-  color:var(--muted);margin-bottom:1.2rem;
-}
-.back-btn{
-  display:inline-flex;align-items:center;gap:0.5rem;
-  font-size:0.78rem;color:var(--muted2);cursor:pointer;
-  margin-bottom:1.5rem;background:none;border:none;
-  font-family:'Instrument Sans',sans-serif;padding:0;
-  transition:color 0.2s;
-}
-.back-btn:hover{color:var(--text)}
+/* EXAM CHIPS */
+.echips{display:flex;gap:.7rem;overflow-x:auto;padding-bottom:.3rem;scrollbar-width:none}
+.echips::-webkit-scrollbar{display:none}
+.echip{flex-shrink:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:.9rem 1rem;cursor:pointer;transition:all .15s;display:flex;flex-direction:column;align-items:center;gap:.5rem;min-width:82px;box-shadow:var(--s1);text-align:center}
+.echip:hover{border-color:var(--blue);background:var(--blue-l);transform:translateY(-2px);box-shadow:var(--s2)}
+.echip.top{border-color:#fbbf24;background:#fffbeb}
+.echip-icon{font-size:1.5rem}
+.echip-name{font-size:.72rem;font-weight:700}
+.echip-sub{font-size:.6rem;color:var(--muted)}
+.top-badge{font-size:.55rem;font-weight:700;color:#d97706;background:#fef3c7;border:1px solid #fde68a;padding:1px 6px;border-radius:4px;letter-spacing:.05em}
 
-/* SUBJECT GRID */
-.subject-grid{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
-  gap:1px;background:var(--border);border:1px solid var(--border);
-}
-.subject-card{
-  background:var(--surface);padding:1.5rem;
-  cursor:pointer;transition:background 0.15s;
-  display:flex;flex-direction:column;gap:0.5rem;
-  position:relative;
-}
-.subject-card:hover{background:var(--card)}
-.s-icon{font-size:1.6rem}
-.s-name{font-family:'Clash Display',sans-serif;font-size:0.95rem;font-weight:600}
-.s-desc{font-size:0.72rem;color:var(--muted)}
-.s-arr{position:absolute;right:1rem;top:50%;transform:translateY(-50%);color:var(--accent);opacity:0;transition:opacity 0.2s}
-.subject-card:hover .s-arr{opacity:1}
+/* CONTINUE CARD */
+.cont-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1rem;box-shadow:var(--s1);display:flex;align-items:center;gap:.9rem;cursor:pointer;transition:all .15s}
+.cont-card:hover{border-color:var(--blue);box-shadow:var(--s2)}
+.cont-icon{width:44px;height:44px;border-radius:10px;background:var(--blue-l);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.cont-info{flex:1;min-width:0}
+.cont-lbl{font-size:.65rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem}
+.cont-title{font-size:.88rem;font-weight:700;margin-bottom:.4rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cont-bar{height:5px;background:var(--card);border-radius:3px;overflow:hidden}
+.cont-fill{height:100%;background:var(--blue);border-radius:3px}
+.cont-pct{font-size:.65rem;color:var(--blue);font-weight:700;margin-top:.25rem}
+.cont-arr{color:var(--muted2);font-size:1.1rem;flex-shrink:0}
 
-/* BOOKS */
-.books-list{display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border)}
-.book-row{
-  background:var(--surface);padding:1.2rem 1.4rem;
-  cursor:pointer;transition:background 0.15s;
-  display:flex;align-items:center;justify-content:space-between;gap:1rem;
-}
-.book-row:hover{background:var(--card)}
-.book-left{display:flex;flex-direction:column;gap:0.25rem}
-.book-title{font-size:0.92rem;font-weight:600}
-.book-author{font-size:0.73rem;color:var(--muted2)}
-.book-note{font-size:0.72rem;color:var(--muted);font-style:italic}
-.book-right{display:flex;align-items:center;gap:0.6rem;flex-shrink:0}
-.tag{font-size:0.63rem;padding:3px 8px;border-radius:2px;font-weight:600;letter-spacing:0.03em}
-.tag-must{background:rgba(232,255,71,0.12);color:var(--accent);border:1px solid rgba(232,255,71,0.2)}
-.tag-ok{background:rgba(255,107,53,0.1);color:var(--accent2);border:1px solid rgba(255,107,53,0.2)}
-.tag-ref{background:rgba(255,255,255,0.04);color:var(--muted2);border:1px solid var(--border)}
-.chev{color:var(--muted);font-size:0.9rem}
+/* UPDATES */
+.upd-item{display:flex;align-items:flex-start;gap:.7rem;padding:.7rem 0;border-bottom:1px solid var(--border)}
+.upd-item:last-child{border-bottom:none}
+.upd-badge{flex-shrink:0;font-size:.6rem;font-weight:700;padding:2px 7px;border-radius:4px;margin-top:2px}
+.b-new{background:#dcfce7;color:#15803d}
+.b-upd{background:#dbeafe;color:#1d4ed8}
+.b-add{background:#fef9c3;color:#a16207}
+.upd-title{font-size:.83rem;font-weight:600;margin-bottom:.2rem}
+.upd-sub{font-size:.72rem;color:var(--muted)}
+
+/* ALL EXAMS GRID */
+.aegrid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.aec{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1rem;cursor:pointer;transition:all .15s;box-shadow:var(--s1)}
+.aec:hover{border-color:var(--blue);background:var(--blue-l);transform:translateY(-2px);box-shadow:var(--s2)}
+.aec-icon{font-size:1.6rem;margin-bottom:.5rem}
+.aec-name{font-size:.88rem;font-weight:700;margin-bottom:.2rem}
+.aec-full{font-size:.67rem;color:var(--muted);line-height:1.4;margin-bottom:.5rem}
+.aec-tags{display:flex;gap:.3rem;flex-wrap:wrap}
+.aec-tag{font-size:.58rem;padding:2px 6px;border-radius:4px;background:var(--card);color:var(--muted);border:1px solid var(--border);font-weight:500}
+
+/* EXAM PAGE */
+#exam-page{padding-top:52px;padding-bottom:70px}
+.exam-hero{padding:1.2rem 1rem 0;background:linear-gradient(135deg,#eff6ff 0%,#f7f6f3 100%);border-bottom:1px solid var(--border)}
+.eh-top{display:flex;align-items:center;gap:.8rem;margin-bottom:.8rem}
+.eh-icon{width:48px;height:48px;border-radius:12px;background:var(--blue);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
+.eh-name{font-size:1.2rem;font-weight:800;letter-spacing:-.4px}
+.eh-full{font-size:.72rem;color:var(--muted);margin-top:.1rem}
+.etabs{display:flex;overflow-x:auto;scrollbar-width:none}
+.etabs::-webkit-scrollbar{display:none}
+.etab{flex-shrink:0;padding:.7rem 1rem;font-size:.78rem;font-weight:600;color:var(--muted);border:none;background:none;border-bottom:2.5px solid transparent;cursor:pointer;transition:all .15s;white-space:nowrap}
+.etab.active{color:var(--blue);border-bottom-color:var(--blue)}
+
+.tcont{display:none;padding:1rem}.tcont.active{display:block}
 
 /* TOPICS */
-.topics-wrap{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border)}
-.topics-col{background:var(--surface)}
-.col-head{padding:0.8rem 1.2rem;border-bottom:1px solid var(--border);font-size:0.67rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)}
-.topic-row{
-  padding:0.85rem 1.2rem;border-bottom:1px solid var(--border);
-  display:flex;align-items:center;justify-content:space-between;
-  cursor:pointer;transition:background 0.15s;
-}
-.topic-row:last-child{border-bottom:none}
-.topic-row:hover{background:var(--card)}
-.t-name{font-size:0.83rem}
-.freq{font-size:0.63rem;padding:2px 8px;border-radius:2px;font-weight:600}
-.fh{background:rgba(232,255,71,0.1);color:var(--accent)}
-.fm{background:rgba(255,107,53,0.1);color:var(--accent2)}
-.fl{background:rgba(255,255,255,0.04);color:var(--muted)}
-.no-prelims{padding:1.2rem;font-size:0.8rem;color:var(--muted);font-style:italic}
+.tsearch{display:flex;align-items:center;gap:.5rem;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--rs);padding:.55rem .8rem;margin-bottom:1rem;transition:border-color .15s}
+.tsearch:focus-within{border-color:var(--blue)}
+.tsearch input{border:none;background:none;outline:none;font-size:.83rem;color:var(--text);width:100%}
 
-/* ANALYSIS */
-.analysis-box{
-  background:var(--surface);border:1px solid var(--border);
-  border-top:none;padding:1.4rem;
-}
-.analysis-title{font-size:0.67rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
-.bar-rows{display:flex;flex-direction:column;gap:0.7rem}
-.bar-row{display:flex;align-items:center;gap:0.8rem}
-.bar-label{font-size:0.73rem;color:var(--muted2);width:100px;flex-shrink:0}
-.bar-track{flex:1;height:5px;background:var(--border);border-radius:3px;overflow:hidden}
-.bar-fill{height:100%;border-radius:3px;background:var(--accent);transition:width 0.7s cubic-bezier(0.4,0,0.2,1)}
-.bar-pct{font-size:0.7rem;color:var(--accent);width:30px;text-align:right;flex-shrink:0}
+.subj-sec{margin-bottom:.8rem}
+.subj-hd{display:flex;align-items:center;justify-content:space-between;padding:.8rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--rs);cursor:pointer;transition:all .15s;margin-bottom:2px}
+.subj-hd:hover,.subj-hd.open{border-color:var(--blue);background:var(--blue-l)}
+.subj-hd.open{border-bottom-left-radius:0;border-bottom-right-radius:0}
+.shl{display:flex;align-items:center;gap:.6rem}
+.sh-icon{font-size:1.1rem}
+.sh-name{font-size:.88rem;font-weight:700}
+.sh-cnt{font-size:.68rem;color:var(--muted);margin-top:.1rem}
+.shr{display:flex;align-items:center;gap:.6rem}
+.sh-arr{color:var(--muted);font-size:.8rem;transition:transform .2s}
+.subj-hd.open .sh-arr{transform:rotate(90deg)}
+.prog-ring{width:32px;height:32px;position:relative;flex-shrink:0}
+.prog-ring svg{transform:rotate(-90deg)}
+.pt{fill:none;stroke:var(--border);stroke-width:3}
+.pf{fill:none;stroke:var(--blue);stroke-width:3;stroke-linecap:round;transition:stroke-dashoffset .6s ease}
+.pl{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:.5rem;font-weight:800;color:var(--blue)}
 
-/* PYQs */
-.pyq-list{display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border)}
-.pyq-row{background:var(--surface);padding:1.2rem 1.4rem;display:flex;gap:1.2rem;align-items:flex-start}
-.pyq-year{font-family:'Clash Display',sans-serif;font-size:1.1rem;font-weight:700;color:var(--accent);min-width:46px;flex-shrink:0;padding-top:2px}
-.pyq-right{}
-.pyq-q{font-size:0.84rem;line-height:1.65;color:var(--text)}
-.pyq-paper{margin-top:0.4rem;font-size:0.67rem;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase}
-.no-pyq{padding:1.4rem;font-size:0.82rem;color:var(--muted);font-style:italic}
+.tlist{background:var(--surface);border:1px solid var(--blue);border-top:none;border-bottom-left-radius:var(--rs);border-bottom-right-radius:var(--rs);overflow:hidden;display:none}
+.tlist.open{display:block}
+.titem{display:flex;align-items:center;justify-content:space-between;padding:.65rem .8rem;border-bottom:1px solid var(--border);cursor:pointer;transition:background .12s}
+.titem:last-child{border-bottom:none}
+.titem:hover{background:var(--blue-l)}
+.til{display:flex;align-items:center;gap:.6rem;flex:1;min-width:0}
+.t-num{width:22px;height:22px;border-radius:6px;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;color:var(--muted);flex-shrink:0}
+.t-name{font-size:.82rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.t-sub{font-size:.65rem;color:var(--muted);margin-top:.1rem}
+.tir{display:flex;align-items:center;gap:.5rem;flex-shrink:0}
+.fb{font-size:.6rem;padding:2px 7px;border-radius:4px;font-weight:700}
+.fh{background:#dcfce7;color:#15803d}
+.fm{background:#fef9c3;color:#a16207}
+.fl{background:var(--card);color:var(--muted)}
+.pyqc{font-size:.6rem;color:var(--muted);background:var(--card);border:1px solid var(--border);padding:2px 6px;border-radius:4px;font-weight:600}
+.tch{color:var(--muted2);font-size:.75rem}
 
-/* FADE ANIM */
-@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-.fade{animation:fadeUp 0.2s ease both}
+/* BOOKS */
+.bfilters{display:flex;gap:.5rem;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.bfilters::-webkit-scrollbar{display:none}
+.fchip{flex-shrink:0;padding:.3rem .8rem;border-radius:20px;font-size:.72rem;font-weight:600;border:1.5px solid var(--border);background:var(--surface);color:var(--muted);cursor:pointer;transition:all .15s}
+.fchip.active{background:var(--blue);border-color:var(--blue);color:#fff}
+.fchip:hover:not(.active){border-color:var(--blue);color:var(--blue)}
 
-/* FOOTER */
-footer{
-  border-top:1px solid var(--border);
-  padding:2rem;text-align:center;
-  font-size:0.75rem;color:var(--muted);
-}
+.bcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1rem;margin-bottom:.7rem;box-shadow:var(--s1);display:flex;gap:.8rem;cursor:pointer;transition:all .15s}
+.bcard:hover{border-color:var(--blue);box-shadow:var(--s2)}
+.bcov{width:52px;height:68px;border-radius:6px;background:linear-gradient(135deg,#dbeafe,#bfdbfe);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;border:1px solid var(--border)}
+.binfo{flex:1;min-width:0}
+.bbadges{display:flex;gap:.4rem;margin-bottom:.4rem;flex-wrap:wrap}
+.bbadge{font-size:.58rem;font-weight:700;padding:2px 7px;border-radius:4px;letter-spacing:.03em}
+.bsell{background:#fef3c7;color:#d97706}
+.brec{background:#dcfce7;color:#15803d}
+.bmust{background:#dbeafe;color:#1d4ed8}
+.bref{background:var(--card);color:var(--muted)}
+.btitle{font-size:.88rem;font-weight:700;margin-bottom:.2rem;line-height:1.3}
+.bauth{font-size:.72rem;color:var(--muted);margin-bottom:.5rem;font-weight:500}
+.bbot{display:flex;align-items:center;justify-content:space-between}
+.brat{display:flex;align-items:center;gap:.3rem;font-size:.72rem;font-weight:700;color:#d97706}
+.bbuy{font-size:.65rem;font-weight:700;padding:.3rem .8rem;border-radius:6px;background:var(--blue);color:#fff;border:none;cursor:pointer;transition:background .15s;display:flex;align-items:center;gap:.3rem}
+.bbuy:hover{background:#1d4ed8}
 
-@media(max-width:640px){
-  .hero h1{letter-spacing:-1px}
-  .hero-stats{gap:1.5rem}
-  .topics-wrap{grid-template-columns:1fr}
-  .exams-grid{grid-template-columns:1fr 1fr}
-  .inner-content{padding:1.2rem}
-  .breadcrumb{padding:0.8rem 1.2rem}
-  nav{padding:0 1.2rem}
-}
+/* PYQ TAB */
+.pyq-yr-sec{margin-bottom:.8rem}
+.pyq-yr-hd{display:flex;align-items:center;justify-content:space-between;padding:.7rem .8rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--rs);cursor:pointer;margin-bottom:2px;transition:all .15s}
+.pyq-yr-hd:hover,.pyq-yr-hd.open{border-color:var(--blue);background:var(--blue-l)}
+.pyq-yr-hd.open{border-bottom-left-radius:0;border-bottom-right-radius:0}
+.pyq-yr-num{font-size:1rem;font-weight:800;color:var(--blue)}
+.pyq-yr-meta{font-size:.72rem;color:var(--muted);margin-top:.1rem}
+.pyq-yr-arr{color:var(--muted);font-size:.8rem;transition:transform .2s}
+.pyq-yr-hd.open .pyq-yr-arr{transform:rotate(90deg)}
+.pyq-qs{background:var(--surface);border:1px solid var(--blue);border-top:none;border-bottom-left-radius:var(--rs);border-bottom-right-radius:var(--rs);overflow:hidden;display:none}
+.pyq-qs.open{display:block}
+.pyq-qi{padding:.85rem .8rem;border-bottom:1px solid var(--border)}
+.pyq-qi:last-child{border-bottom:none}
+.pyq-qi-meta{display:flex;align-items:center;gap:.5rem;margin-bottom:.4rem;flex-wrap:wrap}
+.pyq-ptag{font-size:.6rem;font-weight:700;padding:2px 7px;border-radius:4px;background:var(--blue-l);color:var(--blue)}
+.pyq-ttag{font-size:.6rem;font-weight:600;padding:2px 7px;border-radius:4px;background:var(--card);color:var(--muted)}
+.pyq-qt{font-size:.82rem;line-height:1.65}
+
+/* TOPIC PYQ PAGE */
+#tpyq-page{padding-top:52px;padding-bottom:70px}
+.tpyq-hdr{padding:1rem;background:var(--blue);color:#fff}
+.tpyq-back{display:flex;align-items:center;gap:.4rem;font-size:.75rem;font-weight:600;color:rgba(255,255,255,.8);border:none;background:none;cursor:pointer;margin-bottom:.6rem;font-family:'Plus Jakarta Sans',sans-serif}
+.tpyq-title{font-size:1.1rem;font-weight:800;letter-spacing:-.3px}
+.tpyq-sub{font-size:.72rem;color:rgba(255,255,255,.75);margin-top:.2rem}
+.tpyq-body{padding:1rem}
+.tpyq-stats{display:flex;gap:.6rem;margin-bottom:1rem}
+.tpyq-stat{flex:1;background:var(--surface);border:1px solid var(--border);border-radius:var(--rs);padding:.7rem;text-align:center}
+.tpyq-snum{font-size:1.2rem;font-weight:800;color:var(--blue);line-height:1}
+.tpyq-slbl{font-size:.62rem;color:var(--muted);margin-top:.2rem;font-weight:500}
+.tpyq-qcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1rem;margin-bottom:.7rem;box-shadow:var(--s1)}
+.tpyq-qyr{font-size:.85rem;font-weight:800;color:var(--blue);margin-bottom:.3rem}
+.tpyq-qtxt{font-size:.83rem;line-height:1.65;margin-bottom:.4rem}
+.tpyq-qppr{font-size:.65rem;color:var(--muted);font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+
+/* SEARCH PAGE */
+#srch-page{padding-top:52px;padding-bottom:70px}
+.srch-pg{padding:1rem}
+.srch-pg-bar{display:flex;align-items:center;gap:.5rem;background:var(--surface);border:1.5px solid var(--blue);border-radius:var(--rs);padding:.65rem .8rem;margin-bottom:1rem;box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.srch-pg-bar input{border:none;background:none;outline:none;font-size:.9rem;color:var(--text);flex:1}
+.src-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--rs);padding:.8rem;margin-bottom:.6rem;cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:.7rem}
+.src-card:hover{border-color:var(--blue);background:var(--blue-l)}
+.src-icon{font-size:1.1rem;flex-shrink:0}
+.src-name{font-size:.85rem;font-weight:700}
+.src-cat{font-size:.68rem;color:var(--muted);margin-top:.15rem}
+.src-type{font-size:.62rem;font-weight:700;padding:2px 7px;border-radius:4px;background:var(--blue-l);color:var(--blue);flex-shrink:0;margin-left:auto}
+
+/* BOOKS PAGE */
+#books-page{padding-top:52px;padding-bottom:70px}
+.bpg{padding:1rem}
+
+/* PROFILE PAGE */
+#profile-page{padding-top:52px;padding-bottom:70px}
+.ppg{padding:1rem}
+.prcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;text-align:center;box-shadow:var(--s1);margin-bottom:1rem}
+.pr-av{width:60px;height:60px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:#fff;margin:0 auto .8rem}
+.pr-name{font-size:1rem;font-weight:700;margin-bottom:.2rem}
+.pr-sub{font-size:.75rem;color:var(--muted)}
+.pr-menu{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1rem;box-shadow:var(--s1)}
+.prmi{display:flex;align-items:center;gap:.8rem;padding:.9rem 0;border-bottom:1px solid var(--border);cursor:pointer}
+.prmi:last-child{border-bottom:none}
+.prmi-icon{font-size:1.1rem;flex-shrink:0}
+.prmi-lbl{font-size:.85rem;font-weight:600;flex:1}
+.prmi-arr{color:var(--muted2);font-size:.8rem}
+
+/* BREADCRUMB */
+.bc-bar{display:flex;align-items:center;gap:.4rem;padding:.5rem 1rem;font-size:.68rem;color:var(--muted);background:var(--surface);border-bottom:1px solid var(--border);overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.bc-bar::-webkit-scrollbar{display:none}
+.bc{cursor:pointer;color:var(--muted);transition:color .12s}
+.bc:hover{color:var(--blue)}
+.bc.active{color:var(--blue);font-weight:700}
+.bc-sep{color:var(--border)}
+
+/* NOTES */
+.notes-cs{text-align:center;padding:3rem 1rem}
+.notes-cs-icon{font-size:3rem;margin-bottom:1rem}
+.notes-cs-title{font-size:1rem;font-weight:700;margin-bottom:.5rem}
+.notes-cs-sub{font-size:.82rem;color:var(--muted);line-height:1.6}
+
+/* EMPTY */
+.empty{text-align:center;padding:2.5rem 1rem;color:var(--muted)}
+.empty-icon{font-size:2.5rem;margin-bottom:.8rem}
+.empty-title{font-size:.9rem;font-weight:700;color:var(--text2);margin-bottom:.4rem}
+.empty-sub{font-size:.78rem;line-height:1.6}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.fade{animation:fadeUp .18s ease both}
+
+/* STICKY BACK BTN */
+.sticky-back{position:sticky;top:0;z-index:40;background:rgba(248,247,244,.95);backdrop-filter:blur(8px);padding:.6rem 1rem;border-bottom:1px solid var(--border)}
+.back-btn{display:inline-flex;align-items:center;gap:.5rem;font-size:.8rem;color:var(--blue);cursor:pointer;background:none;border:none;font-family:'Plus Jakarta Sans',sans-serif;padding:0;font-weight:600;transition:opacity .15s}
+.back-btn:hover{opacity:.7}
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="logo" onclick="showHome()">
-    <div class="logo-dot"></div>
+<!-- TOP NAV -->
+<nav class="topnav">
+  <div class="nav-logo" onclick="showPage('home')">
+    <div class="nav-dot">EC</div>
     Exam<span>Compass</span>
   </div>
   <div class="nav-right">
-    <div class="updated-badge">
-      <div class="live-dot"></div>
-      Updated 2025
-    </div>
+    <div class="upill"><div class="upill-dot"></div>May 2026</div>
+    <button class="nav-btn" onclick="toggleSB()">☰</button>
   </div>
 </nav>
 
-<!-- HOME PAGE -->
-<div id="home-page">
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-grid"></div>
-    <div class="hero-eyebrow">India's Free Exam Preparation Guide</div>
-    <h1>Your Complete<br/><em>Exam Guide</em></h1>
-    <p class="hero-sub">Best books, important topics & PYQ analysis for every major Indian exam — all in one place, completely free.</p>
-    <div class="hero-stats">
-      <div class="h-stat"><div class="h-num">8</div><div class="h-label">Exams</div></div>
-      <div class="h-stat"><div class="h-num">100+</div><div class="h-label">Books</div></div>
-      <div class="h-stat"><div class="h-num">500+</div><div class="h-label">PYQs</div></div>
-    </div>
-    <div class="scroll-hint" style="font-size:1rem;margin-top:0.5rem;">↓ Choose Your Exam</div>
-  </section>
-
-  <div class="exams-section">
-    <div class="section-label">All Exams</div>
-    <div class="exams-grid" id="exams-grid"></div>
+<!-- SIDEBAR -->
+<div class="soverlay" id="soverlay" onclick="toggleSB()"></div>
+<div class="sidebar" id="sidebar">
+  <div class="sb-head">
+    <div class="nav-logo"><div class="nav-dot">EC</div>ExamCompass</div>
+    <button class="sb-close" onclick="toggleSB()">✕</button>
   </div>
-
-  <footer>ExamCompass · Free Forever · Updated January 2025</footer>
+  <div class="sb-search">
+    <div class="sb-sbox">
+      <span>🔍</span>
+      <input type="text" placeholder="Search exams, topics..." oninput="sbSearch(this.value)"/>
+    </div>
+  </div>
+  <div class="sb-sec">
+    <div class="sb-sec-title">Main</div>
+    <div class="sb-link active" onclick="showPage('home');toggleSB()"><span>🏠</span>Home</div>
+    <div class="sb-link" onclick="showPage('srch');toggleSB()"><span>🔍</span>Search</div>
+    <div class="sb-link" onclick="showPage('books');toggleSB()"><span>📚</span>Books</div>
+  </div>
+  <div class="sb-div"></div>
+  <div class="sb-sec">
+    <div class="sb-sec-title">Exams</div>
+    <div class="sb-link" onclick="openExam('upsc');toggleSB()"><span>⚖️</span>UPSC CSE</div>
+    <div class="sb-link" onclick="openExam('neet');toggleSB()"><span>🩺</span>NEET UG</div>
+    <div class="sb-link" onclick="openExam('jee');toggleSB()"><span>⚙️</span>JEE Main & Advanced</div>
+    <div class="sb-link" onclick="openExam('cat');toggleSB()"><span>📊</span>CAT</div>
+    <div class="sb-link" onclick="openExam('clat');toggleSB()"><span>⚖️</span>CLAT</div>
+    <div class="sb-link" onclick="openExam('gate');toggleSB()"><span>🔬</span>GATE</div>
+    <div class="sb-link" onclick="openExam('ssc');toggleSB()"><span>📋</span>SSC CGL</div>
+    <div class="sb-link" onclick="openExam('ibps');toggleSB()"><span>🏦</span>IBPS PO</div>
+  </div>
+  <div class="sb-div"></div>
+  <div class="sb-sec">
+    <div class="sb-sec-title">Account</div>
+    <div class="sb-link" onclick="showPage('profile');toggleSB()"><span>👤</span>Profile</div>
+    <div class="sb-link"><span>🔖</span>Bookmarks</div>
+    <div class="sb-link"><span>⚙️</span>Settings</div>
+  </div>
 </div>
 
-<!-- INNER PAGE -->
-<div id="inner-page">
-  <div class="breadcrumb" id="breadcrumb"></div>
-  <div class="inner-content fade" id="inner-content"></div>
+<!-- BOTTOM NAV -->
+<nav class="bnav">
+  <button class="bitem active" id="bn-home" onclick="showPage('home')"><div class="bicon">🏠</div><div class="blabel">Home</div></button>
+  <button class="bitem" id="bn-exams" onclick="showPage('exam')"><div class="bicon">📖</div><div class="blabel">Exams</div></button>
+  <button class="bitem" id="bn-srch" onclick="showPage('srch')"><div class="bicon">🔍</div><div class="blabel">Search</div></button>
+  <button class="bitem" id="bn-books" onclick="showPage('books')"><div class="bicon">📚</div><div class="blabel">Books</div></button>
+  <button class="bitem" id="bn-profile" onclick="showPage('profile')"><div class="bicon">👤</div><div class="blabel">Profile</div></button>
+</nav>
+
+<!-- HOME PAGE -->
+<div class="page active" id="home-page">
+  <div class="hero">
+    <div class="hero-pill">🎯 India's Free Exam Guide</div>
+    <h1>Prepare Smart.<br/><em>Crack Better.</em></h1>
+    <p class="hero-sub">Best books, important topics & PYQ analysis for every major Indian exam — all in one place, completely free.</p>
+    <div class="hero-btns">
+      <button class="btn-p" onclick="document.getElementById('pop-exams').scrollIntoView({behavior:'smooth'})">Explore Exams →</button>
+      <button class="btn-s" onclick="showPage('books')">View Books</button>
+    </div>
+    <div class="srch-wrap">
+      <div class="srch-bar">
+        <span>🔍</span>
+        <input id="hsearch" type="text" placeholder="Search exams, topics, books..." oninput="hSearch(this.value)" onfocus="showDrop()"/>
+        <button class="srch-go" onclick="goSearch()">Search</button>
+      </div>
+      <div class="srch-drop" id="sdrop">
+        <div class="sdrop-item" onclick="openExam('upsc')"><span>⚖️</span><div><div class="sdrop-name">UPSC CSE</div><div class="sdrop-cat">Civil Services · IAS, IPS, IFS</div></div></div>
+        <div class="sdrop-item" onclick="openExam('neet')"><span>🩺</span><div><div class="sdrop-name">NEET UG</div><div class="sdrop-cat">Medical · MBBS, BDS</div></div></div>
+        <div class="sdrop-item" onclick="openExam('jee')"><span>⚙️</span><div><div class="sdrop-name">JEE Main & Advanced</div><div class="sdrop-cat">Engineering · IIT, NIT</div></div></div>
+        <div class="sdrop-item" onclick="openExam('cat')"><span>📊</span><div><div class="sdrop-name">CAT</div><div class="sdrop-cat">MBA · IIM, Management</div></div></div>
+        <div class="sdrop-item" onclick="openExam('ssc')"><span>📋</span><div><div class="sdrop-name">SSC CGL</div><div class="sdrop-cat">Government · Group B, C</div></div></div>
+        <div class="sdrop-item" onclick="openExam('ibps')"><span>🏦</span><div><div class="sdrop-name">IBPS PO</div><div class="sdrop-cat">Banking · PO, Clerk</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hsec">
+    <div class="shdr"><div class="stitle">Continue Preparation</div></div>
+    <div class="cont-card" onclick="openExam('upsc')">
+      <div class="cont-icon">🏛️</div>
+      <div class="cont-info">
+        <div class="cont-lbl">Resume where you left off</div>
+        <div class="cont-title">Polity – Indian Constitution</div>
+        <div class="cont-bar"><div class="cont-fill" style="width:65%"></div></div>
+        <div class="cont-pct">65% completed</div>
+      </div>
+      <div class="cont-arr">›</div>
+    </div>
+  </div>
+
+  <div class="hsec" id="pop-exams" style="padding-top:0">
+    <div class="shdr">
+      <div class="stitle">Popular Exams</div>
+      <div class="slink" onclick="toggleAllExams()">View All</div>
+    </div>
+    <div class="echips">
+      <div class="echip top" onclick="openExam('upsc')"><div class="echip-icon">⚖️</div><div class="echip-name">UPSC</div><div class="top-badge">TOP</div></div>
+      <div class="echip top" onclick="openExam('neet')"><div class="echip-icon">🩺</div><div class="echip-name">NEET</div><div class="top-badge">TOP</div></div>
+      <div class="echip" onclick="openExam('jee')"><div class="echip-icon">⚙️</div><div class="echip-name">JEE</div><div class="echip-sub">Main+Adv</div></div>
+      <div class="echip" onclick="openExam('cat')"><div class="echip-icon">📊</div><div class="echip-name">CAT</div><div class="echip-sub">MBA</div></div>
+      <div class="echip" onclick="openExam('clat')"><div class="echip-icon">⚖️</div><div class="echip-name">CLAT</div><div class="echip-sub">Law</div></div>
+      <div class="echip" onclick="openExam('ssc')"><div class="echip-icon">📋</div><div class="echip-name">SSC CGL</div><div class="echip-sub">Govt</div></div>
+      <div class="echip" onclick="openExam('gate')"><div class="echip-icon">🔬</div><div class="echip-name">GATE</div><div class="echip-sub">M.Tech</div></div>
+      <div class="echip" onclick="openExam('ibps')"><div class="echip-icon">🏦</div><div class="echip-name">IBPS PO</div><div class="echip-sub">Banking</div></div>
+    </div>
+  </div>
+
+  <div id="all-exams-sec" style="display:none;padding:0 1rem 1rem">
+    <div class="aegrid">
+      <div class="aec" onclick="openExam('upsc')"><div class="aec-icon">⚖️</div><div class="aec-name">UPSC CSE</div><div class="aec-full">Civil Services Examination</div><div class="aec-tags"><span class="aec-tag">IAS</span><span class="aec-tag">IPS</span><span class="aec-tag">IFS</span></div></div>
+      <div class="aec" onclick="openExam('neet')"><div class="aec-icon">🩺</div><div class="aec-name">NEET UG</div><div class="aec-full">National Eligibility cum Entrance Test</div><div class="aec-tags"><span class="aec-tag">MBBS</span><span class="aec-tag">BDS</span></div></div>
+      <div class="aec" onclick="openExam('jee')"><div class="aec-icon">⚙️</div><div class="aec-name">JEE</div><div class="aec-full">Joint Entrance Examination</div><div class="aec-tags"><span class="aec-tag">IIT</span><span class="aec-tag">NIT</span></div></div>
+      <div class="aec" onclick="openExam('cat')"><div class="aec-icon">📊</div><div class="aec-name">CAT</div><div class="aec-full">Common Admission Test</div><div class="aec-tags"><span class="aec-tag">IIM</span><span class="aec-tag">MBA</span></div></div>
+      <div class="aec" onclick="openExam('clat')"><div class="aec-icon">⚖️</div><div class="aec-name">CLAT</div><div class="aec-full">Common Law Admission Test</div><div class="aec-tags"><span class="aec-tag">NLU</span><span class="aec-tag">Law</span></div></div>
+      <div class="aec" onclick="openExam('gate')"><div class="aec-icon">🔬</div><div class="aec-name">GATE</div><div class="aec-full">Graduate Aptitude Test</div><div class="aec-tags"><span class="aec-tag">M.Tech</span><span class="aec-tag">PSU</span></div></div>
+      <div class="aec" onclick="openExam('ssc')"><div class="aec-icon">📋</div><div class="aec-name">SSC CGL</div><div class="aec-full">Staff Selection Commission</div><div class="aec-tags"><span class="aec-tag">Group B</span><span class="aec-tag">Govt</span></div></div>
+      <div class="aec" onclick="openExam('ibps')"><div class="aec-icon">🏦</div><div class="aec-name">IBPS PO</div><div class="aec-full">Banking Personnel Selection</div><div class="aec-tags"><span class="aec-tag">Bank PO</span><span class="aec-tag">Clerk</span></div></div>
+    </div>
+  </div>
+
+  <div class="hsec" style="padding-top:0">
+    <div class="shdr">
+      <div class="stitle">Latest Updates</div>
+      <div style="font-size:.65rem;color:var(--muted);font-weight:600">📅 May 2026</div>
+    </div>
+    <div>
+      <div class="upd-item"><span class="upd-badge b-new">NEW</span><div><div class="upd-title">UPSC 2025 PYQs Added</div><div class="upd-sub">All Prelims + Mains questions updated</div></div></div>
+      <div class="upd-item"><span class="upd-badge b-upd">UPDATED</span><div><div class="upd-title">NEET 2025 Important Topics</div><div class="upd-sub">Biology chapter weights revised</div></div></div>
+      <div class="upd-item"><span class="upd-badge b-add">ADDED</span><div><div class="upd-title">JEE Advanced 2025 Analysis</div><div class="upd-sub">Chapter-wise difficulty breakdown added</div></div></div>
+      <div class="upd-item"><span class="upd-badge b-upd">UPDATED</span><div><div class="upd-title">SSC CGL 2025 Book List</div><div class="upd-sub">New edition books updated</div></div></div>
+    </div>
+  </div>
+  <div style="text-align:center;padding:1rem;font-size:.72rem;color:var(--muted)">ExamCompass · Free Forever · Last Updated May 2026</div>
+</div>
+
+<!-- EXAM PAGE -->
+<div class="page" id="exam-page">
+  <div class="bc-bar" id="exam-bc"></div>
+  <div class="exam-hero">
+    <div class="eh-top">
+      <div class="eh-icon" id="eh-icon">⚖️</div>
+      <div><div class="eh-name" id="eh-name">UPSC CSE</div><div class="eh-full" id="eh-full">Civil Services Examination</div></div>
+    </div>
+    <div class="etabs">
+      <button class="etab active" onclick="switchTab('topics')">📚 Topics</button>
+      <button class="etab" onclick="switchTab('books')">📖 Books</button>
+      <button class="etab" onclick="switchTab('pyq')">📝 PYQ</button>
+      <button class="etab" onclick="switchTab('notes')">🗒️ Notes</button>
+    </div>
+  </div>
+  <div class="tcont active" id="tc-topics">
+    <div class="tsearch"><span>🔍</span><input type="text" placeholder="Search topics..." oninput="filterTopics(this.value)"/></div>
+    <div id="topics-wrap"></div>
+  </div>
+  <div class="tcont" id="tc-books">
+    <div class="bfilters" id="bfilters">
+      <div class="fchip active" onclick="filterBooks('all',this)">All</div>
+      <div class="fchip" onclick="filterBooks('must',this)">Must Read</div>
+      <div class="fchip" onclick="filterBooks('ncert',this)">NCERT</div>
+      <div class="fchip" onclick="filterBooks('ref',this)">Reference</div>
+    </div>
+    <div id="books-wrap"></div>
+  </div>
+  <div class="tcont" id="tc-pyq">
+    <div class="bfilters">
+      <div class="fchip active">All Years</div>
+      <div class="fchip">2024</div><div class="fchip">2023</div>
+      <div class="fchip">2022</div><div class="fchip">2021</div>
+    </div>
+    <div id="pyq-wrap"></div>
+  </div>
+  <div class="tcont" id="tc-notes">
+    <div class="notes-cs">
+      <div class="notes-cs-icon">🗒️</div>
+      <div class="notes-cs-title">Notes Coming Soon</div>
+      <div class="notes-cs-sub">Short notes, revision material and topic summaries will be added here. Stay tuned!</div>
+    </div>
+  </div>
+</div>
+
+<!-- TOPIC PYQ PAGE -->
+<div class="page" id="tpyq-page">
+  <div class="tpyq-hdr">
+    <button class="tpyq-back" onclick="showPage('exam')">← Back to Topics</button>
+    <div class="tpyq-title" id="tpyq-title">Topic Name</div>
+    <div class="tpyq-sub" id="tpyq-sub">Exam · Subject</div>
+  </div>
+  <div class="tpyq-body">
+    <div class="tpyq-stats">
+      <div class="tpyq-stat"><div class="tpyq-snum" id="tstat-count">0</div><div class="tpyq-slbl">Total PYQs</div></div>
+      <div class="tpyq-stat"><div class="tpyq-snum" id="tstat-years">0</div><div class="tpyq-slbl">Years</div></div>
+      <div class="tpyq-stat"><div class="tpyq-snum" id="tstat-freq">-</div><div class="tpyq-slbl">Frequency</div></div>
+    </div>
+    <div id="tpyq-wrap"></div>
+  </div>
+</div>
+
+<!-- SEARCH PAGE -->
+<div class="page" id="srch-page">
+  <div class="srch-pg">
+    <div class="srch-pg-bar">
+      <span>🔍</span>
+      <input id="msearch" type="text" placeholder="Search exams, topics, books..." oninput="mSearch(this.value)"/>
+    </div>
+    <div id="srch-results"></div>
+  </div>
+</div>
+
+<!-- BOOKS PAGE -->
+<div class="page" id="books-page">
+  <div class="bpg">
+    <div style="font-size:1rem;font-weight:800;letter-spacing:-.3px;margin-bottom:1rem">All Recommended Books</div>
+    <div class="bfilters">
+      <div class="fchip active">All Exams</div>
+      <div class="fchip" onclick="openExam('upsc')">UPSC</div>
+      <div class="fchip" onclick="openExam('neet')">NEET</div>
+      <div class="fchip" onclick="openExam('jee')">JEE</div>
+      <div class="fchip" onclick="openExam('cat')">CAT</div>
+      <div class="fchip" onclick="openExam('ssc')">SSC</div>
+    </div>
+    <div id="all-books-wrap"></div>
+  </div>
+</div>
+
+<!-- PROFILE PAGE -->
+<div class="page" id="profile-page">
+  <div class="ppg">
+    <div class="prcard">
+      <div class="pr-av">👤</div>
+      <div class="pr-name">Guest User</div>
+      <div class="pr-sub">Sign in to track your progress</div>
+      <button class="btn-p" style="margin:1rem auto 0;display:flex">Sign In / Register</button>
+    </div>
+    <div class="pr-menu">
+      <div class="prmi"><span class="prmi-icon">🔖</span><span class="prmi-lbl">Bookmarks</span><span class="prmi-arr">›</span></div>
+      <div class="prmi"><span class="prmi-icon">📊</span><span class="prmi-lbl">My Progress</span><span class="prmi-arr">›</span></div>
+      <div class="prmi"><span class="prmi-icon">🔔</span><span class="prmi-lbl">Notifications</span><span class="prmi-arr">›</span></div>
+      <div class="prmi"><span class="prmi-icon">⚙️</span><span class="prmi-lbl">Settings</span><span class="prmi-arr">›</span></div>
+      <div class="prmi"><span class="prmi-icon">❓</span><span class="prmi-lbl">Help & Support</span><span class="prmi-arr">›</span></div>
+    </div>
+  </div>
 </div>
 
 <script>
-const EXAMS = [
-  {id:'upsc',icon:'⚖️',name:'UPSC CSE',full:'Civil Services Examination',tags:['IAS','IPS','IFS'],color:'#e8ff47'},
-  {id:'neet',icon:'🩺',name:'NEET UG',full:'National Eligibility cum Entrance Test',tags:['MBBS','BDS','Ayush'],color:'#4ade80'},
-  {id:'jee',icon:'⚙️',name:'JEE Main & Advanced',full:'Joint Entrance Examination',tags:['IIT','NIT','IIIT'],color:'#60a5fa'},
-  {id:'cat',icon:'📊',name:'CAT',full:'Common Admission Test',tags:['IIM','MBA','Management'],color:'#f472b6'},
-  {id:'clat',icon:'⚖️',name:'CLAT',full:'Common Law Admission Test',tags:['NLU','LLB','Law'],color:'#fb923c'},
-  {id:'gate',icon:'🔬',name:'GATE',full:'Graduate Aptitude Test in Engineering',tags:['M.Tech','PSU','Research'],color:'#a78bfa'},
-  {id:'ssc',icon:'📋',name:'SSC CGL',full:'Staff Selection Commission — CGL',tags:['Group B','Group C','Govt'],color:'#34d399'},
-  {id:'ibps',icon:'🏦',name:'IBPS PO',full:'Institute of Banking Personnel Selection',tags:['Bank PO','Clerk','SO'],color:'#fbbf24'},
+const EXAMS=[
+  {id:'upsc',icon:'⚖️',name:'UPSC CSE',full:'Civil Services Examination'},
+  {id:'neet',icon:'🩺',name:'NEET UG',full:'National Eligibility cum Entrance Test'},
+  {id:'jee',icon:'⚙️',name:'JEE Main & Advanced',full:'Joint Entrance Examination'},
+  {id:'cat',icon:'📊',name:'CAT',full:'Common Admission Test'},
+  {id:'clat',icon:'⚖️',name:'CLAT',full:'Common Law Admission Test'},
+  {id:'gate',icon:'🔬',name:'GATE',full:'Graduate Aptitude Test in Engineering'},
+  {id:'ssc',icon:'📋',name:'SSC CGL',full:'Staff Selection Commission — CGL'},
+  {id:'ibps',icon:'🏦',name:'IBPS PO',full:'Institute of Banking Personnel Selection'},
 ];
 
-const DATA = {
-  subjects:{
-    upsc:[
-      {id:'polity',icon:'🏛️',name:'Polity',desc:'Constitution & governance'},
-      {id:'history',icon:'📜',name:'History',desc:'Ancient, Medieval & Modern'},
-      {id:'geography',icon:'🌍',name:'Geography',desc:'Physical & Indian geo'},
-      {id:'economy',icon:'📈',name:'Economy',desc:'Indian economy basics'},
-      {id:'environment',icon:'🌿',name:'Environment',desc:'Ecology & climate'},
-      {id:'science',icon:'🔬',name:'Science & Tech',desc:'Current tech & basics'},
-      {id:'ethics',icon:'🧭',name:'Ethics',desc:'GS Paper IV'},
-      {id:'current',icon:'📰',name:'Current Affairs',desc:'Last 12 months'},
+const SUBJS={
+  upsc:[
+    {id:'polity',icon:'🏛️',name:'Polity',topics:[
+      {name:'Fundamental Rights & Duties',freq:'h',pyqs:8,sub:'Articles 12-35, Part III'},
+      {name:'Parliament & Legislature',freq:'h',pyqs:6,sub:'Lok Sabha, Rajya Sabha, Sessions'},
+      {name:'Constitutional Bodies',freq:'h',pyqs:5,sub:'CAG, Election Commission, UPSC'},
+      {name:'Judiciary & Supreme Court',freq:'h',pyqs:6,sub:'Judicial Review, PIL, Writ Petitions'},
+      {name:'President & Governor Powers',freq:'m',pyqs:4,sub:'Executive Powers, Ordinances'},
+      {name:'Centre-State Relations',freq:'m',pyqs:4,sub:'7th Schedule, Federalism'},
+      {name:'Emergency Provisions',freq:'m',pyqs:3,sub:'Articles 352, 356, 360'},
+    ]},
+    {id:'history',icon:'📜',name:'History',topics:[
+      {name:'Freedom Movement 1857–1947',freq:'h',pyqs:7,sub:'Congress, Gandhi, Partition'},
+      {name:'British Economic Policies',freq:'h',pyqs:5,sub:'Drain Theory, De-industrialization'},
+      {name:'Indus Valley Civilization',freq:'h',pyqs:4,sub:'Harappa, Mohenjo-daro'},
+      {name:'Bhakti & Sufi Movements',freq:'m',pyqs:3,sub:'Medieval Saints, Social Reform'},
+      {name:'Post-Independence India',freq:'m',pyqs:4,sub:'Five Year Plans, Green Revolution'},
+    ]},
+    {id:'geography',icon:'🌍',name:'Geography',topics:[
+      {name:'Monsoon & Climate of India',freq:'h',pyqs:6,sub:'SW Monsoon, El Nino'},
+      {name:'Rivers & Drainage System',freq:'h',pyqs:5,sub:'Himalayan vs Peninsular Rivers'},
+      {name:'Soils of India',freq:'h',pyqs:4,sub:'Alluvial, Black, Red, Laterite'},
+      {name:'Natural Vegetation & Forests',freq:'m',pyqs:3,sub:'Tropical, Montane, Mangroves'},
+    ]},
+    {id:'economy',icon:'📈',name:'Economy',topics:[
+      {name:'Inflation & Monetary Policy',freq:'h',pyqs:7,sub:'RBI, MPC, Repo Rate'},
+      {name:'Banking & Financial System',freq:'h',pyqs:6,sub:'RBI Functions, NPA, Basel'},
+      {name:'Budget & Fiscal Policy',freq:'h',pyqs:5,sub:'Union Budget, Fiscal Deficit'},
+      {name:'Agriculture & Food Security',freq:'h',pyqs:5,sub:'MSP, FCI, PDS'},
+    ]},
+    {id:'environment',icon:'🌿',name:'Environment',topics:[
+      {name:'Climate Change & UNFCCC',freq:'h',pyqs:7,sub:'Paris Agreement, COP, NDC'},
+      {name:'Biodiversity & Protected Areas',freq:'h',pyqs:6,sub:'National Parks, Biosphere'},
+      {name:'Pollution & Environmental Laws',freq:'h',pyqs:5,sub:'Air, Water, Noise Acts'},
+      {name:'International Conventions',freq:'m',pyqs:4,sub:'Ramsar, CITES, Basel'},
+    ]},
+    {id:'science',icon:'🔬',name:'Science & Tech',topics:[
+      {name:'Space Technology (ISRO)',freq:'h',pyqs:6,sub:'Chandrayaan, Mangalyaan'},
+      {name:'Biotechnology & GMOs',freq:'h',pyqs:5,sub:'Bt Crops, Gene Editing'},
+      {name:'Diseases & Vaccines',freq:'h',pyqs:5,sub:'COVID, mRNA, One Health'},
+      {name:'Cyber Security & AI',freq:'h',pyqs:4,sub:'Deepfakes, AI Policy'},
+    ]},
+    {id:'ethics',icon:'🧭',name:'Ethics',topics:[
+      {name:'Case Studies — Public Service',freq:'h',pyqs:10,sub:'Dilemmas, Conflicts, Decisions'},
+      {name:'Emotional Intelligence',freq:'h',pyqs:6,sub:'EQ, Self-Awareness, Empathy'},
+      {name:'Corruption & Accountability',freq:'h',pyqs:5,sub:'Probity, Whistleblowing'},
+      {name:'Moral Thinkers & Philosophers',freq:'m',pyqs:4,sub:'Gandhi, Kant, Rawls'},
+    ]},
+    {id:'current',icon:'📰',name:'Current Affairs',topics:[
+      {name:'Government Schemes 2025-26',freq:'h',pyqs:5,sub:'PM Schemes, Flagship Programs'},
+      {name:'India Foreign Policy',freq:'h',pyqs:6,sub:'G20, QUAD, SCO, BRICS'},
+      {name:'International Summits & Orgs',freq:'h',pyqs:5,sub:'UN, WTO, IMF Updates'},
+    ]},
+  ],
+  neet:[
+    {id:'physics',icon:'⚡',name:'Physics',topics:[
+      {name:'Mechanics & Laws of Motion',freq:'h',pyqs:12,sub:"Newton's Laws, Work-Energy"},
+      {name:'Electrostatics & Current Electricity',freq:'h',pyqs:10,sub:"Coulomb's Law, Circuits"},
+      {name:'Modern Physics',freq:'h',pyqs:9,sub:'Photoelectric, Radioactivity'},
+      {name:'Optics',freq:'h',pyqs:8,sub:'Lenses, Mirrors, Diffraction'},
+      {name:'Thermodynamics',freq:'m',pyqs:6,sub:'Laws of Thermodynamics'},
+    ]},
+    {id:'chemistry',icon:'🧪',name:'Chemistry',topics:[
+      {name:'Organic Reactions & Mechanisms',freq:'h',pyqs:14,sub:'SN1, SN2, Addition, Elimination'},
+      {name:'Chemical Bonding & Structure',freq:'h',pyqs:10,sub:'VSEPR, Hybridization'},
+      {name:'Coordination Compounds',freq:'h',pyqs:8,sub:'Isomerism, Crystal Field Theory'},
+      {name:'Equilibrium',freq:'h',pyqs:7,sub:'Le Chatelier, Kp, Kc'},
+    ]},
+    {id:'biology',icon:'🧬',name:'Biology',topics:[
+      {name:'Human Physiology',freq:'h',pyqs:16,sub:'Digestion, Circulation, Excretion'},
+      {name:'Genetics & Evolution',freq:'h',pyqs:12,sub:'Mendel, DNA, Hardy-Weinberg'},
+      {name:'Plant Physiology',freq:'h',pyqs:10,sub:'Photosynthesis, Respiration'},
+      {name:'Cell Biology & Biomolecules',freq:'h',pyqs:9,sub:'Cell Division, Proteins'},
+      {name:'Ecology & Environment',freq:'m',pyqs:7,sub:'Ecosystem, Population'},
+    ]},
+  ],
+  jee:[
+    {id:'physics',icon:'⚡',name:'Physics',topics:[
+      {name:'Mechanics & Kinematics',freq:'h',pyqs:14,sub:'Projectile, Circular Motion'},
+      {name:'Electrostatics & Magnetism',freq:'h',pyqs:12,sub:'Gauss Law, Magnetic Force'},
+      {name:'Modern Physics',freq:'h',pyqs:10,sub:'Photoelectric, Bohr Model'},
+      {name:'Optics',freq:'h',pyqs:8,sub:'Lens Formula, Interference'},
+    ]},
+    {id:'chemistry',icon:'🧪',name:'Chemistry',topics:[
+      {name:'Organic Chemistry (GOC)',freq:'h',pyqs:14,sub:'IUPAC, Isomerism, Mechanisms'},
+      {name:'Chemical Bonding',freq:'h',pyqs:10,sub:'VSEPR, Hybridization'},
+      {name:'Thermochemistry',freq:'h',pyqs:8,sub:'Hess Law, Bond Enthalpy'},
+    ]},
+    {id:'maths',icon:'📐',name:'Mathematics',topics:[
+      {name:'Calculus',freq:'h',pyqs:16,sub:'Definite Integrals, Area, ODE'},
+      {name:'Coordinate Geometry',freq:'h',pyqs:12,sub:'Circles, Conics, Parabola'},
+      {name:'Probability & Statistics',freq:'h',pyqs:9,sub:'Bayes, Distributions'},
+      {name:'Matrices & Determinants',freq:'m',pyqs:7,sub:'Matrix Operations, Eigenvalues'},
+    ]},
+  ],
+  cat:[
+    {id:'varc',icon:'📖',name:'VARC',topics:[
+      {name:'Reading Comprehension (RC)',freq:'h',pyqs:20,sub:"Inference, Tone, Author's View"},
+      {name:'Para Jumbles',freq:'h',pyqs:8,sub:'Sentence Ordering'},
+      {name:'Para Summary',freq:'h',pyqs:6,sub:'Main Idea, Best Summary'},
+    ]},
+    {id:'dilr',icon:'🧩',name:'DILR',topics:[
+      {name:'Seating Arrangement & Puzzles',freq:'h',pyqs:12,sub:'Linear, Circular, Floor-based'},
+      {name:'Data Interpretation Sets',freq:'h',pyqs:12,sub:'Bar, Line, Pie, Caselet DI'},
+      {name:'Games & Tournaments',freq:'h',pyqs:6,sub:'Knockout, Round Robin'},
+    ]},
+    {id:'qa',icon:'🔢',name:'Quantitative Aptitude',topics:[
+      {name:'Arithmetic (%, Ratio, Profit-Loss)',freq:'h',pyqs:14,sub:'Time-Speed, SI/CI'},
+      {name:'Number System & Theory',freq:'h',pyqs:10,sub:'HCF, LCM, Remainders'},
+      {name:'Algebra & Quadratic',freq:'h',pyqs:9,sub:'Inequalities, Logs, Progressions'},
+    ]},
+  ],
+  ssc:[
+    {id:'reasoning',icon:'🧠',name:'Reasoning',topics:[
+      {name:'Analogy',freq:'h',pyqs:8,sub:'Word, Number, Letter Analogy'},
+      {name:'Series (Number & Letter)',freq:'h',pyqs:7,sub:'Missing Term, Wrong Term'},
+      {name:'Coding-Decoding',freq:'h',pyqs:6,sub:'Letter Coding, Number Coding'},
+      {name:'Blood Relations',freq:'m',pyqs:4,sub:'Family Tree, Puzzle Based'},
+    ]},
+    {id:'quant_ssc',icon:'🔢',name:'Quantitative Aptitude',topics:[
+      {name:'Percentage & Profit-Loss',freq:'h',pyqs:8,sub:'Discount, CP-SP'},
+      {name:'Time-Speed-Distance',freq:'h',pyqs:6,sub:'Trains, Boats, Relative Speed'},
+      {name:'Geometry & Mensuration',freq:'h',pyqs:7,sub:'Area, Volume, Triangles'},
+    ]},
+    {id:'english_ssc',icon:'📝',name:'English',topics:[
+      {name:'Fill in the Blanks',freq:'h',pyqs:6,sub:'Grammar-based, Vocabulary'},
+      {name:'Error Spotting',freq:'h',pyqs:6,sub:'Subject-Verb, Tense, Articles'},
+      {name:'Reading Comprehension',freq:'h',pyqs:5,sub:'Inference, Direct Questions'},
+    ]},
+    {id:'gk_ssc',icon:'🌐',name:'General Awareness',topics:[
+      {name:'Indian History',freq:'h',pyqs:6,sub:'Ancient, Medieval, Modern'},
+      {name:'Polity & Constitution',freq:'h',pyqs:5,sub:'Articles, Bodies, Amendments'},
+      {name:'Current Affairs',freq:'m',pyqs:4,sub:'Last 6 months Events'},
+    ]},
+  ],
+  ibps:[
+    {id:'reasoning_ibps',icon:'🧠',name:'Reasoning',topics:[
+      {name:'Puzzles & Seating Arrangement',freq:'h',pyqs:10,sub:'Floor, Circular, Linear'},
+      {name:'Inequality',freq:'h',pyqs:6,sub:'Direct, Coded Inequalities'},
+      {name:'Syllogism',freq:'h',pyqs:5,sub:'All, Some, No — Conclusions'},
+    ]},
+    {id:'quant_ibps',icon:'🔢',name:'Quantitative Aptitude',topics:[
+      {name:'Data Interpretation (DI)',freq:'h',pyqs:10,sub:'Tables, Bar, Line, Mixed'},
+      {name:'Number Series',freq:'h',pyqs:6,sub:'Missing, Wrong Term Series'},
+      {name:'Quadratic Equations',freq:'h',pyqs:5,sub:'Roots, Relationship'},
+    ]},
+    {id:'english_ibps',icon:'📝',name:'English Language',topics:[
+      {name:'Reading Comprehension',freq:'h',pyqs:8,sub:'Theme, Inference, Vocabulary'},
+      {name:'Cloze Test',freq:'h',pyqs:5,sub:'Fill blanks with best word'},
+      {name:'Error Detection',freq:'h',pyqs:5,sub:'Grammatical Errors'},
+    ]},
+    {id:'gk_ibps',icon:'🏦',name:'Banking Awareness',topics:[
+      {name:'Banking Terms & Concepts',freq:'h',pyqs:8,sub:'Repo, Reverse Repo, CRR'},
+      {name:'RBI & Monetary Policy',freq:'h',pyqs:6,sub:'MPC, Inflation Targeting'},
+      {name:'Financial Awareness',freq:'h',pyqs:5,sub:'Budget, Economy News'},
+    ]},
+  ],
+  clat:[
+    {id:'legal',icon:'⚖️',name:'Legal Reasoning',topics:[
+      {name:'Torts & Negligence',freq:'h',pyqs:8,sub:'Strict Liability, Vicarious'},
+      {name:'Contract Law Principles',freq:'h',pyqs:7,sub:'Offer, Acceptance, Consideration'},
+      {name:'Constitutional Principles',freq:'h',pyqs:6,sub:'Fundamental Rights'},
+    ]},
+    {id:'logical',icon:'🧠',name:'Logical Reasoning',topics:[
+      {name:'Critical Reasoning',freq:'h',pyqs:8,sub:'Assumptions, Inferences'},
+      {name:'Syllogisms',freq:'h',pyqs:6,sub:'Valid Conclusions, Venn'},
+    ]},
+    {id:'english',icon:'📝',name:'English',topics:[
+      {name:'Reading Comprehension',freq:'h',pyqs:10,sub:'Law passages, Inference'},
+      {name:'Vocabulary & Idioms',freq:'h',pyqs:6,sub:'Contextual Meaning'},
+    ]},
+  ],
+  gate:[
+    {id:'core',icon:'⚙️',name:'Core Engineering',topics:[
+      {name:'Branch Core Subjects',freq:'h',pyqs:20,sub:'72% weightage — choose branch'},
+      {name:'Previous Year Questions',freq:'h',pyqs:50,sub:'10 years PYQs essential'},
+    ]},
+    {id:'engg_maths',icon:'📐',name:'Engineering Mathematics',topics:[
+      {name:'Linear Algebra',freq:'h',pyqs:6,sub:'Matrices, Eigenvalues'},
+      {name:'Calculus & Differential Equations',freq:'h',pyqs:6,sub:'Integration, ODE'},
+      {name:'Probability & Statistics',freq:'h',pyqs:5,sub:'Distributions, Hypothesis'},
+    ]},
+    {id:'aptitude',icon:'🧮',name:'General Aptitude',topics:[
+      {name:'Numerical Computation',freq:'h',pyqs:6,sub:'Arithmetic, Time-Speed'},
+      {name:'Verbal Analogies & Grammar',freq:'h',pyqs:5,sub:'Sentence Completion, RC'},
+    ]},
+  ],
+};
+
+const BOOKS={
+  upsc:{
+    polity:[
+      {t:'Indian Polity',a:'M. Laxmikanth',tag:'must',r:'4.9',note:'The most important UPSC book — start here'},
+      {t:'Introduction to Constitution of India',a:'D.D. Basu',tag:'ref',r:'4.6',note:'In-depth reference for Mains'},
+      {t:'Governance in India',a:'M. Laxmikanth',tag:'ok',r:'4.5',note:'Best for GS Paper II'},
     ],
-    neet:[
-      {id:'physics',icon:'⚡',name:'Physics',desc:'Mechanics to modern physics'},
-      {id:'chemistry',icon:'🧪',name:'Chemistry',desc:'Organic, Inorganic, Physical'},
-      {id:'biology',icon:'🧬',name:'Biology',desc:'Botany & Zoology'},
+    history:[
+      {t:"India's Struggle for Independence",a:'Bipan Chandra',tag:'must',r:'4.8',note:'Essential for Modern History'},
+      {t:'Ancient & Medieval India',a:'Poonam Dalal Dahiya',tag:'must',r:'4.7',note:'Best single book for both eras'},
+      {t:'NCERT History (6–12)',a:'NCERT',tag:'ok',r:'4.5',note:'Foundation — start here'},
     ],
-    jee:[
-      {id:'physics',icon:'⚡',name:'Physics',desc:'Concepts & problems'},
-      {id:'chemistry',icon:'🧪',name:'Chemistry',desc:'All three branches'},
-      {id:'maths',icon:'📐',name:'Mathematics',desc:'Calculus to algebra'},
+    geography:[
+      {t:'Certificate Physical & Human Geography',a:'Goh Cheng Leong',tag:'must',r:'4.7',note:'Best for Physical Geography'},
+      {t:'Geography of India',a:'Majid Husain',tag:'must',r:'4.6',note:'Most detailed Indian Geography book'},
     ],
-    cat:[
-      {id:'varc',icon:'📖',name:'VARC',desc:'Verbal & Reading Comprehension'},
-      {id:'dilr',icon:'🧩',name:'DILR',desc:'Data Interpretation & LR'},
-      {id:'qa',icon:'🔢',name:'Quantitative Aptitude',desc:'Arithmetic & Algebra'},
+    economy:[
+      {t:'Indian Economy',a:'Ramesh Singh',tag:'must',r:'4.6',note:'Standard book for GS Paper III'},
+      {t:'Economic Survey (Latest)',a:'Ministry of Finance',tag:'ok',r:'4.8',note:'Free PDF — essential for Mains'},
     ],
-    clat:[
-      {id:'english',icon:'📝',name:'English',desc:'Comprehension & grammar'},
-      {id:'gk',icon:'🌐',name:'GK & Current Affairs',desc:'Legal & general awareness'},
-      {id:'legal',icon:'⚖️',name:'Legal Reasoning',desc:'Legal principles & cases'},
-      {id:'logical',icon:'🧠',name:'Logical Reasoning',desc:'Analytical ability'},
-      {id:'quant',icon:'🔢',name:'Quantitative Techniques',desc:'Basic maths'},
+    environment:[
+      {t:'Environment & Ecology',a:'Majid Husain',tag:'must',r:'4.6',note:'Covers both Prelims and Mains'},
+      {t:'Shankar IAS Environment',a:'Shankar IAS Academy',tag:'ok',r:'4.4',note:'Best for quick revision'},
     ],
-    gate:[
-      {id:'core',icon:'⚙️',name:'Core Engineering',desc:'Branch-specific subjects'},
-      {id:'aptitude',icon:'🧮',name:'General Aptitude',desc:'Verbal & numerical'},
-      {id:'engg_maths',icon:'📐',name:'Engineering Mathematics',desc:'Linear algebra, calculus'},
+    science:[
+      {t:'NCERT Science (6–10)',a:'NCERT',tag:'must',r:'4.7',note:'Start here — strong foundation'},
+      {t:'Science & Technology',a:'Ravi P. Agrahari',tag:'ok',r:'4.4',note:'Covers current technology topics'},
     ],
-    ssc:[
-      {id:'reasoning',icon:'🧠',name:'Reasoning',desc:'Verbal & non-verbal'},
-      {id:'quant_ssc',icon:'🔢',name:'Quantitative Aptitude',desc:'Arithmetic & DI'},
-      {id:'english_ssc',icon:'📝',name:'English',desc:'Grammar & comprehension'},
-      {id:'gk_ssc',icon:'🌐',name:'General Awareness',desc:'Static GK & current affairs'},
+    ethics:[
+      {t:'Ethics, Integrity & Aptitude',a:'G. Subba Rao',tag:'must',r:'4.5',note:'GS IV standard book'},
+      {t:'Lexicon for Ethics',a:'Chronicle Publications',tag:'ok',r:'4.3',note:'Key ethics terms & definitions'},
     ],
-    ibps:[
-      {id:'reasoning_ibps',icon:'🧠',name:'Reasoning',desc:'Verbal & puzzles'},
-      {id:'quant_ibps',icon:'🔢',name:'Quantitative Aptitude',desc:'DI & arithmetic'},
-      {id:'english_ibps',icon:'📝',name:'English Language',desc:'RC & grammar'},
-      {id:'gk_ibps',icon:'🏦',name:'Banking Awareness',desc:'Banking & finance GK'},
+    current:[
+      {t:'The Hindu / Indian Express',a:'Daily Newspaper',tag:'must',r:'5.0',note:'Must read daily'},
+      {t:'Vision IAS Monthly CA',a:'Vision IAS',tag:'ok',r:'4.5',note:'Monthly current affairs consolidation'},
     ],
   },
+  neet:{
+    physics:[
+      {t:'Concepts of Physics Vol 1 & 2',a:'H.C. Verma',tag:'must',r:'4.9',note:'Gold standard for theory'},
+      {t:'NCERT Physics (11–12)',a:'NCERT',tag:'must',r:'4.8',note:'Questions come directly from NCERT'},
+      {t:'DC Pandey Physics for NEET',a:'DC Pandey',tag:'ok',r:'4.6',note:'Best for practice problems'},
+    ],
+    chemistry:[
+      {t:'NCERT Chemistry (11–12)',a:'NCERT',tag:'must',r:'4.8',note:'Inorganic comes directly from NCERT'},
+      {t:'Organic Chemistry',a:'MS Chauhan',tag:'ok',r:'4.7',note:'Best for reaction mechanisms'},
+    ],
+    biology:[
+      {t:'NCERT Biology (11–12)',a:'NCERT',tag:'must',r:'4.9',note:'70% questions directly from NCERT'},
+      {t:"Trueman's Biology Vol 1 & 2",a:'Trueman Publications',tag:'must',r:'4.7',note:'Detailed explanations'},
+      {t:'MTG Fingertips Biology',a:'MTG Editorial Board',tag:'ok',r:'4.5',note:'Best for quick revision'},
+    ],
+  },
+  jee:{
+    physics:[
+      {t:'Concepts of Physics',a:'H.C. Verma',tag:'must',r:'4.9',note:'Best for theory and basics'},
+      {t:'Problems in General Physics',a:'I.E. Irodov',tag:'ref',r:'4.7',note:'Advanced — JEE Advanced level'},
+    ],
+    chemistry:[
+      {t:'NCERT Chemistry (11–12)',a:'NCERT',tag:'must',r:'4.8',note:'Best base for Inorganic'},
+      {t:'Organic Chemistry',a:'Morrison & Boyd',tag:'ref',r:'4.6',note:'In-depth Organic Chemistry'},
+    ],
+    maths:[
+      {t:'Mathematics for JEE',a:'R.D. Sharma',tag:'must',r:'4.7',note:'Comprehensive coverage'},
+      {t:'Calculus',a:'Amit M. Agarwal',tag:'ok',r:'4.6',note:'Best book for Calculus'},
+    ],
+  },
+  cat:{
+    varc:[
+      {t:'How to Prepare for Verbal Ability',a:'Arun Sharma',tag:'must',r:'4.6',note:'Standard book for VA'},
+      {t:'Word Power Made Easy',a:'Norman Lewis',tag:'must',r:'4.8',note:'Vocabulary building essential'},
+    ],
+    dilr:[
+      {t:'How to Prepare for Data Interpretation',a:'Arun Sharma',tag:'must',r:'4.6',note:'Best book for DI'},
+    ],
+    qa:[
+      {t:'Quantitative Aptitude for CAT',a:'Arun Sharma',tag:'must',r:'4.7',note:'Most popular QA book'},
+    ],
+  },
+  ssc:{
+    reasoning:[
+      {t:'A Modern Approach to Verbal & Non-Verbal Reasoning',a:'R.S. Aggarwal',tag:'must',r:'4.7',note:'SSC reasoning gold standard'},
+    ],
+    quant_ssc:[
+      {t:'Quantitative Aptitude',a:'R.S. Aggarwal',tag:'must',r:'4.7',note:'Arithmetic gold standard'},
+      {t:'Fast Track Arithmetic',a:'Rajesh Verma',tag:'ok',r:'4.4',note:'Speed techniques & shortcuts'},
+    ],
+    english_ssc:[
+      {t:'Objective General English',a:'S.P. Bakshi',tag:'must',r:'4.6',note:'Standard book for SSC English'},
+    ],
+    gk_ssc:[
+      {t:"Lucent's General Knowledge",a:'Lucent Publications',tag:'must',r:'4.7',note:'Static GK gold standard'},
+    ],
+  },
+  ibps:{
+    reasoning_ibps:[
+      {t:'A Modern Approach to Verbal Reasoning',a:'R.S. Aggarwal',tag:'must',r:'4.7',note:'Essential for all bank exams'},
+    ],
+    quant_ibps:[
+      {t:'Quantitative Aptitude',a:'R.S. Aggarwal',tag:'must',r:'4.7',note:'Bank maths bible'},
+      {t:'Data Interpretation',a:'Arun Sharma',tag:'ok',r:'4.5',note:'Best for Data Interpretation'},
+    ],
+    english_ibps:[
+      {t:'Objective General English',a:'S.P. Bakshi',tag:'must',r:'4.6',note:'Best for bank exam English'},
+    ],
+    gk_ibps:[
+      {t:'Banking Awareness',a:'Arihant Publications',tag:'must',r:'4.5',note:'Must-have for Banking GK'},
+    ],
+  },
+  clat:{
+    legal:[{t:'Legal Aptitude for CLAT',a:'A.P. Bhardwaj',tag:'must',r:'4.6',note:'Legal reasoning standard book'}],
+    logical:[{t:'Logical Reasoning',a:'R.S. Aggarwal',tag:'must',r:'4.6',note:'Classic book — highly relevant'}],
+    english:[{t:'Word Power Made Easy',a:'Norman Lewis',tag:'must',r:'4.8',note:'Vocabulary must-have'}],
+  },
+  gate:{
+    core:[
+      {t:'GATE Subject Books',a:'Made Easy Publications',tag:'must',r:'4.6',note:'Choose your engineering branch'},
+      {t:'Previous Year GATE Papers',a:'ACE Engineering',tag:'must',r:'4.7',note:'10 years PYQs — absolutely essential'},
+    ],
+    engg_maths:[{t:'Higher Engineering Mathematics',a:'B.S. Grewal',tag:'must',r:'4.7',note:'Engineering mathematics bible'}],
+  },
+};
 
-  books:{
-    upsc:{
-      polity:[
-        {title:'Indian Polity',author:'M. Laxmikanth',tag:'must',note:'The most important book for UPSC — start here'},
-        {title:'Introduction to Constitution of India',author:'D.D. Basu',tag:'ref',note:'In-depth reference book for Mains'},
-        {title:'Governance in India',author:'M. Laxmikanth',tag:'ok',note:'Best for GS Paper II'},
+const PYQS={
+  upsc:{
+    polity:{
+      'Fundamental Rights & Duties':[
+        {year:2024,q:'Examine the scope of "Right to be Forgotten" in the context of Right to Privacy under Article 21.',paper:'GS II — Mains'},
+        {year:2023,q:'Examine the scope and limitations of Right to Privacy as a Fundamental Right after the Puttaswamy judgment.',paper:'GS II — Mains'},
+        {year:2022,q:'What distinguishes Fundamental Rights from Directive Principles? Can DPSPs be enforced?',paper:'GS II — Mains'},
+        {year:2021,q:'Discuss how the right to freedom of speech is subject to reasonable restrictions under Article 19(2).',paper:'GS II — Mains'},
+        {year:2020,q:'The Right to Education Act 2009 has not fully achieved its objectives. Critically examine.',paper:'GS II — Mains'},
       ],
-      history:[
-        {title:"India's Struggle for Independence",author:'Bipan Chandra',tag:'must',note:'Essential for Modern History'},
-        {title:'Ancient & Medieval India',author:'Poonam Dalal Dahiya',tag:'must',note:'Best single book covering both Ancient & Medieval'},
-        {title:'NCERT History (6–12)',author:'NCERT',tag:'ok',note:'Build your foundation here first'},
+      'Parliament & Legislature':[
+        {year:2024,q:'Examine the role of Parliamentary Standing Committees in making the government more accountable.',paper:'GS II — Mains'},
+        {year:2023,q:'Distinguish between the powers of Lok Sabha and Rajya Sabha with respect to Money Bills.',paper:'GS II — Mains'},
+        {year:2022,q:'Examine the role of Parliamentary Committees in strengthening democracy.',paper:'GS II — Mains'},
+        {year:2021,q:'What impact does the "Anti-Defection Law" have on the working of parliamentary democracy?',paper:'GS II — Mains'},
       ],
-      geography:[
-        {title:'Certificate Physical & Human Geography',author:'Goh Cheng Leong',tag:'must',note:'Best for Physical Geography'},
-        {title:'Geography of India',author:'Majid Husain',tag:'must',note:'Most detailed book for Indian Geography'},
-        {title:'NCERT Geography (11–12)',author:'NCERT',tag:'ok',note:'For building fundamentals'},
-      ],
-      economy:[
-        {title:'Indian Economy',author:'Ramesh Singh',tag:'must',note:'Standard book for GS Paper III'},
-        {title:'Economic Survey (latest)',author:'Ministry of Finance',tag:'ok',note:'Free PDF — essential for Mains'},
-      ],
-      environment:[
-        {title:'Environment & Ecology',author:'Majid Husain',tag:'must',note:'Covers both Prelims and Mains'},
-        {title:'Shankar IAS Environment',author:'Shankar IAS',tag:'ok',note:'Best for quick revision'},
-      ],
-      science:[
-        {title:'NCERT Science (6–10)',author:'NCERT',tag:'must',note:'Start yahan se'},
-        {title:'Science & Technology',author:'Ravi P. Agrahari',tag:'ok',note:'Covers current technology topics'},
-      ],
-      ethics:[
-        {title:'Ethics, Integrity & Aptitude',author:'G. Subba Rao',tag:'must',note:'GS IV standard book'},
-        {title:'Lexicon for Ethics',author:'Chronicle',tag:'ok',note:'Covers key ethics terms & definitions'},
-      ],
-      current:[
-        {title:'The Hindu / Indian Express',author:'Daily Newspaper',tag:'must',note:'Must read daily — very important'},
-        {title:'Vision IAS Monthly CA',author:'Vision IAS',tag:'ok',note:'Monthly current affairs consolidation'},
+      'Constitutional Bodies':[
+        {year:2024,q:'The Election Commission of India has been facing challenges. Analyse its independence and accountability.',paper:'GS II — Mains'},
+        {year:2023,q:'Discuss the role of the Election Commission of India in ensuring free and fair elections.',paper:'GS II — Mains'},
+        {year:2022,q:'Examine the independence of constitutional bodies and challenges they face.',paper:'GS II — Mains'},
       ],
     },
-    neet:{
-      physics:[
-        {title:'Concepts of Physics Vol 1 & 2',author:'H.C. Verma',tag:'must',note:'Gold standard for theory'},
-        {title:'NCERT Physics (11–12)',author:'NCERT',tag:'must',note:'NEET questions come directly from NCERT'},
-        {title:'DC Pandey Physics for NEET',author:'DC Pandey',tag:'ok',note:'Best for practice problems'},
+    history:{
+      'Freedom Movement 1857–1947':[
+        {year:2023,q:"Critically examine the role of Mahatma Gandhi in shaping mass movements in India.",paper:'GS I — Mains'},
+        {year:2022,q:'How did the Non-Cooperation Movement change the nature of Indian nationalism?',paper:'GS I — Mains'},
+        {year:2021,q:"Evaluate the contribution of revolutionary nationalists in India's freedom struggle.",paper:'GS I — Mains'},
+        {year:2020,q:'Discuss the contribution of women freedom fighters who are not in the limelight.',paper:'GS I — Mains'},
       ],
-      chemistry:[
-        {title:'NCERT Chemistry (11–12)',author:'NCERT',tag:'must',note:'Inorganic chemistry comes directly from NCERT'},
-        {title:'Physical Chemistry',author:'N. Avasthi',tag:'ok',note:'Best for numerical problems'},
-        {title:'Organic Chemistry',author:'MS Chauhan',tag:'ok',note:'Best for reaction mechanisms'},
-      ],
-      biology:[
-        {title:'NCERT Biology (11–12)',author:'NCERT',tag:'must',note:'70% of questions are directly from NCERT'},
-        {title:'Trueman\'s Biology Vol 1 & 2',author:'Trueman',tag:'must',note:'Detailed explanations'},
-        {title:'MTG Fingertips Biology',author:'MTG',tag:'ok',note:'Best for quick revision'},
+      'British Economic Policies':[
+        {year:2023,q:'Examine the impact of de-industrialization under British rule on Indian artisans.',paper:'GS I — Mains'},
+        {year:2021,q:'How did the Permanent Settlement affect agrarian relations in Bengal?',paper:'GS I — Mains'},
       ],
     },
-    jee:{
-      physics:[
-        {title:'Concepts of Physics',author:'H.C. Verma',tag:'must',note:'Best for theory and basics'},
-        {title:'Problems in General Physics',author:'I.E. Irodov',tag:'ref',note:'For advanced problems — JEE Advanced level'},
-        {title:'DC Pandey Mechanics',author:'DC Pandey',tag:'ok',note:'Topic-wise practice'},
+    economy:{
+      'Inflation & Monetary Policy':[
+        {year:2024,q:'Examine the challenges faced by the Monetary Policy Committee in meeting its inflation targets.',paper:'GS III — Mains'},
+        {year:2023,q:'Examine the role of Monetary Policy Committee (MPC) in controlling inflation in India.',paper:'GS III — Mains'},
+        {year:2022,q:'What is stagflation? How is it different from normal inflation? What remedies are available?',paper:'GS III — Mains'},
       ],
-      chemistry:[
-        {title:'NCERT Chemistry (11–12)',author:'NCERT',tag:'must',note:'Best base for Inorganic Chemistry'},
-        {title:'Organic Chemistry',author:'Morrison & Boyd',tag:'ref',note:'In-depth Organic Chemistry reference'},
-        {title:'Physical Chemistry',author:'O.P. Tandon',tag:'ok',note:'Best for numerical problems'},
-      ],
-      maths:[
-        {title:'Mathematics for JEE',author:'R.D. Sharma',tag:'must',note:'Comprehensive coverage of all topics'},
-        {title:'Calculus',author:'Amit M. Agarwal',tag:'ok',note:'Best book for Calculus'},
-        {title:'Coordinate Geometry',author:'S.L. Loney',tag:'ref',note:'Best for advanced Coordinate Geometry'},
+      'Agriculture & Food Security':[
+        {year:2024,q:'What are the key reforms needed in the APMC Act to ensure better price realization for farmers?',paper:'GS III — Mains'},
+        {year:2023,q:'Analyse the challenges in implementing the Minimum Support Price (MSP) regime in India.',paper:'GS III — Mains'},
       ],
     },
-    cat:{
-      varc:[
-        {title:'How to Prepare for Verbal Ability',author:'Arun Sharma',tag:'must',note:'Standard book for Verbal Ability'},
-        {title:'Word Power Made Easy',author:'Norman Lewis',tag:'must',note:'Vocabulary building essential'},
-        {title:'High School Grammar',author:'Wren & Martin',tag:'ok',note:'Grammar basics'},
+    environment:{
+      'Climate Change & UNFCCC':[
+        {year:2024,q:'Discuss the significance of Article 6 of the Paris Agreement for carbon markets.',paper:'GS III — Mains'},
+        {year:2023,q:'What is the "Loss and Damage" mechanism under UNFCCC? What was decided at COP28?',paper:'GS III — Mains'},
+        {year:2022,q:"Critically examine India's commitments under the Paris Agreement.",paper:'GS III — Mains'},
       ],
-      dilr:[
-        {title:'How to Prepare for Data Interpretation',author:'Arun Sharma',tag:'must',note:'Best book for Data Interpretation'},
-        {title:'Logical Reasoning & DI',author:'Nishit Sinha',tag:'ok',note:'Aligned with recent CAT pattern'},
-      ],
-      qa:[
-        {title:'Quantitative Aptitude for CAT',author:'Arun Sharma',tag:'must',note:'Most popular QA book'},
-        {title:'Quantitative Aptitude',author:'Nishit Sinha',tag:'ok',note:'Best for concept building'},
-        {title:'How to Prepare for QA',author:'Arun Sharma',tag:'ref',note:'For advanced practice'},
+      'Biodiversity & Protected Areas':[
+        {year:2024,q:'Discuss the significance of the Kunming-Montreal Global Biodiversity Framework for India.',paper:'GS III — Mains'},
+        {year:2023,q:'Project Tiger has been a success — evaluate with evidence.',paper:'GS III — Mains'},
       ],
     },
-    clat:{
-      english:[
-        {title:'Word Power Made Easy',author:'Norman Lewis',tag:'must',note:'Vocabulary must'},
-        {title:'High School Grammar & Composition',author:'Wren & Martin',tag:'ok',note:'Best for Grammar'},
+    science:{
+      'Space Technology (ISRO)':[
+        {year:2024,q:'Discuss the strategic and scientific significance of the Aditya-L1 solar mission.',paper:'GS III — Mains'},
+        {year:2023,q:"Discuss the significance of Chandrayaan-3 mission for India's space programme.",paper:'GS III — Mains'},
+        {year:2022,q:'What is the significance of the semi-cryogenic engine developed by ISRO?',paper:'GS III — Mains'},
       ],
-      gk:[
-        {title:'Manorama Yearbook',author:'Manorama',tag:'must',note:'Best for Static GK'},
-        {title:'The Hindu / Indian Express',author:'Daily',tag:'must',note:'Must read daily for current affairs'},
-      ],
-      legal:[
-        {title:'Legal Aptitude for CLAT',author:'A.P. Bhardwaj',tag:'must',note:'Best for Legal Reasoning'},
-        {title:'Universal Guide to CLAT',author:'Universal',tag:'ok',note:'Comprehensive all-in-one guide'},
-      ],
-      logical:[
-        {title:'Logical Reasoning',author:'R.S. Aggarwal',tag:'must',note:'Classic book — highly relevant for exams'},
-        {title:'A Modern Approach to Logical Reasoning',author:'R.S. Aggarwal',tag:'ok',note:'Best for pattern-based problems'},
-      ],
-      quant:[
-        {title:'Quantitative Aptitude',author:'R.S. Aggarwal',tag:'must',note:'Best for Basic Mathematics'},
+      'Cyber Security & AI':[
+        {year:2024,q:'Examine the ethical and security concerns posed by AI in governance.',paper:'GS III — Mains'},
+        {year:2023,q:'Discuss the threats posed by deepfakes to democratic processes and national security.',paper:'GS III — Mains'},
       ],
     },
-    gate:{
-      core:[
-        {title:'GATE subject-specific books',author:'Made Easy Publications',tag:'must',note:'Choose based on your engineering branch'},
-        {title:'Previous Year GATE Papers',author:'ACE Engineering',tag:'must',note:'10 years of PYQs — absolutely essential'},
+    ethics:{
+      'Case Studies — Public Service':[
+        {year:2024,q:'You are a senior IAS officer. You find that funds meant for a welfare scheme are being siphoned off. What steps would you take?',paper:'GS IV — Mains'},
+        {year:2023,q:'A district collector faces pressure from a minister to manipulate records for a contractor. Discuss ethical dimensions.',paper:'GS IV — Mains'},
+        {year:2022,q:'A senior officer discovers financial irregularities but fears victimisation. What action should be taken?',paper:'GS IV — Mains'},
+        {year:2021,q:'As a public servant, you are asked to implement a policy you personally disagree with. How do you handle this?',paper:'GS IV — Mains'},
       ],
-      aptitude:[
-        {title:'Quantitative Aptitude',author:'R.S. Aggarwal',tag:'ok',note:'Best for Numerical Aptitude'},
-        {title:'High School Grammar',author:'Wren & Martin',tag:'ok',note:'Best for Verbal Aptitude'},
-      ],
-      engg_maths:[
-        {title:'Higher Engineering Mathematics',author:'B.S. Grewal',tag:'must',note:'Engineering maths bible'},
-        {title:'Advanced Engineering Mathematics',author:'Erwin Kreyszig',tag:'ref',note:'Deep reference'},
-      ],
-    },
-    ssc:{
-      reasoning:[
-        {title:'A Modern Approach to Verbal & Non-Verbal Reasoning',author:'R.S. Aggarwal',tag:'must',note:'Best for SSC Reasoning'},
-        {title:'Analytical Reasoning',author:'M.K. Pandey',tag:'ok',note:'Pattern-based questions'},
-      ],
-      quant_ssc:[
-        {title:'Quantitative Aptitude',author:'R.S. Aggarwal',tag:'must',note:'Arithmetic ka best book'},
-        {title:'Fast Track Arithmetic',author:'Rajesh Verma',tag:'ok',note:'Best for speed techniques & shortcuts'},
-      ],
-      english_ssc:[
-        {title:'Objective General English',author:'S.P. Bakshi',tag:'must',note:'Standard book for SSC English'},
-        {title:'High School Grammar',author:'Wren & Martin',tag:'ok',note:'Best for Grammar rules'},
-      ],
-      gk_ssc:[
-        {title:'Lucent\'s General Knowledge',author:'Lucent',tag:'must',note:'Gold standard for Static GK'},
-        {title:'Manorama Yearbook',author:'Manorama',tag:'ok',note:'Current affairs + static'},
+      'Emotional Intelligence':[
+        {year:2024,q:'How can emotional intelligence help a civil servant deal with public grievances more effectively?',paper:'GS IV — Mains'},
+        {year:2023,q:'What do you understand by emotional intelligence? How is it relevant to civil servants?',paper:'GS IV — Mains'},
+        {year:2022,q:'Distinguish between emotional intelligence and IQ. Which is more important for a civil servant?',paper:'GS IV — Mains'},
       ],
     },
-    ibps:{
-      reasoning_ibps:[
-        {title:'A Modern Approach to Verbal Reasoning',author:'R.S. Aggarwal',tag:'must',note:'Essential for all Bank exams'},
-        {title:'How to Crack Test of Reasoning',author:'Jaikishan',tag:'ok',note:'Puzzles & seating arrangement'},
+    current:{
+      'Government Schemes 2025-26':[
+        {year:2024,q:'Discuss the impact of the PM Awas Yojana (Urban) on housing for the urban poor.',paper:'GS II — Mains'},
+        {year:2023,q:'Describe the PM Vishwakarma Yojana and its significance for traditional artisans.',paper:'GS II — Mains'},
       ],
-      quant_ibps:[
-        {title:'Quantitative Aptitude',author:'R.S. Aggarwal',tag:'must',note:'Bank maths ka bible'},
-        {title:'Data Interpretation',author:'Arun Sharma',tag:'ok',note:'Best for Data Interpretation'},
-      ],
-      english_ibps:[
-        {title:'Objective General English',author:'S.P. Bakshi',tag:'must',note:'Best for Bank exam English'},
-        {title:'Word Power Made Easy',author:'Norman Lewis',tag:'ok',note:'Vocabulary essential'},
-      ],
-      gk_ibps:[
-        {title:'Banking Awareness',author:'Arihant',tag:'must',note:'Must-have for Banking GK'},
-        {title:'Lucent\'s General Knowledge',author:'Lucent',tag:'ok',note:'Best for Static GK'},
+      'India Foreign Policy':[
+        {year:2024,q:"Evaluate India's role in the Global South and its significance for foreign policy.",paper:'GS II — Mains'},
+        {year:2023,q:"India's G20 presidency — evaluate the outcomes and India's role as a global south voice.",paper:'GS II — Mains'},
       ],
     },
   },
-
-  topics:{
-    upsc:{
-      polity:{
-        prelims:[
-          {name:'Fundamental Rights & Duties',freq:'h'},
-          {name:'Parliament & Legislature',freq:'h'},
-          {name:'Constitutional Bodies',freq:'h'},
-          {name:'Judiciary & SC',freq:'h'},
-          {name:'President & Governor',freq:'m'},
-          {name:'Centre-State Relations',freq:'m'},
-          {name:'Emergency Provisions',freq:'m'},
-        ],
-        mains:[
-          {name:'Federalism',freq:'h'},
-          {name:'Electoral Reforms',freq:'h'},
-          {name:'Role of Governor',freq:'h'},
-          {name:'Parliamentary System',freq:'m'},
-          {name:'Anti-Defection Law',freq:'m'},
-        ],
-      },
-      history:{
-        prelims:[
-          {name:'Freedom Movement (1857–1947)',freq:'h'},
-          {name:'Indus Valley Civilization',freq:'h'},
-          {name:'British Economic Policies',freq:'h'},
-          {name:'Mughal Empire',freq:'m'},
-          {name:'Bhakti & Sufi Movements',freq:'m'},
-          {name:'Reform Movements 19th C.',freq:'m'},
-        ],
-        mains:[
-          {name:'Post-Independence India',freq:'h'},
-          {name:'Partition & its Impact',freq:'h'},
-          {name:'Role of Gandhi & Subhas',freq:'m'},
-          {name:'Social Reform Movements',freq:'m'},
-        ],
-      },
-      geography:{
-        prelims:[
-          {name:'Monsoon & Climate',freq:'h'},
-          {name:'Rivers & Drainage',freq:'h'},
-          {name:'Soils of India',freq:'h'},
-          {name:'Natural Vegetation',freq:'m'},
-          {name:'Physical Features of India',freq:'m'},
-          {name:'World Physical Geography',freq:'m'},
-        ],
-        mains:[
-          {name:'Economic Geography',freq:'h'},
-          {name:'Disaster Prone Regions',freq:'h'},
-          {name:'Water Disputes',freq:'m'},
-          {name:'Urban Issues',freq:'m'},
-        ],
-      },
-      economy:{
-        prelims:[
-          {name:'National Income & GDP',freq:'h'},
-          {name:'Inflation & Monetary Policy',freq:'h'},
-          {name:'Banking & RBI',freq:'h'},
-          {name:'Budget & Fiscal Policy',freq:'h'},
-          {name:'International Trade & WTO',freq:'m'},
-        ],
-        mains:[
-          {name:'Inclusive Growth & Poverty',freq:'h'},
-          {name:'Agriculture Reforms',freq:'h'},
-          {name:'Economic Survey Highlights',freq:'h'},
-          {name:'Infrastructure Development',freq:'m'},
-        ],
-      },
-      environment:{
-        prelims:[
-          {name:'Biodiversity & Protected Areas',freq:'h'},
-          {name:'Climate Change & UNFCCC',freq:'h'},
-          {name:'Pollution (Air, Water, Soil)',freq:'h'},
-          {name:'Environmental Laws',freq:'m'},
-          {name:'International Conventions',freq:'m'},
-        ],
-        mains:[
-          {name:'Sustainable Development',freq:'h'},
-          {name:'Green Energy Transition',freq:'h'},
-          {name:'Wetlands & Ramsar Sites',freq:'m'},
-          {name:'Wildlife Conservation',freq:'m'},
-        ],
-      },
-      science:{
-        prelims:[
-          {name:'Space Technology (ISRO)',freq:'h'},
-          {name:'Biotechnology & GMOs',freq:'h'},
-          {name:'Diseases & Vaccines',freq:'h'},
-          {name:'Nuclear Energy',freq:'m'},
-          {name:'Defence Technology',freq:'m'},
-        ],
-        mains:[
-          {name:'AI & Emerging Tech',freq:'h'},
-          {name:'Cyber Security',freq:'h'},
-          {name:'IPR & Patents',freq:'m'},
-          {name:'Science Policy',freq:'l'},
-        ],
-      },
-      ethics:{
-        prelims:[],
-        mains:[
-          {name:'Case Studies — Public Service',freq:'h'},
-          {name:'Emotional Intelligence',freq:'h'},
-          {name:'Corruption & Accountability',freq:'h'},
-          {name:'Moral Thinkers',freq:'m'},
-          {name:'Probity in Public Life',freq:'m'},
-          {name:'Conflict of Interest',freq:'m'},
-        ],
-      },
-      current:{
-        prelims:[
-          {name:'Govt Schemes (last 12 months)',freq:'h'},
-          {name:'International Summits',freq:'h'},
-          {name:'India Foreign Policy',freq:'h'},
-          {name:'New Laws & Bills',freq:'m'},
-          {name:'Sports & Awards',freq:'m'},
-        ],
-        mains:[
-          {name:'Major Policy Announcements',freq:'h'},
-          {name:'Economic Survey & Budget',freq:'h'},
-          {name:'India-World Relations',freq:'h'},
-          {name:'Social Issues in News',freq:'m'},
-        ],
-      },
+  neet:{
+    physics:{
+      'Mechanics & Laws of Motion':[
+        {year:2024,q:'A ball is thrown vertically upward with velocity 20 m/s. Time to reach maximum height (g=10 m/s²) is:',paper:'Physics — NEET 2024'},
+        {year:2023,q:'A block of mass 5kg on rough surface. Coefficient of friction = 0.3. Force required to just move it (g=10):',paper:'Physics — NEET 2023'},
+        {year:2022,q:'A projectile thrown at 45°. The ratio of maximum height to range is:',paper:'Physics — NEET 2022'},
+      ],
+      'Modern Physics':[
+        {year:2024,q:'In photoelectric effect, increasing the intensity of incident light causes:',paper:'Physics — NEET 2024'},
+        {year:2023,q:'Half-life of radioactive element is 20 min. After 1 hour, fraction remaining from 80g sample is:',paper:'Physics — NEET 2023'},
+      ],
     },
-    neet:{
-      physics:{
-        prelims:[
-          {name:'Mechanics (Laws of Motion)',freq:'h'},
-          {name:'Electrostatics & Current Electricity',freq:'h'},
-          {name:'Modern Physics',freq:'h'},
-          {name:'Optics',freq:'h'},
-          {name:'Thermodynamics',freq:'m'},
-          {name:'Waves & Oscillations',freq:'m'},
-          {name:'Magnetism',freq:'m'},
-        ],
-        mains:[],
-      },
-      chemistry:{
-        prelims:[
-          {name:'Organic Reactions & Mechanisms',freq:'h'},
-          {name:'Chemical Bonding',freq:'h'},
-          {name:'Coordination Compounds',freq:'h'},
-          {name:'Equilibrium',freq:'h'},
-          {name:'Electrochemistry',freq:'m'},
-          {name:'P-Block Elements',freq:'m'},
-          {name:'Biomolecules',freq:'m'},
-        ],
-        mains:[],
-      },
-      biology:{
-        prelims:[
-          {name:'Human Physiology',freq:'h'},
-          {name:'Genetics & Evolution',freq:'h'},
-          {name:'Plant Physiology',freq:'h'},
-          {name:'Cell Biology',freq:'h'},
-          {name:'Ecology & Environment',freq:'m'},
-          {name:'Reproduction',freq:'m'},
-          {name:'Biotechnology',freq:'m'},
-        ],
-        mains:[],
-      },
+    chemistry:{
+      'Organic Reactions & Mechanisms':[
+        {year:2024,q:'Which of the following undergoes SN1 reaction most readily?',paper:'Chemistry — NEET 2024'},
+        {year:2023,q:'Which reagent converts primary alcohol to aldehyde without further oxidation?',paper:'Chemistry — NEET 2023'},
+        {year:2022,q:'Product of dehydration of 2-methylbutan-2-ol with H₂SO₄ is:',paper:'Chemistry — NEET 2022'},
+      ],
     },
-    jee:{
-      physics:{
-        prelims:[
-          {name:'Mechanics & Kinematics',freq:'h'},
-          {name:'Electrostatics',freq:'h'},
-          {name:'Modern Physics',freq:'h'},
-          {name:'Optics (Ray & Wave)',freq:'h'},
-          {name:'Electromagnetic Induction',freq:'m'},
-          {name:'Thermodynamics',freq:'m'},
-        ],
-        mains:[],
-      },
-      chemistry:{
-        prelims:[
-          {name:'Chemical Bonding',freq:'h'},
-          {name:'Organic Chemistry (GOC)',freq:'h'},
-          {name:'Coordination Compounds',freq:'h'},
-          {name:'Equilibrium & Thermodynamics',freq:'m'},
-          {name:'Electrochemistry',freq:'m'},
-          {name:'Periodic Table & Properties',freq:'m'},
-        ],
-        mains:[],
-      },
-      maths:{
-        prelims:[
-          {name:'Calculus (Limits, Derivatives, Integration)',freq:'h'},
-          {name:'Coordinate Geometry',freq:'h'},
-          {name:'Probability & Statistics',freq:'h'},
-          {name:'Matrices & Determinants',freq:'m'},
-          {name:'Trigonometry',freq:'m'},
-          {name:'3D Geometry & Vectors',freq:'m'},
-        ],
-        mains:[],
-      },
-    },
-    cat:{
-      varc:{
-        prelims:[
-          {name:'Reading Comprehension (RC)',freq:'h'},
-          {name:'Para Jumbles',freq:'h'},
-          {name:'Para Summary',freq:'h'},
-          {name:'Odd Sentence Out',freq:'m'},
-          {name:'Vocabulary in Context',freq:'m'},
-        ],
-        mains:[],
-      },
-      dilr:{
-        prelims:[
-          {name:'Seating Arrangement',freq:'h'},
-          {name:'Blood Relations & Puzzles',freq:'h'},
-          {name:'Bar/Line/Pie Charts',freq:'h'},
-          {name:'Caselets (DI)',freq:'h'},
-          {name:'Games & Tournaments',freq:'m'},
-          {name:'Logical Connectives',freq:'m'},
-        ],
-        mains:[],
-      },
-      qa:{
-        prelims:[
-          {name:'Arithmetic (Ratio, %, Profit-Loss)',freq:'h'},
-          {name:'Number System',freq:'h'},
-          {name:'Algebra',freq:'h'},
-          {name:'Geometry & Mensuration',freq:'m'},
-          {name:'Modern Maths (P&C, Probability)',freq:'m'},
-          {name:'Time-Speed-Distance',freq:'m'},
-        ],
-        mains:[],
-      },
-    },
-    clat:{
-      english:{
-        prelims:[
-          {name:'Reading Comprehension',freq:'h'},
-          {name:'Vocabulary & Idioms',freq:'h'},
-          {name:'Grammar & Usage',freq:'m'},
-          {name:'Para Completion',freq:'m'},
-        ],
-        mains:[],
-      },
-      gk:{
-        prelims:[
-          {name:'Legal Current Affairs',freq:'h'},
-          {name:'National & International News',freq:'h'},
-          {name:'Static GK (History, Polity)',freq:'m'},
-          {name:'Awards & Honours',freq:'m'},
-        ],
-        mains:[],
-      },
-      legal:{
-        prelims:[
-          {name:'Torts & Negligence',freq:'h'},
-          {name:'Contract Law Principles',freq:'h'},
-          {name:'Constitutional Principles',freq:'h'},
-          {name:'Criminal Law Basics',freq:'m'},
-          {name:'Family & Property Law',freq:'m'},
-        ],
-        mains:[],
-      },
-      logical:{
-        prelims:[
-          {name:'Syllogisms',freq:'h'},
-          {name:'Critical Reasoning',freq:'h'},
-          {name:'Assumptions & Inferences',freq:'h'},
-          {name:'Analogies',freq:'m'},
-          {name:'Statement & Conclusions',freq:'m'},
-        ],
-        mains:[],
-      },
-      quant:{
-        prelims:[
-          {name:'Ratio & Proportion',freq:'h'},
-          {name:'Percentage & Profit-Loss',freq:'h'},
-          {name:'Basic Arithmetic',freq:'m'},
-          {name:'Time & Work',freq:'m'},
-        ],
-        mains:[],
-      },
-    },
-    gate:{
-      core:{
-        prelims:[
-          {name:'Branch Core Subjects (60% weightage)',freq:'h'},
-          {name:'Previous Year PYQs (10 yr)',freq:'h'},
-          {name:'Standard Reference Books',freq:'h'},
-        ],
-        mains:[],
-      },
-      aptitude:{
-        prelims:[
-          {name:'Numerical Computation',freq:'h'},
-          {name:'Verbal Analogies',freq:'h'},
-          {name:'Data Interpretation',freq:'m'},
-          {name:'English Grammar',freq:'m'},
-        ],
-        mains:[],
-      },
-      engg_maths:{
-        prelims:[
-          {name:'Linear Algebra',freq:'h'},
-          {name:'Calculus & Differential Equations',freq:'h'},
-          {name:'Probability & Statistics',freq:'h'},
-          {name:'Complex Numbers',freq:'m'},
-          {name:'Numerical Methods',freq:'m'},
-        ],
-        mains:[],
-      },
-    },
-    ssc:{
-      reasoning:{
-        prelims:[
-          {name:'Analogy',freq:'h'},
-          {name:'Series (Number & Letter)',freq:'h'},
-          {name:'Coding-Decoding',freq:'h'},
-          {name:'Blood Relations',freq:'m'},
-          {name:'Direction & Distance',freq:'m'},
-          {name:'Matrix & Arrangement',freq:'m'},
-        ],
-        mains:[],
-      },
-      quant_ssc:{
-        prelims:[
-          {name:'Percentage & Profit-Loss',freq:'h'},
-          {name:'Time-Speed-Distance',freq:'h'},
-          {name:'Geometry & Mensuration',freq:'h'},
-          {name:'Number System',freq:'m'},
-          {name:'Algebra',freq:'m'},
-          {name:'Trigonometry',freq:'m'},
-        ],
-        mains:[],
-      },
-      english_ssc:{
-        prelims:[
-          {name:'Fill in the Blanks',freq:'h'},
-          {name:'Error Spotting',freq:'h'},
-          {name:'Reading Comprehension',freq:'h'},
-          {name:'Synonyms & Antonyms',freq:'m'},
-          {name:'Sentence Improvement',freq:'m'},
-        ],
-        mains:[],
-      },
-      gk_ssc:{
-        prelims:[
-          {name:'Indian History',freq:'h'},
-          {name:'Polity & Constitution',freq:'h'},
-          {name:'Geography',freq:'m'},
-          {name:'Science (Physics/Chem/Bio)',freq:'m'},
-          {name:'Current Affairs',freq:'m'},
-          {name:'Economy Basics',freq:'l'},
-        ],
-        mains:[],
-      },
-    },
-    ibps:{
-      reasoning_ibps:{
-        prelims:[
-          {name:'Puzzles & Seating Arrangement',freq:'h'},
-          {name:'Inequality',freq:'h'},
-          {name:'Syllogism',freq:'h'},
-          {name:'Coding-Decoding',freq:'m'},
-          {name:'Blood Relations',freq:'m'},
-          {name:'Direction Sense',freq:'m'},
-        ],
-        mains:[],
-      },
-      quant_ibps:{
-        prelims:[
-          {name:'Data Interpretation (DI)',freq:'h'},
-          {name:'Number Series',freq:'h'},
-          {name:'Quadratic Equations',freq:'h'},
-          {name:'Percentage & Ratio',freq:'m'},
-          {name:'Time & Work',freq:'m'},
-          {name:'Simple & Compound Interest',freq:'m'},
-        ],
-        mains:[],
-      },
-      english_ibps:{
-        prelims:[
-          {name:'Reading Comprehension',freq:'h'},
-          {name:'Cloze Test',freq:'h'},
-          {name:'Error Detection',freq:'h'},
-          {name:'Para Jumbles',freq:'m'},
-          {name:'Sentence Completion',freq:'m'},
-        ],
-        mains:[],
-      },
-      gk_ibps:{
-        prelims:[
-          {name:'Banking Terms & Concepts',freq:'h'},
-          {name:'RBI & Monetary Policy',freq:'h'},
-          {name:'Financial Awareness',freq:'h'},
-          {name:'Static GK',freq:'m'},
-          {name:'Current Affairs (Banking)',freq:'m'},
-        ],
-        mains:[],
-      },
-    },
-  },
-
-  analysis:{
-    upsc:{
-      polity:[{l:'Polity',p:85},{l:'Governance',p:70},{l:'IR',p:55},{l:'Social',p:40}],
-      history:[{l:'Modern',p:75},{l:'Ancient',p:50},{l:'Medieval',p:40},{l:'Art & Culture',p:30}],
-      geography:[{l:'Indian Geo',p:80},{l:'World Geo',p:55},{l:'Disasters',p:65},{l:'Env-Geo',p:50}],
-      economy:[{l:'Macro Eco',p:75},{l:'Banking',p:70},{l:'Agri',p:65},{l:'Trade',p:45}],
-      environment:[{l:'Biodiversity',p:80},{l:'Climate',p:85},{l:'Pollution',p:60},{l:'Laws',p:55}],
-      science:[{l:'Space',p:75},{l:'Biotech',p:65},{l:'Cyber',p:60},{l:'Defence',p:50}],
-      ethics:[{l:'Case Study',p:90},{l:'EI',p:80},{l:'Thinkers',p:55},{l:'Probity',p:70}],
-      current:[{l:'Schemes',p:85},{l:'IR Events',p:80},{l:'Policy',p:75},{l:'Awards',p:40}],
-    },
-    neet:{
-      physics:[{l:'Mechanics',p:20},{l:'Electricity',p:25},{l:'Modern Physics',p:20},{l:'Optics',p:15},{l:'Others',p:20}],
-      chemistry:[{l:'Organic',p:35},{l:'Inorganic',p:35},{l:'Physical',p:30}],
-      biology:[{l:'Zoology',p:50},{l:'Botany',p:50}],
-    },
-    jee:{
-      physics:[{l:'Mechanics',p:30},{l:'Electricity',p:25},{l:'Modern Physics',p:20},{l:'Others',p:25}],
-      chemistry:[{l:'Organic',p:35},{l:'Inorganic',p:30},{l:'Physical',p:35}],
-      maths:[{l:'Calculus',p:35},{l:'Coord Geo',p:25},{l:'Algebra',p:25},{l:'Others',p:15}],
-    },
-    cat:{
-      varc:[{l:'RC',p:75},{l:'Para Jumble',p:15},{l:'Summary',p:10}],
-      dilr:[{l:'Arrangements',p:40},{l:'DI Sets',p:40},{l:'Others',p:20}],
-      qa:[{l:'Arithmetic',p:40},{l:'Algebra',p:25},{l:'Geometry',p:20},{l:'Modern Maths',p:15}],
-    },
-    clat:{
-      english:[{l:'RC',p:70},{l:'Vocab',p:20},{l:'Grammar',p:10}],
-      gk:[{l:'Legal CA',p:50},{l:'General CA',p:30},{l:'Static GK',p:20}],
-      legal:[{l:'Torts',p:35},{l:'Contracts',p:30},{l:'Constitution',p:25},{l:'Others',p:10}],
-      logical:[{l:'Critical Reasoning',p:50},{l:'Syllogisms',p:30},{l:'Others',p:20}],
-      quant:[{l:'Arithmetic',p:70},{l:'Algebra',p:30}],
-    },
-    gate:{
-      core:[{l:'Core Subject',p:72},{l:'Engg Maths',p:15},{l:'Aptitude',p:13}],
-      aptitude:[{l:'Numerical',p:60},{l:'Verbal',p:40}],
-      engg_maths:[{l:'Linear Algebra',p:30},{l:'Calculus',p:35},{l:'Probability',p:25},{l:'Others',p:10}],
-    },
-    ssc:{
-      reasoning:[{l:'Analogy',p:25},{l:'Series',p:20},{l:'Coding',p:20},{l:'Others',p:35}],
-      quant_ssc:[{l:'Arithmetic',p:50},{l:'Geometry',p:25},{l:'Algebra',p:15},{l:'Trig',p:10}],
-      english_ssc:[{l:'RC+Cloze',p:40},{l:'Grammar',p:35},{l:'Vocab',p:25}],
-      gk_ssc:[{l:'History',p:30},{l:'Polity',p:25},{l:'Geo',p:20},{l:'Science',p:15},{l:'CA',p:10}],
-    },
-    ibps:{
-      reasoning_ibps:[{l:'Puzzles',p:50},{l:'Inequality',p:20},{l:'Syllogism',p:15},{l:'Others',p:15}],
-      quant_ibps:[{l:'DI',p:40},{l:'Series',p:20},{l:'Arithmetic',p:25},{l:'Others',p:15}],
-      english_ibps:[{l:'RC',p:40},{l:'Cloze Test',p:25},{l:'Errors',p:20},{l:'Others',p:15}],
-      gk_ibps:[{l:'Banking',p:50},{l:'Finance',p:30},{l:'Static GK',p:20}],
-    },
-  },
-
-  pyqs:{
-    upsc:{
-      polity:{
-        'Fundamental Rights & Duties':[
-          {year:2023,q:'Examine the scope and limitations of Right to Privacy as a Fundamental Right after the Puttaswamy judgment.',paper:'GS II — Mains'},
-          {year:2022,q:'What distinguishes Fundamental Rights from Directive Principles? Can DPSPs be enforced?',paper:'GS II — Mains'},
-          {year:2021,q:'Discuss how the right to freedom of speech is subject to reasonable restrictions.',paper:'GS II — Mains'},
-        ],
-        'Parliament & Legislature':[
-          {year:2023,q:'Distinguish between the powers of Lok Sabha and Rajya Sabha with respect to Money Bills.',paper:'GS II — Mains'},
-          {year:2022,q:'Examine the role of Parliamentary Committees in strengthening democracy.',paper:'GS II — Mains'},
-          {year:2020,q:'The anti-defection law has not been able to prevent defections. Comment.',paper:'GS II — Mains'},
-        ],
-        'Constitutional Bodies':[
-          {year:2023,q:'Discuss the role of the Election Commission of India in ensuring free and fair elections.',paper:'GS II — Mains'},
-          {year:2021,q:'Examine the independence of constitutional bodies and challenges they face.',paper:'GS II — Mains'},
-        ],
-      },
-      history:{
-        'Freedom Movement (1857–1947)':[
-          {year:2023,q:'Critically examine the role of Mahatma Gandhi in shaping mass movements in India.',paper:'GS I — Mains'},
-          {year:2022,q:'How did the Non-Cooperation Movement change the nature of Indian nationalism?',paper:'GS I — Mains'},
-          {year:2021,q:'Evaluate the contribution of revolutionary nationalists in India\'s freedom struggle.',paper:'GS I — Mains'},
-        ],
-        'British Economic Policies':[
-          {year:2023,q:'Examine the impact of de-industrialization under British rule on Indian artisans.',paper:'GS I — Mains'},
-          {year:2021,q:'How did the Permanent Settlement affect agrarian relations in Bengal?',paper:'GS I — Mains'},
-        ],
-      },
-      economy:{
-        'Inflation & Monetary Policy':[
-          {year:2023,q:'Examine the role of Monetary Policy Committee (MPC) in controlling inflation in India.',paper:'GS III — Mains'},
-          {year:2022,q:'What is stagflation? How is it different from normal inflation? What remedies are available?',paper:'GS III — Mains'},
-        ],
-        'Agriculture Reforms':[
-          {year:2023,q:'Analyze the challenges in implementing the Minimum Support Price (MSP) regime in India.',paper:'GS III — Mains'},
-          {year:2022,q:'Discuss the significance of contract farming in transforming Indian agriculture.',paper:'GS III — Mains'},
-        ],
-      },
-      environment:{
-        'Climate Change & UNFCCC':[
-          {year:2023,q:'What is the "Loss and Damage" mechanism under UNFCCC? What was decided at COP28?',paper:'GS III — Mains'},
-          {year:2022,q:'Critically examine India\'s commitments under the Paris Agreement.',paper:'GS III — Mains'},
-        ],
-        'Biodiversity & Protected Areas':[
-          {year:2023,q:'Discuss the significance of the Kunming-Montreal Global Biodiversity Framework.',paper:'GS III — Mains'},
-          {year:2022,q:'Project Tiger has been a success — evaluate with evidence.',paper:'GS III — Mains'},
-        ],
-      },
-      science:{
-        'Space Technology (ISRO)':[
-          {year:2023,q:'Discuss the significance of Chandrayaan-3 mission for India\'s space programme.',paper:'GS III — Mains'},
-          {year:2022,q:'What is the significance of the semi-cryogenic engine developed by ISRO?',paper:'GS III — Mains'},
-        ],
-        'AI & Emerging Tech':[
-          {year:2023,q:'Discuss the threats posed by deepfakes to democratic processes and national security.',paper:'GS III — Mains'},
-          {year:2022,q:'What are the challenges in creating a robust cybersecurity ecosystem in India?',paper:'GS III — Mains'},
-        ],
-      },
-      ethics:{
-        'Case Studies — Public Service':[
-          {year:2023,q:'A district collector faces pressure from a minister to manipulate records for a contractor. What should the officer do? Discuss ethical dimensions.',paper:'GS IV — Mains'},
-          {year:2022,q:'A senior officer discovers financial irregularities but fears victimisation. What action should be taken?',paper:'GS IV — Mains'},
-          {year:2021,q:'As a public servant, you are asked to implement a policy you personally disagree with. How do you handle this?',paper:'GS IV — Mains'},
-        ],
-        'Emotional Intelligence':[
-          {year:2023,q:'What do you understand by emotional intelligence? How is it relevant to civil servants?',paper:'GS IV — Mains'},
-          {year:2022,q:'Distinguish between emotional intelligence and IQ. Which is more important for a civil servant?',paper:'GS IV — Mains'},
-        ],
-      },
-      current:{
-        'Govt Schemes (last 12 months)':[
-          {year:2023,q:'Describe the PM Vishwakarma Yojana and its significance for traditional artisans.',paper:'GS II — Mains'},
-          {year:2022,q:'Discuss the objectives of PM Gati Shakti National Master Plan.',paper:'GS III — Mains'},
-        ],
-        'India Foreign Policy':[
-          {year:2023,q:"India's G20 presidency — evaluate the outcomes and India's role as a global south voice.",paper:'GS II — Mains'},
-          {year:2022,q:"Discuss India's strategic interests in the Indo-Pacific and significance of QUAD.",paper:'GS II — Mains'},
-        ],
-      },
-    },
-    neet:{
-      physics:{
-        'Mechanics (Laws of Motion)':[
-          {year:2023,q:'A block of mass 5kg is placed on a rough surface. If coefficient of friction is 0.3, find the force required to just move it. (g=10)',paper:'Physics — NEET 2023'},
-          {year:2022,q:'A projectile is thrown at 45° angle. What is the ratio of maximum height to range?',paper:'Physics — NEET 2022'},
-          {year:2021,q:'Newton\'s 3rd law states — for every action there is an equal and opposite reaction. Which of following is correct application? (MCQ)',paper:'Physics — NEET 2021'},
-        ],
-        'Modern Physics':[
-          {year:2023,q:'The half-life of a radioactive element is 20 minutes. How much will remain after 1 hour from 80g initial sample?',paper:'Physics — NEET 2023'},
-          {year:2022,q:'In photoelectric effect, stopping potential depends on — (MCQ)',paper:'Physics — NEET 2022'},
-        ],
-      },
-      chemistry:{
-        'Organic Reactions & Mechanisms':[
-          {year:2023,q:'Which reagent converts primary alcohol to aldehyde without further oxidation?',paper:'Chemistry — NEET 2023'},
-          {year:2022,q:'SN1 reaction proceeds through — (MCQ)',paper:'Chemistry — NEET 2022'},
-          {year:2021,q:'Identify the product when benzene reacts with Cl2 in presence of AlCl3.',paper:'Chemistry — NEET 2021'},
-        ],
-        'Chemical Bonding':[
-          {year:2023,q:'The geometry of XeF4 molecule is — (MCQ)',paper:'Chemistry — NEET 2023'},
-          {year:2022,q:'Which has maximum bond angle among H2O, NH3, CH4?',paper:'Chemistry — NEET 2022'},
-        ],
-      },
-      biology:{
-        'Human Physiology':[
-          {year:2023,q:'The enzyme pepsin is secreted in its inactive form as pepsinogen. This is activated by — (MCQ)',paper:'Biology — NEET 2023'},
-          {year:2022,q:'The correct sequence of events in cardiac cycle is — (MCQ)',paper:'Biology — NEET 2022'},
-          {year:2021,q:'Which part of nephron is impermeable to water but permeable to urea?',paper:'Biology — NEET 2021'},
-        ],
-        'Genetics & Evolution':[
-          {year:2023,q:'In a monohybrid cross between Tt × Tt, what is the ratio of homozygous dominant : heterozygous : homozygous recessive?',paper:'Biology — NEET 2023'},
-          {year:2022,q:'Hardy-Weinberg principle is violated when — (MCQ)',paper:'Biology — NEET 2022'},
-        ],
-      },
-    },
-    jee:{
-      physics:{
-        'Mechanics & Kinematics':[
-          {year:2024,q:'A particle moves in a circle of radius R. The displacement after half a revolution is — (MCQ)',paper:'JEE Main 2024'},
-          {year:2023,q:'Two blocks connected by a string over a pulley. Find acceleration when masses are m1=5kg and m2=3kg.',paper:'JEE Main 2023'},
-        ],
-        'Electrostatics':[
-          {year:2024,q:'Electric field inside a hollow conducting sphere is — (MCQ)',paper:'JEE Main 2024'},
-          {year:2023,q:'Find the potential at the centre of a square of side a with charges at corners.',paper:'JEE Main 2023'},
-        ],
-      },
-      chemistry:{
-        'Chemical Bonding':[
-          {year:2024,q:'Which of the following has maximum number of lone pairs on central atom? SF4, XeF4, PCl5 (MCQ)',paper:'JEE Main 2024'},
-          {year:2023,q:'Bond order of O2+ is — (MCQ)',paper:'JEE Main 2023'},
-        ],
-        'Organic Chemistry (GOC)':[
-          {year:2024,q:'Which intermediate is most stable? — Tertiary carbocation, secondary, primary (MCQ)',paper:'JEE Main 2024'},
-          {year:2023,q:'Arrange in decreasing order of nucleophilicity: F-, Cl-, Br-, I- in polar protic solvent.',paper:'JEE Main 2023'},
-        ],
-      },
-      maths:{
-        'Calculus (Limits, Derivatives, Integration)':[
-          {year:2024,q:'Evaluate: lim(x→0) [sin(3x)/x]',paper:'JEE Main 2024'},
-          {year:2023,q:'Find the area bounded by y=x² and y=2x.',paper:'JEE Main 2023'},
-          {year:2022,q:'If f(x) = x³ - 3x² + 4, find the interval where f is strictly increasing.',paper:'JEE Main 2022'},
-        ],
-        'Coordinate Geometry':[
-          {year:2024,q:'The equation of circle passing through (1,2) and touching both axes in first quadrant.',paper:'JEE Main 2024'},
-          {year:2023,q:'Find the locus of point equidistant from (3,4) and (5,2).',paper:'JEE Main 2023'},
-        ],
-      },
-    },
-    cat:{
-      varc:{
-        'Reading Comprehension (RC)':[
-          {year:2023,q:'The passage discusses the paradox of choice in modern consumerism. The author\'s central argument is most closely aligned with — (MCQ from passage)',paper:'VARC — CAT 2023'},
-          {year:2022,q:'Based on the passage on cognitive biases, which of the following is an assumption the author makes? (Inference question)',paper:'VARC — CAT 2022'},
-        ],
-        'Para Jumbles':[
-          {year:2023,q:'Arrange sentences A,B,C,D,E into coherent paragraph. [Standard Para Jumble format]',paper:'VARC — CAT 2023'},
-          {year:2022,q:'Identify the sentence that does NOT fit in the given paragraph. [Odd Sentence Out]',paper:'VARC — CAT 2022'},
-        ],
-      },
-      dilr:{
-        'Seating Arrangement':[
-          {year:2023,q:'8 people sit around a circular table. Given 6 conditions about who sits where — find position of person X. (Set of 4 questions)',paper:'DILR — CAT 2023'},
-          {year:2022,q:'Linear arrangement puzzle: 6 people in a row with given constraints. (Set of 3 questions)',paper:'DILR — CAT 2022'},
-        ],
-        'Bar/Line/Pie Charts':[
-          {year:2023,q:'Sales data of 5 companies over 4 years shown in bar chart. Which company showed maximum % growth from 2020-2023?',paper:'DILR — CAT 2023'},
-        ],
-      },
-      qa:{
-        'Arithmetic (Ratio, %, Profit-Loss)':[
-          {year:2023,q:'A shopkeeper marks goods 40% above cost price and gives 25% discount. Find profit %.',paper:'QA — CAT 2023'},
-          {year:2022,q:'Pipe A fills tank in 12 hours, B empties in 16 hours. If both open, in how many hours will tank fill?',paper:'QA — CAT 2022'},
-        ],
-        'Number System':[
-          {year:2023,q:'Find the remainder when 7^100 is divided by 48.',paper:'QA — CAT 2023'},
-          {year:2022,q:'How many 3-digit numbers are divisible by both 4 and 9?',paper:'QA — CAT 2022'},
-        ],
-      },
-    },
-    clat:{
-      legal:{
-        'Torts & Negligence':[
-          {year:2023,q:'Principle: A person is liable for damages caused by their negligent act. Application: X, a surgeon, operates on wrong leg due to misfiled reports. Is hospital liable? (MCQ)',paper:'Legal Reasoning — CLAT 2023'},
-          {year:2022,q:'Principle: Strict liability applies where person keeps dangerous thing on land. Application: Factory stores chemicals, flood causes leak. Liability? (MCQ)',paper:'Legal Reasoning — CLAT 2022'},
-        ],
-        'Contract Law Principles':[
-          {year:2023,q:'Principle: Agreement without consideration is void. Application: A promises to pay B for past voluntary service. Enforceable? (MCQ)',paper:'Legal Reasoning — CLAT 2023'},
-        ],
-      },
-      logical:{
-        'Critical Reasoning':[
-          {year:2023,q:'All successful entrepreneurs take risks. Ram is successful. Does Ram take risks? (Syllogism)',paper:'Logical Reasoning — CLAT 2023'},
-          {year:2022,q:'Identify the assumption in the argument: "Sales have increased, therefore our new ad campaign is working."',paper:'Logical Reasoning — CLAT 2022'},
-        ],
-      },
-      english:{
-        'Reading Comprehension':[
-          {year:2023,q:'Passage on climate justice and developing nations. Question: What is the tone of the passage? (MCQ)',paper:'English — CLAT 2023'},
-          {year:2022,q:'Passage on constitutional morality. What does the author mean by "transformative constitutionalism"? (MCQ)',paper:'English — CLAT 2022'},
-        ],
-      },
-    },
-    gate:{
-      engg_maths:{
-        'Linear Algebra':[
-          {year:2023,q:'The rank of matrix A = [[1,2,3],[4,5,6],[7,8,9]] is — (Numerical)',paper:'Engineering Mathematics — GATE 2023'},
-          {year:2022,q:'Eigenvalues of A = [[2,1],[0,3]] are — (MCQ)',paper:'Engineering Mathematics — GATE 2022'},
-        ],
-        'Calculus & Differential Equations':[
-          {year:2023,q:'The value of ∫₀¹ x·eˣ dx is — (Numerical)',paper:'Engineering Mathematics — GATE 2023'},
-          {year:2022,q:'Solution of dy/dx = y/x with y(1)=1 is — (MCQ)',paper:'Engineering Mathematics — GATE 2022'},
-        ],
-      },
-      aptitude:{
-        'Numerical Computation':[
-          {year:2023,q:'A train travels 300km in 4 hours. Another train 400km in 5 hours. Ratio of their speeds? (Numerical)',paper:'General Aptitude — GATE 2023'},
-          {year:2022,q:'If 15 workers can complete a task in 8 days, how many workers needed to complete in 6 days?',paper:'General Aptitude — GATE 2022'},
-        ],
-      },
-    },
-    ssc:{
-      reasoning:{
-        'Analogy':[
-          {year:2023,q:'Doctor : Hospital :: Teacher : ? (MCQ — SSC CGL Tier 1)',paper:'Reasoning — SSC CGL 2023'},
-          {year:2022,q:'ABCD : DCBA :: MNOP : ? (Letter analogy)',paper:'Reasoning — SSC CGL 2022'},
-        ],
-        'Coding-Decoding':[
-          {year:2023,q:'If MOON is coded as NPPN, how is STAR coded? (MCQ)',paper:'Reasoning — SSC CGL 2023'},
-          {year:2022,q:'In a certain code RING is written as 4957, what is code for KING?',paper:'Reasoning — SSC CGL 2022'},
-        ],
-      },
-      quant_ssc:{
-        'Percentage & Profit-Loss':[
-          {year:2023,q:'A sells goods at 20% profit. If he had bought for 10% less and sold for ₹10 more, gain would be 40%. Find cost price.',paper:'QA — SSC CGL 2023'},
-          {year:2022,q:'Population increases by 10% in year 1 and decreases 10% in year 2. Net % change?',paper:'QA — SSC CGL 2022'},
-        ],
-      },
-      gk_ssc:{
-        'Indian History':[
-          {year:2023,q:'The Battle of Plassey was fought in which year? (MCQ)',paper:'GK — SSC CGL 2023'},
-          {year:2022,q:'Who founded the Mughal Empire? (MCQ)',paper:'GK — SSC CGL 2022'},
-        ],
-      },
-    },
-    ibps:{
-      reasoning_ibps:{
-        'Puzzles & Seating Arrangement':[
-          {year:2023,q:'7 people A,B,C,D,E,F,G sit in a row. B sits 3rd from left. A is not adjacent to B... (Set of 5 questions)',paper:'Reasoning — IBPS PO Mains 2023'},
-          {year:2022,q:'6 boxes of different colors stacked. Blue is above green but below red... find arrangement. (Set)',paper:'Reasoning — IBPS PO Prelims 2022'},
-        ],
-        'Inequality':[
-          {year:2023,q:'If A > B ≥ C = D < E, then which conclusion follows? (MCQ)',paper:'Reasoning — IBPS PO 2023'},
-        ],
-      },
-      quant_ibps:{
-        'Data Interpretation (DI)':[
-          {year:2023,q:'Table shows profit of 5 companies over 4 years. Find average profit of Company A. (Set of 5)',paper:'QA — IBPS PO Mains 2023'},
-          {year:2022,q:'Pie chart: expenditure of a family. If total = ₹60,000, find amount spent on education. (Set)',paper:'QA — IBPS PO 2022'},
-        ],
-      },
-      gk_ibps:{
-        'Banking Terms & Concepts':[
-          {year:2023,q:'Repo rate is the rate at which — (MCQ)',paper:'GA — IBPS PO 2023'},
-          {year:2022,q:'CRR stands for — and it is maintained with — (MCQ)',paper:'GA — IBPS PO 2022'},
-        ],
-      },
+    biology:{
+      'Human Physiology':[
+        {year:2024,q:'The enzyme that catalyses conversion of fibrinogen to fibrin during blood clotting is:',paper:'Biology — NEET 2024'},
+        {year:2023,q:'Enzyme pepsin is secreted as pepsinogen. It is activated by:',paper:'Biology — NEET 2023'},
+        {year:2022,q:'Correct sequence of events in cardiac cycle is:',paper:'Biology — NEET 2022'},
+        {year:2021,q:'Which part of nephron is impermeable to water but permeable to urea?',paper:'Biology — NEET 2021'},
+      ],
+      'Genetics & Evolution':[
+        {year:2024,q:'In Tt × Tt monohybrid cross, ratio of homozygous dominant : heterozygous : homozygous recessive is:',paper:'Biology — NEET 2024'},
+        {year:2023,q:'Hardy-Weinberg equilibrium is disturbed by:',paper:'Biology — NEET 2023'},
+      ],
     },
   },
 };
 
-// STATE
-let state = {view:'subjects',examId:null,subjectId:null,bookTitle:null,topicName:null};
+let curExam='upsc', curSubj=null, curTopic=null;
 
-function showHome(){
-  document.getElementById('home-page').style.display='block';
-  document.getElementById('inner-page').style.display='none';
-  state={view:'subjects',examId:null,subjectId:null,bookTitle:null,topicName:null};
-}
-
-function openExam(examId){
-  state={view:'subjects',examId,subjectId:null,bookTitle:null,topicName:null};
-  document.getElementById('home-page').style.display='none';
-  document.getElementById('inner-page').style.display='block';
-  renderInner();
-}
-
-function nav(view,extra={}){
-  state={...state,view,...extra};
-  renderInner();
-}
-
-function renderInner(){
-  renderBreadcrumb();
-  const c=document.getElementById('inner-content');
-  c.classList.remove('fade');
-  void c.offsetWidth;
-  c.classList.add('fade');
-  if(state.view==='subjects') renderSubjects(c);
-  else if(state.view==='books') renderBooks(c);
-  else if(state.view==='topics') renderTopics(c);
-  else if(state.view==='pyqs') renderPyqs(c);
-}
-
-function renderBreadcrumb(){
-  const bc=document.getElementById('breadcrumb');
-  const exam=EXAMS.find(e=>e.id===state.examId);
-  let html=`<span class="bc" onclick="showHome()">All Exams</span>`;
-  if(exam) html+=`<span class="bc-sep">›</span><span class="bc ${state.view==='subjects'?'active':''}" onclick="nav('subjects')">${exam.name}</span>`;
-  if(state.subjectId){
-    const subs=DATA.subjects[state.examId]||[];
-    const sub=subs.find(s=>s.id===state.subjectId);
-    if(sub) html+=`<span class="bc-sep">›</span><span class="bc ${state.view==='books'||state.view==='topics'?'active':''}" onclick="nav('books',{subjectId:'${state.subjectId}'})">${sub.name}</span>`;
+// PAGE NAVIGATION
+function showPage(p){
+  document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.bitem').forEach(x=>x.classList.remove('active'));
+  const pm={home:['home-page','bn-home'],exam:['exam-page','bn-exams'],srch:['srch-page','bn-srch'],books:['books-page','bn-books'],profile:['profile-page','bn-profile'],'tpyq':['tpyq-page','bn-exams']};
+  if(pm[p]){
+    document.getElementById(pm[p][0]).classList.add('active');
+    const b=document.getElementById(pm[p][1]);
+    if(b)b.classList.add('active');
   }
-  if(state.bookTitle) html+=`<span class="bc-sep">›</span><span class="bc ${state.view==='topics'?'active':''}" onclick="nav('topics',{subjectId:'${state.subjectId}',bookTitle:'${state.bookTitle.replace(/'/g,'\\\'')}'})">Topics</span>`;
-  if(state.topicName) html+=`<span class="bc-sep">›</span><span class="bc active">${state.topicName}</span>`;
-  bc.innerHTML=html;
+  if(p==='books')renderAllBooks();
+  if(p==='srch'){setTimeout(()=>document.getElementById('msearch').focus(),100);initSearch();}
+  window.scrollTo(0,0);
 }
 
-function renderSubjects(c){
-  const exam=EXAMS.find(e=>e.id===state.examId);
-  const subs=DATA.subjects[state.examId]||[];
-  c.innerHTML=`<div class="screen-label">${exam.icon} ${exam.name} — Select Subject</div>
-  <div class="subject-grid">${subs.map(s=>`
-    <div class="subject-card" onclick="nav('books',{subjectId:'${s.id}'})">
-      <div class="s-icon">${s.icon}</div>
-      <div class="s-name">${s.name}</div>
-      <div class="s-desc">${s.desc}</div>
-      <div class="s-arr">→</div>
-    </div>`).join('')}</div>`;
+function openExam(id){
+  curExam=id;
+  const ex=EXAMS.find(e=>e.id===id);
+  if(!ex)return;
+  document.getElementById('eh-icon').textContent=ex.icon;
+  document.getElementById('eh-name').textContent=ex.name;
+  document.getElementById('eh-full').textContent=ex.full;
+  // Reset tabs
+  document.querySelectorAll('.etab').forEach((t,i)=>t.classList.toggle('active',i===0));
+  document.querySelectorAll('.tcont').forEach((t,i)=>t.classList.toggle('active',i===0));
+  setBreadcrumb([{l:'Home',a:"showPage('home')"},{l:ex.name,a:null}]);
+  renderTopics('');
+  renderBooks('all');
+  renderPYQs();
+  showPage('exam');
 }
 
-function renderBooks(c){
-  const exam=EXAMS.find(e=>e.id===state.examId);
-  const subs=DATA.subjects[state.examId]||[];
-  const sub=subs.find(s=>s.id===state.subjectId);
-  const books=(DATA.books[state.examId]||{})[state.subjectId]||[];
-  c.innerHTML=`<button class="back-btn" onclick="nav('subjects')">← Back to Subjects</button>
-  <div class="screen-label">${sub?.icon} ${sub?.name} — Books</div>
-  <div class="books-list">${books.map(b=>`
-    <div class="book-row" onclick="nav('topics',{subjectId:'${state.subjectId}',bookTitle:'${b.title.replace(/'/g,'\\\'')}'})">
-      <div class="book-left">
-        <div class="book-title">${b.title}</div>
-        <div class="book-author">${b.author}</div>
-        <div class="book-note">${b.note}</div>
+function setBreadcrumb(items){
+  document.getElementById('exam-bc').innerHTML=items.map((item,i)=>`${i>0?'<span class="bc-sep">›</span>':''}<span class="bc ${!items[i+1]?'active':''}" ${item.a?`onclick="${item.a}"`:''} >${item.l}</span>`).join('');
+}
+
+function switchTab(t){
+  const m={topics:0,books:1,pyq:2,notes:3};
+  document.querySelectorAll('.etab').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.tcont').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.etab')[m[t]].classList.add('active');
+  document.getElementById(`tc-${t}`).classList.add('active');
+}
+
+// TOPICS
+function renderTopics(filter){
+  const subs=SUBJS[curExam]||[];
+  const c=document.getElementById('topics-wrap');
+  c.innerHTML=subs.map(sub=>{
+    const ft=sub.topics.filter(t=>!filter||t.name.toLowerCase().includes(filter.toLowerCase()));
+    if(!ft.length)return'';
+    const pct=Math.round(Math.random()*40+40);
+    const circ=2*Math.PI*13;
+    const off=circ-(pct/100)*circ;
+    return`<div class="subj-sec">
+      <div class="subj-hd" onclick="toggleSubj(this)">
+        <div class="shl"><span class="sh-icon">${sub.icon}</span><div><div class="sh-name">${sub.name}</div><div class="sh-cnt">${ft.length} topics</div></div></div>
+        <div class="shr">
+          <div class="prog-ring"><svg width="32" height="32" viewBox="0 0 32 32"><circle class="pt" cx="16" cy="16" r="13"/><circle class="pf" cx="16" cy="16" r="13" stroke-dasharray="${circ}" stroke-dashoffset="${off}"/></svg><div class="pl">${pct}%</div></div>
+          <span class="sh-arr">›</span>
+        </div>
       </div>
-      <div class="book-right">
-        <span class="tag tag-${b.tag}">${b.tag==='must'?'Must Read':b.tag==='ok'?'Helpful':'Reference'}</span>
-        <span class="chev">›</span>
+      <div class="tlist">${ft.map((t,i)=>`
+        <div class="titem" onclick="openTopicPYQ('${sub.id}','${t.name.replace(/'/g,"\\'")}')">
+          <div class="til"><div class="t-num">${i+1}</div><div><div class="t-name">${t.name}</div><div class="t-sub">${t.sub}</div></div></div>
+          <div class="tir"><span class="fb ${t.freq==='h'?'fh':t.freq==='m'?'fm':'fl'}">${t.freq==='h'?'High':t.freq==='m'?'Medium':'Low'}</span><span class="pyqc">${t.pyqs} PYQs</span><span class="tch">›</span></div>
+        </div>`).join('')}
       </div>
-    </div>`).join('')}</div>`;
+    </div>`;
+  }).join('');
 }
 
-function renderTopics(c){
-  const subs=DATA.subjects[state.examId]||[];
-  const sub=subs.find(s=>s.id===state.subjectId);
-  const topicData=((DATA.topics[state.examId]||{})[state.subjectId])||{prelims:[],mains:[]};
-  const analysis=((DATA.analysis[state.examId]||{})[state.subjectId])||[];
-
-  const fl=f=>f==='h'?'Very High':f==='m'?'Moderate':'Low';
-  const fc=f=>f==='h'?'fh':f==='m'?'fm':'fl';
-
-  const prelRow=t=>`<div class="topic-row" onclick="nav('pyqs',{subjectId:'${state.subjectId}',bookTitle:'${(state.bookTitle||'').replace(/'/g,'\\\'') }',topicName:'${t.name.replace(/'/g,'\\\'')}'})"><span class="t-name">${t.name}</span><span class="freq ${fc(t.freq)}">${fl(t.freq)}</span></div>`;
-
-  const prelims=topicData.prelims?.length?topicData.prelims.map(prelRow).join(''):`<div class="no-prelims">MCQ based — no separate topic list.</div>`;
-  const mains=topicData.mains?.length?topicData.mains.map(prelRow).join(''):`<div class="no-prelims">This exam does not have a Mains stage.</div>`;
-
-  const bars=analysis.map(a=>`<div class="bar-row"><div class="bar-label">${a.l}</div><div class="bar-track"><div class="bar-fill" style="width:0%" data-pct="${a.p}%"></div></div><div class="bar-pct">${a.p}%</div></div>`).join('');
-
-  c.innerHTML=`<button class="back-btn" onclick="nav('books',{subjectId:'${state.subjectId}'})">← Back to Books</button>
-  <div class="screen-label">${sub?.icon} ${sub?.name} — Important Topics — Click a topic to see PYQs</div>
-  <div class="topics-wrap">
-    <div class="topics-col"><div class="col-head">Prelims / Paper I</div>${prelims}</div>
-    <div class="topics-col"><div class="col-head">Mains / Paper II</div>${mains}</div>
-  </div>
-  <div class="analysis-box">
-    <div class="analysis-title">📊 PYQ Weightage Analysis</div>
-    <div class="bar-rows">${bars}</div>
-  </div>`;
-
-  setTimeout(()=>{
-    c.querySelectorAll('.bar-fill').forEach(b=>{b.style.width=b.dataset.pct});
-  },100);
+function toggleSubj(h){
+  h.classList.toggle('open');
+  h.nextElementSibling.classList.toggle('open');
 }
 
-function renderPyqs(c){
-  const subs=DATA.subjects[state.examId]||[];
-  const sub=subs.find(s=>s.id===state.subjectId);
-  const examPyqs=(DATA.pyqs[state.examId]||{});
-  const subPyqs=(examPyqs[state.subjectId]||{});
-  const topicPyqs=subPyqs[state.topicName]||[];
+function filterTopics(v){
+  renderTopics(v);
+  if(v){setTimeout(()=>{document.querySelectorAll('.subj-hd').forEach(h=>{h.classList.add('open');h.nextElementSibling.classList.add('open');});},50);}
+}
 
-  const rows=topicPyqs.length?topicPyqs.map(p=>`
-    <div class="pyq-row">
-      <div class="pyq-year">${p.year}</div>
-      <div class="pyq-right">
-        <div class="pyq-q">${p.q}</div>
-        <div class="pyq-paper">${p.paper}</div>
+// TOPIC PYQ PAGE
+function openTopicPYQ(subId,topicName){
+  curSubj=subId;curTopic=topicName;
+  const ex=EXAMS.find(e=>e.id===curExam);
+  const sub=(SUBJS[curExam]||[]).find(s=>s.id===subId);
+  const topic=sub?.topics.find(t=>t.name===topicName);
+  document.getElementById('tpyq-title').textContent=topicName;
+  document.getElementById('tpyq-sub').textContent=`${ex?.name} · ${sub?.name}`;
+  const pyqs=((PYQS[curExam]||{})[subId]||{})[topicName]||[];
+  document.getElementById('tstat-count').textContent=pyqs.length||(topic?.pyqs||0);
+  document.getElementById('tstat-years').textContent=pyqs.length>0?[...new Set(pyqs.map(p=>p.year))].length:'10+';
+  document.getElementById('tstat-freq').textContent=topic?.freq==='h'?'High':topic?.freq==='m'?'Medium':'Low';
+  const c=document.getElementById('tpyq-wrap');
+  c.innerHTML=pyqs.length>0?pyqs.map(p=>`<div class="tpyq-qcard"><div class="tpyq-qyr">${p.year}</div><div class="tpyq-qtxt">${p.q}</div><div class="tpyq-qppr">${p.paper}</div></div>`).join(''):`<div class="empty"><div class="empty-icon">📝</div><div class="empty-title">PYQs Coming Soon</div><div class="empty-sub">Previous year questions for this topic will be added in the next update.</div></div>`;
+  showPage('tpyq');
+}
+
+// BOOKS
+function renderBooks(filter){
+  const examBooks=BOOKS[curExam]||{};
+  const all=[];
+  Object.entries(examBooks).forEach(([sid,bks])=>{
+    const sub=(SUBJS[curExam]||[]).find(s=>s.id===sid);
+    bks.forEach(b=>all.push({...b,subject:sub?.name||sid}));
+  });
+  const filtered=filter==='all'?all:filter==='must'?all.filter(b=>b.tag==='must'):filter==='ncert'?all.filter(b=>b.t.toLowerCase().includes('ncert')):all.filter(b=>b.tag==='ref');
+  document.getElementById('books-wrap').innerHTML=filtered.length>0?filtered.map(b=>{
+    const badge=b.tag==='must'?'<span class="bbadge bmust">Must Read</span>':b.tag==='ref'?'<span class="bbadge bref">Reference</span>':'<span class="bbadge brec">Helpful</span>';
+    return`<div class="bcard"><div class="bcov">📖</div><div class="binfo"><div class="bbadges">${badge}<span class="bbadge" style="background:var(--blue-l);color:var(--blue);font-weight:700">${b.subject}</span></div><div class="btitle">${b.t}</div><div class="bauth">by ${b.a}</div><div style="font-size:.72rem;color:var(--muted);margin-bottom:.5rem">${b.note}</div><div class="bbot"><div class="brat">★ ${b.r}</div><button class="bbuy">Buy on Amazon ↗</button></div></div></div>`;
+  }).join(''):`<div class="empty"><div class="empty-icon">📚</div><div class="empty-title">No books found</div></div>`;
+}
+
+function filterBooks(type,el){
+  document.querySelectorAll('#bfilters .fchip').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+  renderBooks(type);
+}
+
+function renderAllBooks(){
+  const all=[];
+  Object.entries(BOOKS).forEach(([eid,subs])=>{
+    const ex=EXAMS.find(e=>e.id===eid);
+    Object.values(subs).forEach(bks=>bks.filter(b=>b.tag==='must').forEach(b=>all.push({...b,examName:ex?.name})));
+  });
+  document.getElementById('all-books-wrap').innerHTML=all.slice(0,20).map(b=>`<div class="bcard"><div class="bcov">📖</div><div class="binfo"><div class="bbadges"><span class="bbadge bmust">Must Read</span><span class="bbadge" style="background:var(--blue-l);color:var(--blue);font-weight:700">${b.examName}</span></div><div class="btitle">${b.t}</div><div class="bauth">by ${b.a}</div><div class="bbot"><div class="brat">★ ${b.r}</div><button class="bbuy">Buy on Amazon ↗</button></div></div></div>`).join('');
+}
+
+// PYQs
+function renderPYQs(){
+  const ep=PYQS[curExam];
+  if(!ep){document.getElementById('pyq-wrap').innerHTML=`<div class="empty"><div class="empty-icon">📝</div><div class="empty-title">PYQs Coming Soon</div></div>`;return;}
+  const years={};
+  Object.entries(ep).forEach(([sid,topics])=>Object.entries(topics).forEach(([tn,qs])=>qs.forEach(q=>{if(!years[q.year])years[q.year]=[];years[q.year].push({...q,topic:tn});})));
+  document.getElementById('pyq-wrap').innerHTML=Object.keys(years).sort((a,b)=>b-a).map(yr=>`
+    <div class="pyq-yr-sec">
+      <div class="pyq-yr-hd" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+        <div><div class="pyq-yr-num">${yr}</div><div class="pyq-yr-meta">${years[yr].length} questions</div></div>
+        <span class="pyq-yr-arr">›</span>
       </div>
-    </div>`).join(''):`<div class="no-pyq">PYQs for this topic will be added soon.</div>`;
-
-  c.innerHTML=`<button class="back-btn" onclick="nav('topics',{subjectId:'${state.subjectId}',bookTitle:'${(state.bookTitle||'').replace(/'/g,'\\\'') }'})">← Back to Topics</button>
-  <div class="screen-label">${sub?.icon} ${state.topicName} — Previous Year Questions (PYQs)</div>
-  <div class="pyq-list">${rows}</div>`;
-}
-
-// RENDER HOME
-function renderHome(){
-  const grid=document.getElementById('exams-grid');
-  grid.innerHTML=EXAMS.map(e=>`
-    <div class="exam-card" onclick="openExam('${e.id}')">
-      <div class="exam-icon">${e.icon}</div>
-      <div class="exam-name">${e.name}</div>
-      <div class="exam-full">${e.full}</div>
-      <div class="exam-meta">${e.tags.map(t=>`<span class="emeta">${t}</span>`).join('')}</div>
-      <div class="exam-arrow">→</div>
+      <div class="pyq-qs">${years[yr].map(q=>`<div class="pyq-qi"><div class="pyq-qi-meta"><span class="pyq-ptag">${q.paper.split('—')[0].trim()}</span><span class="pyq-ttag">${q.topic}</span></div><div class="pyq-qt">${q.q}</div></div>`).join('')}</div>
     </div>`).join('');
 }
-renderHome();
+
+// SEARCH
+function hSearch(v){document.getElementById('sdrop').classList.toggle('show',v.length>0);}
+function showDrop(){document.getElementById('sdrop').classList.add('show');}
+document.addEventListener('click',e=>{if(!e.target.closest('.srch-wrap'))document.getElementById('sdrop').classList.remove('show');});
+function goSearch(){const v=document.getElementById('hsearch').value;if(v){showPage('srch');document.getElementById('msearch').value=v;mSearch(v);}}
+
+function initSearch(){
+  const c=document.getElementById('srch-results');
+  c.innerHTML=`<div style="font-size:.75rem;color:var(--muted);margin-bottom:.8rem;font-weight:600">POPULAR SEARCHES</div>`+EXAMS.map(e=>`<div class="src-card" onclick="openExam('${e.id}')"><span class="src-icon">${e.icon}</span><div><div class="src-name">${e.name}</div><div class="src-cat">${e.full}</div></div><span class="src-type">EXAM</span></div>`).join('');
+}
+
+function mSearch(v){
+  const c=document.getElementById('srch-results');
+  if(!v){initSearch();return;}
+  const res=[];
+  EXAMS.forEach(ex=>{
+    if(ex.name.toLowerCase().includes(v.toLowerCase())||ex.full.toLowerCase().includes(v.toLowerCase()))
+      res.push({icon:ex.icon,name:ex.name,cat:ex.full,type:'EXAM',action:`openExam('${ex.id}')`});
+    (SUBJS[ex.id]||[]).forEach(sub=>sub.topics.forEach(t=>{
+      if(t.name.toLowerCase().includes(v.toLowerCase()))
+        res.push({icon:sub.icon,name:t.name,cat:`${ex.name} · ${sub.name}`,type:'TOPIC',action:`openExam('${ex.id}');openTopicPYQ('${sub.id}','${t.name.replace(/'/g,"\\'")}');`});
+    }));
+  });
+  c.innerHTML=res.length>0?`<div style="font-size:.72rem;color:var(--muted);margin-bottom:.8rem;font-weight:600">${res.length} RESULT${res.length>1?'S':''} FOUND</div>`+res.slice(0,10).map(r=>`<div class="src-card" onclick="${r.action}"><span class="src-icon">${r.icon}</span><div><div class="src-name">${r.name}</div><div class="src-cat">${r.cat}</div></div><span class="src-type">${r.type}</span></div>`).join(''):`<div class="empty"><div class="empty-icon">🔍</div><div class="empty-title">No results found</div><div class="empty-sub">Try searching for exam names or topics.</div></div>`;
+}
+
+function sbSearch(v){if(v.length>2){showPage('srch');toggleSB();document.getElementById('msearch').value=v;mSearch(v);}}
+
+// SIDEBAR
+function toggleSB(){
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('soverlay').classList.toggle('open');
+}
+
+// HOME
+function toggleAllExams(){
+  const s=document.getElementById('all-exams-sec');
+  s.style.display=s.style.display==='none'?'block':'none';
+}
+
+// INIT
+renderTopics('');
+initSearch();
 </script>
 </body>
 </html>
