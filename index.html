@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>ExamCompass — Your Complete Exam Preparation Guide</title>
-<meta name="description" content="Best books, important topics & PYQ analysis for UPSC, NEET, JEE, CAT, CLAT, GATE, SSC CGL, IBPS PO — all in one place, completely free."/>
+<meta name="description" content="Best books, important topics & PYQ analysis for UPSC Civil Services Examination — all in one place, completely free."/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -350,13 +350,6 @@ button,input{font-family:'Plus Jakarta Sans',sans-serif}
   <div class="sb-sec">
     <div class="sb-sec-title">Exams</div>
     <div class="sb-link" onclick="openExam('upsc');toggleSB()"><span>⚖️</span>UPSC CSE</div>
-    <div class="sb-link" onclick="openExam('neet');toggleSB()"><span>🩺</span>NEET UG</div>
-    <div class="sb-link" onclick="openExam('jee');toggleSB()"><span>⚙️</span>JEE Main & Advanced</div>
-    <div class="sb-link" onclick="openExam('cat');toggleSB()"><span>📊</span>CAT</div>
-    <div class="sb-link" onclick="openExam('clat');toggleSB()"><span>⚖️</span>CLAT</div>
-    <div class="sb-link" onclick="openExam('gate');toggleSB()"><span>🔬</span>GATE</div>
-    <div class="sb-link" onclick="openExam('ssc');toggleSB()"><span>📋</span>SSC CGL</div>
-    <div class="sb-link" onclick="openExam('ibps');toggleSB()"><span>🏦</span>IBPS PO</div>
   </div>
   <div class="sb-div"></div>
   <div class="sb-sec">
@@ -378,29 +371,10 @@ button,input{font-family:'Plus Jakarta Sans',sans-serif}
 
 <!-- HOME PAGE -->
 <div class="page active" id="home-page">
-  <div class="hero">
-    <div class="hero-pill">🎯 India's Free Exam Guide</div>
-    <h1>Prepare Smart.<br/><em>Crack Better.</em></h1>
-    <p class="hero-sub">Best books, important topics & PYQ analysis for every major Indian exam — all in one place, completely free.</p>
-    <div class="hero-btns">
-      <button class="btn-p" onclick="document.getElementById('pop-exams').scrollIntoView({behavior:'smooth'})">Explore Exams →</button>
-      <button class="btn-s" onclick="showPage('books')">View Books</button>
-    </div>
-    <div class="srch-wrap">
-      <div class="srch-bar">
-        <span>🔍</span>
-        <input id="hsearch" type="text" placeholder="Search exams, topics, books..." oninput="hSearch(this.value)" onfocus="showDrop()"/>
-        <button class="srch-go" onclick="goSearch()">Search</button>
-      </div>
-      <div class="srch-drop" id="sdrop">
-        <div class="sdrop-item" onclick="openExam('upsc')"><span>⚖️</span><div><div class="sdrop-name">UPSC CSE</div><div class="sdrop-cat">Civil Services · IAS, IPS, IFS</div></div></div>
-        <div class="sdrop-item" onclick="openExam('neet')"><span>🩺</span><div><div class="sdrop-name">NEET UG</div><div class="sdrop-cat">Medical · MBBS, BDS</div></div></div>
-        <div class="sdrop-item" onclick="openExam('jee')"><span>⚙️</span><div><div class="sdrop-name">JEE Main & Advanced</div><div class="sdrop-cat">Engineering · IIT, NIT</div></div></div>
-        <div class="sdrop-item" onclick="openExam('cat')"><span>📊</span><div><div class="sdrop-name">CAT</div><div class="sdrop-cat">MBA · IIM, Management</div></div></div>
-        <div class="sdrop-item" onclick="openExam('ssc')"><span>📋</span><div><div class="sdrop-name">SSC CGL</div><div class="sdrop-cat">Government · Group B, C</div></div></div>
-        <div class="sdrop-item" onclick="openExam('ibps')"><span>🏦</span><div><div class="sdrop-name">IBPS PO</div><div class="sdrop-cat">Banking · PO, Clerk</div></div></div>
-      </div>
-    </div>
+  <div class="hero" style="text-align:center;padding:2.5rem 1.5rem 2rem">
+    <div class="hero-pill" style="justify-content:center">🎯 India's Free Exam Guide</div>
+    <h1 style="font-size:2.6rem;margin-bottom:.8rem">Prepare Smart.<br/><em>Crack Better.</em></h1>
+    <p class="hero-sub" style="margin:0 auto;text-align:center">Best books, important topics & PYQ analysis for UPSC Civil Services — all in one place, completely free.</p>
   </div>
 
   <div class="hsec" id="cont-sec" style="display:none">
@@ -419,31 +393,20 @@ button,input{font-family:'Plus Jakarta Sans',sans-serif}
 
   <div class="hsec" id="pop-exams" style="padding-top:0">
     <div class="shdr">
-      <div class="stitle">Popular Exams</div>
-      <div class="slink" onclick="toggleAllExams()">View All</div>
+      <div class="stitle">Exams</div>
     </div>
-    <div class="echips">
-      <div class="echip top" onclick="openExam('upsc')"><div class="echip-icon">⚖️</div><div class="echip-name">UPSC</div><div class="top-badge">TOP</div></div>
-      <div class="echip top" onclick="openExam('neet')"><div class="echip-icon">🩺</div><div class="echip-name">NEET</div><div class="top-badge">TOP</div></div>
-      <div class="echip" onclick="openExam('jee')"><div class="echip-icon">⚙️</div><div class="echip-name">JEE</div><div class="echip-sub">Main+Adv</div></div>
-      <div class="echip" onclick="openExam('cat')"><div class="echip-icon">📊</div><div class="echip-name">CAT</div><div class="echip-sub">MBA</div></div>
-      <div class="echip" onclick="openExam('clat')"><div class="echip-icon">⚖️</div><div class="echip-name">CLAT</div><div class="echip-sub">Law</div></div>
-      <div class="echip" onclick="openExam('ssc')"><div class="echip-icon">📋</div><div class="echip-name">SSC CGL</div><div class="echip-sub">Govt</div></div>
-      <div class="echip" onclick="openExam('gate')"><div class="echip-icon">🔬</div><div class="echip-name">GATE</div><div class="echip-sub">M.Tech</div></div>
-      <div class="echip" onclick="openExam('ibps')"><div class="echip-icon">🏦</div><div class="echip-name">IBPS PO</div><div class="echip-sub">Banking</div></div>
-    </div>
-  </div>
-
-  <div id="all-exams-sec" style="display:none;padding:0 1rem 1rem">
     <div class="aegrid">
-      <div class="aec" onclick="openExam('upsc')"><div class="aec-icon">⚖️</div><div class="aec-name">UPSC CSE</div><div class="aec-full">Civil Services Examination</div><div class="aec-tags"><span class="aec-tag">IAS</span><span class="aec-tag">IPS</span><span class="aec-tag">IFS</span></div></div>
-      <div class="aec" onclick="openExam('neet')"><div class="aec-icon">🩺</div><div class="aec-name">NEET UG</div><div class="aec-full">National Eligibility cum Entrance Test</div><div class="aec-tags"><span class="aec-tag">MBBS</span><span class="aec-tag">BDS</span></div></div>
-      <div class="aec" onclick="openExam('jee')"><div class="aec-icon">⚙️</div><div class="aec-name">JEE</div><div class="aec-full">Joint Entrance Examination</div><div class="aec-tags"><span class="aec-tag">IIT</span><span class="aec-tag">NIT</span></div></div>
-      <div class="aec" onclick="openExam('cat')"><div class="aec-icon">📊</div><div class="aec-name">CAT</div><div class="aec-full">Common Admission Test</div><div class="aec-tags"><span class="aec-tag">IIM</span><span class="aec-tag">MBA</span></div></div>
-      <div class="aec" onclick="openExam('clat')"><div class="aec-icon">⚖️</div><div class="aec-name">CLAT</div><div class="aec-full">Common Law Admission Test</div><div class="aec-tags"><span class="aec-tag">NLU</span><span class="aec-tag">Law</span></div></div>
-      <div class="aec" onclick="openExam('gate')"><div class="aec-icon">🔬</div><div class="aec-name">GATE</div><div class="aec-full">Graduate Aptitude Test</div><div class="aec-tags"><span class="aec-tag">M.Tech</span><span class="aec-tag">PSU</span></div></div>
-      <div class="aec" onclick="openExam('ssc')"><div class="aec-icon">📋</div><div class="aec-name">SSC CGL</div><div class="aec-full">Staff Selection Commission</div><div class="aec-tags"><span class="aec-tag">Group B</span><span class="aec-tag">Govt</span></div></div>
-      <div class="aec" onclick="openExam('ibps')"><div class="aec-icon">🏦</div><div class="aec-name">IBPS PO</div><div class="aec-full">Banking Personnel Selection</div><div class="aec-tags"><span class="aec-tag">Bank PO</span><span class="aec-tag">Clerk</span></div></div>
+      <div class="aec" onclick="openExam('upsc')" style="grid-column:1/-1">
+        <div style="display:flex;align-items:center;gap:1rem">
+          <div style="font-size:2.2rem">⚖️</div>
+          <div>
+            <div class="aec-name" style="font-size:1rem">UPSC CSE</div>
+            <div class="aec-full">Civil Services Examination</div>
+            <div class="aec-tags" style="margin-top:.4rem"><span class="aec-tag">IAS</span><span class="aec-tag">IPS</span><span class="aec-tag">IFS</span></div>
+          </div>
+          <div style="margin-left:auto;color:var(--blue);font-size:1.2rem">›</div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -454,9 +417,8 @@ button,input{font-family:'Plus Jakarta Sans',sans-serif}
     </div>
     <div>
       <div class="upd-item"><span class="upd-badge b-new">NEW</span><div><div class="upd-title">UPSC 2025 PYQs Added</div><div class="upd-sub">All Prelims + Mains questions updated</div></div></div>
-      <div class="upd-item"><span class="upd-badge b-upd">UPDATED</span><div><div class="upd-title">NEET 2025 Important Topics</div><div class="upd-sub">Biology chapter weights revised</div></div></div>
-      <div class="upd-item"><span class="upd-badge b-add">ADDED</span><div><div class="upd-title">JEE Advanced 2025 Analysis</div><div class="upd-sub">Chapter-wise difficulty breakdown added</div></div></div>
-      <div class="upd-item"><span class="upd-badge b-upd">UPDATED</span><div><div class="upd-title">SSC CGL 2025 Book List</div><div class="upd-sub">New edition books updated</div></div></div>
+      <div class="upd-item"><span class="upd-badge b-upd">UPDATED</span><div><div class="upd-title">UPSC 2025 Important Topics</div><div class="upd-sub">GS Paper weightage revised</div></div></div>
+      <div class="upd-item"><span class="upd-badge b-add">ADDED</span><div><div class="upd-title">UPSC Mains 2024 Analysis</div><div class="upd-sub">Essay + GS paper-wise breakdown added</div></div></div>
     </div>
   </div>
   <div style="text-align:center;padding:1rem;font-size:.72rem;color:var(--muted)">ExamCompass · Free Forever · Last Updated May 2026</div>
@@ -479,6 +441,10 @@ button,input{font-family:'Plus Jakarta Sans',sans-serif}
     </div>
   </div>
   <div class="tcont active" id="tc-topics">
+    <div style="display:flex;gap:.6rem;padding:1rem 0 .5rem;border-bottom:1px solid var(--border);margin-bottom:1rem">
+      <button class="topic-mode-btn active" id="topicbtn-mains" onclick="switchTopicMode('mains',this)" style="flex:1;padding:.6rem;border-radius:var(--rs);border:1.5px solid var(--blue);background:var(--blue);color:#fff;font-size:.82rem;font-weight:700;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;transition:all .15s">📝 Mains</button>
+      <button class="topic-mode-btn" id="topicbtn-prelims" onclick="switchTopicMode('prelims',this)" style="flex:1;padding:.6rem;border-radius:var(--rs);border:1.5px solid var(--border);background:var(--surface);color:var(--text);font-size:.82rem;font-weight:700;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;transition:all .15s">📋 Prelims</button>
+    </div>
     <div class="tsearch"><span>🔍</span><input type="text" placeholder="Search topics..." oninput="filterTopics(this.value)"/></div>
     <div id="topics-wrap"></div>
   </div>
@@ -492,10 +458,9 @@ button,input{font-family:'Plus Jakarta Sans',sans-serif}
     <div id="books-wrap"></div>
   </div>
   <div class="tcont" id="tc-pyq">
-    <div class="bfilters">
-      <div class="fchip active">All Years</div>
-      <div class="fchip">2024</div><div class="fchip">2023</div>
-      <div class="fchip">2022</div><div class="fchip">2021</div>
+    <div style="display:flex;gap:.6rem;padding:1rem 0 .5rem;border-bottom:1px solid var(--border);margin-bottom:1rem">
+      <button class="pyq-mode-btn active" id="pyqbtn-mains" onclick="switchPYQMode('mains',this)" style="flex:1;padding:.6rem;border-radius:var(--rs);border:1.5px solid var(--blue);background:var(--blue);color:#fff;font-size:.82rem;font-weight:700;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;transition:all .15s">📝 Mains</button>
+      <button class="pyq-mode-btn" id="pyqbtn-prelims" onclick="switchPYQMode('prelims',this)" style="flex:1;padding:.6rem;border-radius:var(--rs);border:1.5px solid var(--border);background:var(--surface);color:var(--text);font-size:.82rem;font-weight:700;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;transition:all .15s">📋 Prelims</button>
     </div>
     <div id="pyq-wrap"></div>
   </div>
@@ -539,14 +504,9 @@ button,input{font-family:'Plus Jakarta Sans',sans-serif}
 <!-- BOOKS PAGE -->
 <div class="page" id="books-page">
   <div class="bpg">
-    <div style="font-size:1rem;font-weight:800;letter-spacing:-.3px;margin-bottom:1rem">All Recommended Books</div>
+    <div style="font-size:1rem;font-weight:800;letter-spacing:-.3px;margin-bottom:1rem">UPSC Recommended Books</div>
     <div class="bfilters">
-      <div class="fchip active">All Exams</div>
-      <div class="fchip" onclick="openExam('upsc')">UPSC</div>
-      <div class="fchip" onclick="openExam('neet')">NEET</div>
-      <div class="fchip" onclick="openExam('jee')">JEE</div>
-      <div class="fchip" onclick="openExam('cat')">CAT</div>
-      <div class="fchip" onclick="openExam('ssc')">SSC</div>
+      <div class="fchip active" onclick="openExam('upsc')">UPSC CSE</div>
     </div>
     <div id="all-books-wrap"></div>
   </div>
@@ -574,202 +534,118 @@ button,input{font-family:'Plus Jakarta Sans',sans-serif}
 <script>
 const EXAMS=[
   {id:'upsc',icon:'⚖️',name:'UPSC CSE',full:'Civil Services Examination'},
-  {id:'neet',icon:'🩺',name:'NEET UG',full:'National Eligibility cum Entrance Test'},
-  {id:'jee',icon:'⚙️',name:'JEE Main & Advanced',full:'Joint Entrance Examination'},
-  {id:'cat',icon:'📊',name:'CAT',full:'Common Admission Test'},
-  {id:'clat',icon:'⚖️',name:'CLAT',full:'Common Law Admission Test'},
-  {id:'gate',icon:'🔬',name:'GATE',full:'Graduate Aptitude Test in Engineering'},
-  {id:'ssc',icon:'📋',name:'SSC CGL',full:'Staff Selection Commission — CGL'},
-  {id:'ibps',icon:'🏦',name:'IBPS PO',full:'Institute of Banking Personnel Selection'},
 ];
 
 const SUBJS={
-  upsc:[
-    {id:'polity',icon:'🏛️',name:'Polity',topics:[
-      {name:'Fundamental Rights & Duties',freq:'h',pyqs:8,sub:'Articles 12-35, Part III'},
-      {name:'Parliament & Legislature',freq:'h',pyqs:6,sub:'Lok Sabha, Rajya Sabha, Sessions'},
-      {name:'Constitutional Bodies',freq:'h',pyqs:5,sub:'CAG, Election Commission, UPSC'},
-      {name:'Judiciary & Supreme Court',freq:'h',pyqs:6,sub:'Judicial Review, PIL, Writ Petitions'},
-      {name:'President & Governor Powers',freq:'m',pyqs:4,sub:'Executive Powers, Ordinances'},
-      {name:'Centre-State Relations',freq:'m',pyqs:4,sub:'7th Schedule, Federalism'},
-      {name:'Emergency Provisions',freq:'m',pyqs:3,sub:'Articles 352, 356, 360'},
-    ]},
-    {id:'history',icon:'📜',name:'History',topics:[
-      {name:'Freedom Movement 1857–1947',freq:'h',pyqs:7,sub:'Congress, Gandhi, Partition'},
-      {name:'British Economic Policies',freq:'h',pyqs:5,sub:'Drain Theory, De-industrialization'},
-      {name:'Indus Valley Civilization',freq:'h',pyqs:4,sub:'Harappa, Mohenjo-daro'},
-      {name:'Bhakti & Sufi Movements',freq:'m',pyqs:3,sub:'Medieval Saints, Social Reform'},
-      {name:'Post-Independence India',freq:'m',pyqs:4,sub:'Five Year Plans, Green Revolution'},
-    ]},
-    {id:'geography',icon:'🌍',name:'Geography',topics:[
-      {name:'Monsoon & Climate of India',freq:'h',pyqs:6,sub:'SW Monsoon, El Nino'},
-      {name:'Rivers & Drainage System',freq:'h',pyqs:5,sub:'Himalayan vs Peninsular Rivers'},
-      {name:'Soils of India',freq:'h',pyqs:4,sub:'Alluvial, Black, Red, Laterite'},
-      {name:'Natural Vegetation & Forests',freq:'m',pyqs:3,sub:'Tropical, Montane, Mangroves'},
-    ]},
-    {id:'economy',icon:'📈',name:'Economy',topics:[
-      {name:'Inflation & Monetary Policy',freq:'h',pyqs:7,sub:'RBI, MPC, Repo Rate'},
-      {name:'Banking & Financial System',freq:'h',pyqs:6,sub:'RBI Functions, NPA, Basel'},
-      {name:'Budget & Fiscal Policy',freq:'h',pyqs:5,sub:'Union Budget, Fiscal Deficit'},
-      {name:'Agriculture & Food Security',freq:'h',pyqs:5,sub:'MSP, FCI, PDS'},
-    ]},
-    {id:'environment',icon:'🌿',name:'Environment',topics:[
-      {name:'Climate Change & UNFCCC',freq:'h',pyqs:7,sub:'Paris Agreement, COP, NDC'},
-      {name:'Biodiversity & Protected Areas',freq:'h',pyqs:6,sub:'National Parks, Biosphere'},
-      {name:'Pollution & Environmental Laws',freq:'h',pyqs:5,sub:'Air, Water, Noise Acts'},
-      {name:'International Conventions',freq:'m',pyqs:4,sub:'Ramsar, CITES, Basel'},
-    ]},
-    {id:'science',icon:'🔬',name:'Science & Tech',topics:[
-      {name:'Space Technology (ISRO)',freq:'h',pyqs:6,sub:'Chandrayaan, Mangalyaan'},
-      {name:'Biotechnology & GMOs',freq:'h',pyqs:5,sub:'Bt Crops, Gene Editing'},
-      {name:'Diseases & Vaccines',freq:'h',pyqs:5,sub:'COVID, mRNA, One Health'},
-      {name:'Cyber Security & AI',freq:'h',pyqs:4,sub:'Deepfakes, AI Policy'},
-    ]},
-    {id:'ethics',icon:'🧭',name:'Ethics',topics:[
-      {name:'Case Studies — Public Service',freq:'h',pyqs:10,sub:'Dilemmas, Conflicts, Decisions'},
-      {name:'Emotional Intelligence',freq:'h',pyqs:6,sub:'EQ, Self-Awareness, Empathy'},
-      {name:'Corruption & Accountability',freq:'h',pyqs:5,sub:'Probity, Whistleblowing'},
-      {name:'Moral Thinkers & Philosophers',freq:'m',pyqs:4,sub:'Gandhi, Kant, Rawls'},
-    ]},
-    {id:'current',icon:'📰',name:'Current Affairs',topics:[
-      {name:'Government Schemes 2025-26',freq:'h',pyqs:5,sub:'PM Schemes, Flagship Programs'},
-      {name:'India Foreign Policy',freq:'h',pyqs:6,sub:'G20, QUAD, SCO, BRICS'},
-      {name:'International Summits & Orgs',freq:'h',pyqs:5,sub:'UN, WTO, IMF Updates'},
-    ]},
-  ],
-  neet:[
-    {id:'physics',icon:'⚡',name:'Physics',topics:[
-      {name:'Mechanics & Laws of Motion',freq:'h',pyqs:12,sub:"Newton's Laws, Work-Energy"},
-      {name:'Electrostatics & Current Electricity',freq:'h',pyqs:10,sub:"Coulomb's Law, Circuits"},
-      {name:'Modern Physics',freq:'h',pyqs:9,sub:'Photoelectric, Radioactivity'},
-      {name:'Optics',freq:'h',pyqs:8,sub:'Lenses, Mirrors, Diffraction'},
-      {name:'Thermodynamics',freq:'m',pyqs:6,sub:'Laws of Thermodynamics'},
-    ]},
-    {id:'chemistry',icon:'🧪',name:'Chemistry',topics:[
-      {name:'Organic Reactions & Mechanisms',freq:'h',pyqs:14,sub:'SN1, SN2, Addition, Elimination'},
-      {name:'Chemical Bonding & Structure',freq:'h',pyqs:10,sub:'VSEPR, Hybridization'},
-      {name:'Coordination Compounds',freq:'h',pyqs:8,sub:'Isomerism, Crystal Field Theory'},
-      {name:'Equilibrium',freq:'h',pyqs:7,sub:'Le Chatelier, Kp, Kc'},
-    ]},
-    {id:'biology',icon:'🧬',name:'Biology',topics:[
-      {name:'Human Physiology',freq:'h',pyqs:16,sub:'Digestion, Circulation, Excretion'},
-      {name:'Genetics & Evolution',freq:'h',pyqs:12,sub:'Mendel, DNA, Hardy-Weinberg'},
-      {name:'Plant Physiology',freq:'h',pyqs:10,sub:'Photosynthesis, Respiration'},
-      {name:'Cell Biology & Biomolecules',freq:'h',pyqs:9,sub:'Cell Division, Proteins'},
-      {name:'Ecology & Environment',freq:'m',pyqs:7,sub:'Ecosystem, Population'},
-    ]},
-  ],
-  jee:[
-    {id:'physics',icon:'⚡',name:'Physics',topics:[
-      {name:'Mechanics & Kinematics',freq:'h',pyqs:14,sub:'Projectile, Circular Motion'},
-      {name:'Electrostatics & Magnetism',freq:'h',pyqs:12,sub:'Gauss Law, Magnetic Force'},
-      {name:'Modern Physics',freq:'h',pyqs:10,sub:'Photoelectric, Bohr Model'},
-      {name:'Optics',freq:'h',pyqs:8,sub:'Lens Formula, Interference'},
-    ]},
-    {id:'chemistry',icon:'🧪',name:'Chemistry',topics:[
-      {name:'Organic Chemistry (GOC)',freq:'h',pyqs:14,sub:'IUPAC, Isomerism, Mechanisms'},
-      {name:'Chemical Bonding',freq:'h',pyqs:10,sub:'VSEPR, Hybridization'},
-      {name:'Thermochemistry',freq:'h',pyqs:8,sub:'Hess Law, Bond Enthalpy'},
-    ]},
-    {id:'maths',icon:'📐',name:'Mathematics',topics:[
-      {name:'Calculus',freq:'h',pyqs:16,sub:'Definite Integrals, Area, ODE'},
-      {name:'Coordinate Geometry',freq:'h',pyqs:12,sub:'Circles, Conics, Parabola'},
-      {name:'Probability & Statistics',freq:'h',pyqs:9,sub:'Bayes, Distributions'},
-      {name:'Matrices & Determinants',freq:'m',pyqs:7,sub:'Matrix Operations, Eigenvalues'},
-    ]},
-  ],
-  cat:[
-    {id:'varc',icon:'📖',name:'VARC',topics:[
-      {name:'Reading Comprehension (RC)',freq:'h',pyqs:20,sub:"Inference, Tone, Author's View"},
-      {name:'Para Jumbles',freq:'h',pyqs:8,sub:'Sentence Ordering'},
-      {name:'Para Summary',freq:'h',pyqs:6,sub:'Main Idea, Best Summary'},
-    ]},
-    {id:'dilr',icon:'🧩',name:'DILR',topics:[
-      {name:'Seating Arrangement & Puzzles',freq:'h',pyqs:12,sub:'Linear, Circular, Floor-based'},
-      {name:'Data Interpretation Sets',freq:'h',pyqs:12,sub:'Bar, Line, Pie, Caselet DI'},
-      {name:'Games & Tournaments',freq:'h',pyqs:6,sub:'Knockout, Round Robin'},
-    ]},
-    {id:'qa',icon:'🔢',name:'Quantitative Aptitude',topics:[
-      {name:'Arithmetic (%, Ratio, Profit-Loss)',freq:'h',pyqs:14,sub:'Time-Speed, SI/CI'},
-      {name:'Number System & Theory',freq:'h',pyqs:10,sub:'HCF, LCM, Remainders'},
-      {name:'Algebra & Quadratic',freq:'h',pyqs:9,sub:'Inequalities, Logs, Progressions'},
-    ]},
-  ],
-  ssc:[
-    {id:'reasoning',icon:'🧠',name:'Reasoning',topics:[
-      {name:'Analogy',freq:'h',pyqs:8,sub:'Word, Number, Letter Analogy'},
-      {name:'Series (Number & Letter)',freq:'h',pyqs:7,sub:'Missing Term, Wrong Term'},
-      {name:'Coding-Decoding',freq:'h',pyqs:6,sub:'Letter Coding, Number Coding'},
-      {name:'Blood Relations',freq:'m',pyqs:4,sub:'Family Tree, Puzzle Based'},
-    ]},
-    {id:'quant_ssc',icon:'🔢',name:'Quantitative Aptitude',topics:[
-      {name:'Percentage & Profit-Loss',freq:'h',pyqs:8,sub:'Discount, CP-SP'},
-      {name:'Time-Speed-Distance',freq:'h',pyqs:6,sub:'Trains, Boats, Relative Speed'},
-      {name:'Geometry & Mensuration',freq:'h',pyqs:7,sub:'Area, Volume, Triangles'},
-    ]},
-    {id:'english_ssc',icon:'📝',name:'English',topics:[
-      {name:'Fill in the Blanks',freq:'h',pyqs:6,sub:'Grammar-based, Vocabulary'},
-      {name:'Error Spotting',freq:'h',pyqs:6,sub:'Subject-Verb, Tense, Articles'},
-      {name:'Reading Comprehension',freq:'h',pyqs:5,sub:'Inference, Direct Questions'},
-    ]},
-    {id:'gk_ssc',icon:'🌐',name:'General Awareness',topics:[
-      {name:'Indian History',freq:'h',pyqs:6,sub:'Ancient, Medieval, Modern'},
-      {name:'Polity & Constitution',freq:'h',pyqs:5,sub:'Articles, Bodies, Amendments'},
-      {name:'Current Affairs',freq:'m',pyqs:4,sub:'Last 6 months Events'},
-    ]},
-  ],
-  ibps:[
-    {id:'reasoning_ibps',icon:'🧠',name:'Reasoning',topics:[
-      {name:'Puzzles & Seating Arrangement',freq:'h',pyqs:10,sub:'Floor, Circular, Linear'},
-      {name:'Inequality',freq:'h',pyqs:6,sub:'Direct, Coded Inequalities'},
-      {name:'Syllogism',freq:'h',pyqs:5,sub:'All, Some, No — Conclusions'},
-    ]},
-    {id:'quant_ibps',icon:'🔢',name:'Quantitative Aptitude',topics:[
-      {name:'Data Interpretation (DI)',freq:'h',pyqs:10,sub:'Tables, Bar, Line, Mixed'},
-      {name:'Number Series',freq:'h',pyqs:6,sub:'Missing, Wrong Term Series'},
-      {name:'Quadratic Equations',freq:'h',pyqs:5,sub:'Roots, Relationship'},
-    ]},
-    {id:'english_ibps',icon:'📝',name:'English Language',topics:[
-      {name:'Reading Comprehension',freq:'h',pyqs:8,sub:'Theme, Inference, Vocabulary'},
-      {name:'Cloze Test',freq:'h',pyqs:5,sub:'Fill blanks with best word'},
-      {name:'Error Detection',freq:'h',pyqs:5,sub:'Grammatical Errors'},
-    ]},
-    {id:'gk_ibps',icon:'🏦',name:'Banking Awareness',topics:[
-      {name:'Banking Terms & Concepts',freq:'h',pyqs:8,sub:'Repo, Reverse Repo, CRR'},
-      {name:'RBI & Monetary Policy',freq:'h',pyqs:6,sub:'MPC, Inflation Targeting'},
-      {name:'Financial Awareness',freq:'h',pyqs:5,sub:'Budget, Economy News'},
-    ]},
-  ],
-  clat:[
-    {id:'legal',icon:'⚖️',name:'Legal Reasoning',topics:[
-      {name:'Torts & Negligence',freq:'h',pyqs:8,sub:'Strict Liability, Vicarious'},
-      {name:'Contract Law Principles',freq:'h',pyqs:7,sub:'Offer, Acceptance, Consideration'},
-      {name:'Constitutional Principles',freq:'h',pyqs:6,sub:'Fundamental Rights'},
-    ]},
-    {id:'logical',icon:'🧠',name:'Logical Reasoning',topics:[
-      {name:'Critical Reasoning',freq:'h',pyqs:8,sub:'Assumptions, Inferences'},
-      {name:'Syllogisms',freq:'h',pyqs:6,sub:'Valid Conclusions, Venn'},
-    ]},
-    {id:'english',icon:'📝',name:'English',topics:[
-      {name:'Reading Comprehension',freq:'h',pyqs:10,sub:'Law passages, Inference'},
-      {name:'Vocabulary & Idioms',freq:'h',pyqs:6,sub:'Contextual Meaning'},
-    ]},
-  ],
-  gate:[
-    {id:'core',icon:'⚙️',name:'Core Engineering',topics:[
-      {name:'Branch Core Subjects',freq:'h',pyqs:20,sub:'72% weightage — choose branch'},
-      {name:'Previous Year Questions',freq:'h',pyqs:50,sub:'10 years PYQs essential'},
-    ]},
-    {id:'engg_maths',icon:'📐',name:'Engineering Mathematics',topics:[
-      {name:'Linear Algebra',freq:'h',pyqs:6,sub:'Matrices, Eigenvalues'},
-      {name:'Calculus & Differential Equations',freq:'h',pyqs:6,sub:'Integration, ODE'},
-      {name:'Probability & Statistics',freq:'h',pyqs:5,sub:'Distributions, Hypothesis'},
-    ]},
-    {id:'aptitude',icon:'🧮',name:'General Aptitude',topics:[
-      {name:'Numerical Computation',freq:'h',pyqs:6,sub:'Arithmetic, Time-Speed'},
-      {name:'Verbal Analogies & Grammar',freq:'h',pyqs:5,sub:'Sentence Completion, RC'},
-    ]},
-  ],
+  upsc:{
+    mains:[
+      {id:'polity',icon:'🏛️',name:'Polity',topics:[
+        {name:'Fundamental Rights & Duties',freq:'h',pyqs:8,sub:'Articles 12-35, Part III'},
+        {name:'Parliament & Legislature',freq:'h',pyqs:6,sub:'Lok Sabha, Rajya Sabha, Sessions'},
+        {name:'Constitutional Bodies',freq:'h',pyqs:5,sub:'CAG, Election Commission, UPSC'},
+        {name:'Judiciary & Supreme Court',freq:'h',pyqs:6,sub:'Judicial Review, PIL, Writ Petitions'},
+        {name:'President & Governor Powers',freq:'m',pyqs:4,sub:'Executive Powers, Ordinances'},
+        {name:'Centre-State Relations',freq:'m',pyqs:4,sub:'7th Schedule, Federalism'},
+        {name:'Emergency Provisions',freq:'m',pyqs:3,sub:'Articles 352, 356, 360'},
+      ]},
+      {id:'history',icon:'📜',name:'History',topics:[
+        {name:'Freedom Movement 1857–1947',freq:'h',pyqs:7,sub:'Congress, Gandhi, Partition'},
+        {name:'British Economic Policies',freq:'h',pyqs:5,sub:'Drain Theory, De-industrialization'},
+        {name:'Post-Independence India',freq:'m',pyqs:4,sub:'Five Year Plans, Green Revolution'},
+        {name:'Bhakti & Sufi Movements',freq:'m',pyqs:3,sub:'Medieval Saints, Social Reform'},
+      ]},
+      {id:'geography',icon:'🌍',name:'Geography',topics:[
+        {name:'Monsoon & Climate of India',freq:'h',pyqs:6,sub:'SW Monsoon, El Nino'},
+        {name:'Rivers & Drainage System',freq:'h',pyqs:5,sub:'Himalayan vs Peninsular Rivers'},
+        {name:'Natural Vegetation & Forests',freq:'m',pyqs:3,sub:'Tropical, Montane, Mangroves'},
+      ]},
+      {id:'economy',icon:'📈',name:'Economy',topics:[
+        {name:'Inflation & Monetary Policy',freq:'h',pyqs:7,sub:'RBI, MPC, Repo Rate'},
+        {name:'Banking & Financial System',freq:'h',pyqs:6,sub:'RBI Functions, NPA, Basel'},
+        {name:'Budget & Fiscal Policy',freq:'h',pyqs:5,sub:'Union Budget, Fiscal Deficit'},
+        {name:'Agriculture & Food Security',freq:'h',pyqs:5,sub:'MSP, FCI, PDS'},
+      ]},
+      {id:'environment',icon:'🌿',name:'Environment',topics:[
+        {name:'Climate Change & UNFCCC',freq:'h',pyqs:7,sub:'Paris Agreement, COP, NDC'},
+        {name:'Biodiversity & Protected Areas',freq:'h',pyqs:6,sub:'National Parks, Biosphere'},
+        {name:'Pollution & Environmental Laws',freq:'h',pyqs:5,sub:'Air, Water, Noise Acts'},
+        {name:'International Conventions',freq:'m',pyqs:4,sub:'Ramsar, CITES, Basel'},
+      ]},
+      {id:'science',icon:'🔬',name:'Science & Tech',topics:[
+        {name:'Space Technology (ISRO)',freq:'h',pyqs:6,sub:'Chandrayaan, Mangalyaan'},
+        {name:'Biotechnology & GMOs',freq:'h',pyqs:5,sub:'Bt Crops, Gene Editing'},
+        {name:'Diseases & Vaccines',freq:'h',pyqs:5,sub:'COVID, mRNA, One Health'},
+        {name:'Cyber Security & AI',freq:'h',pyqs:4,sub:'Deepfakes, AI Policy'},
+      ]},
+      {id:'ethics',icon:'🧭',name:'Ethics (GS IV)',topics:[
+        {name:'Case Studies — Public Service',freq:'h',pyqs:10,sub:'Dilemmas, Conflicts, Decisions'},
+        {name:'Emotional Intelligence',freq:'h',pyqs:6,sub:'EQ, Self-Awareness, Empathy'},
+        {name:'Corruption & Accountability',freq:'h',pyqs:5,sub:'Probity, Whistleblowing'},
+        {name:'Moral Thinkers & Philosophers',freq:'m',pyqs:4,sub:'Gandhi, Kant, Rawls'},
+      ]},
+      {id:'current',icon:'📰',name:'Current Affairs',topics:[
+        {name:'Government Schemes 2025-26',freq:'h',pyqs:5,sub:'PM Schemes, Flagship Programs'},
+        {name:'India Foreign Policy',freq:'h',pyqs:6,sub:'G20, QUAD, SCO, BRICS'},
+        {name:'International Summits & Orgs',freq:'h',pyqs:5,sub:'UN, WTO, IMF Updates'},
+      ]},
+    ],
+    prelims:[
+      {id:'polity',icon:'🏛️',name:'Polity',topics:[
+        {name:'Fundamental Rights & Duties',freq:'h',pyqs:8,sub:'Articles 12-35, Part III'},
+        {name:'Parliament & Legislature',freq:'h',pyqs:7,sub:'Lok Sabha, Rajya Sabha, Sessions'},
+        {name:'Constitutional Bodies',freq:'h',pyqs:6,sub:'CAG, Election Commission, UPSC'},
+        {name:'Judiciary & Supreme Court',freq:'h',pyqs:5,sub:'Judicial Review, PIL, Writs'},
+        {name:'President & Governor Powers',freq:'m',pyqs:4,sub:'Executive Powers, Ordinances'},
+        {name:'Centre-State Relations',freq:'m',pyqs:4,sub:'7th Schedule, Federalism'},
+        {name:'Emergency Provisions',freq:'m',pyqs:3,sub:'Articles 352, 356, 360'},
+        {name:'Local Government (73rd & 74th)',freq:'l',pyqs:2,sub:'Panchayati Raj, Urban Bodies'},
+      ]},
+      {id:'history',icon:'📜',name:'History',topics:[
+        {name:'Indus Valley Civilization',freq:'h',pyqs:5,sub:'Harappa, Mohenjo-daro, Trade'},
+        {name:'Freedom Movement 1857–1947',freq:'h',pyqs:7,sub:'Congress, Gandhi, Partition'},
+        {name:'Bhakti & Sufi Movements',freq:'h',pyqs:4,sub:'Medieval Saints, Social Reform'},
+        {name:'Maurya & Gupta Empires',freq:'m',pyqs:4,sub:'Ashoka, Administration, Culture'},
+        {name:'British Economic Policies',freq:'m',pyqs:3,sub:'Drain Theory, De-industrialization'},
+        {name:'Art & Architecture',freq:'m',pyqs:3,sub:'Temples, Sculptures, Paintings'},
+      ]},
+      {id:'geography',icon:'🌍',name:'Geography',topics:[
+        {name:'Monsoon & Climate of India',freq:'h',pyqs:6,sub:'SW Monsoon, El Nino, La Nina'},
+        {name:'Rivers & Drainage System',freq:'h',pyqs:6,sub:'Himalayan vs Peninsular Rivers'},
+        {name:'Soils of India',freq:'h',pyqs:4,sub:'Alluvial, Black, Red, Laterite'},
+        {name:'Natural Vegetation & Forests',freq:'m',pyqs:3,sub:'Tropical, Montane, Mangroves'},
+        {name:'Physiographic Divisions',freq:'m',pyqs:3,sub:'Himalayas, Plains, Plateau, Coast'},
+        {name:'Economic Geography',freq:'l',pyqs:2,sub:'Agriculture zones, Minerals, Industry'},
+      ]},
+      {id:'economy',icon:'📈',name:'Economy',topics:[
+        {name:'Inflation & Monetary Policy',freq:'h',pyqs:6,sub:'RBI, MPC, Repo Rate'},
+        {name:'Banking & Financial System',freq:'h',pyqs:5,sub:'RBI Functions, NPA, Basel'},
+        {name:'Budget & Fiscal Policy',freq:'h',pyqs:5,sub:'Union Budget, Fiscal Deficit'},
+        {name:'Agriculture & Food Security',freq:'h',pyqs:4,sub:'MSP, FCI, PDS'},
+        {name:'International Trade & WTO',freq:'m',pyqs:3,sub:'Trade Agreements, Tariffs'},
+        {name:'Index Numbers & Data',freq:'m',pyqs:3,sub:'CPI, WPI, IIP, GDP'},
+      ]},
+      {id:'environment',icon:'🌿',name:'Environment',topics:[
+        {name:'Climate Change & UNFCCC',freq:'h',pyqs:7,sub:'Paris Agreement, COP, NDC'},
+        {name:'Biodiversity & Protected Areas',freq:'h',pyqs:7,sub:'National Parks, Biosphere Reserves'},
+        {name:'International Conventions',freq:'h',pyqs:5,sub:'Ramsar, CITES, Basel, CBD'},
+        {name:'Pollution & Environmental Laws',freq:'m',pyqs:4,sub:'Air, Water, Noise Acts'},
+        {name:'Ecology & Ecosystems',freq:'m',pyqs:3,sub:'Food Chain, Biomes, Succession'},
+      ]},
+      {id:'science',icon:'🔬',name:'Science & Tech',topics:[
+        {name:'Space Technology (ISRO)',freq:'h',pyqs:6,sub:'Chandrayaan, Mangalyaan, PSLV'},
+        {name:'Biotechnology & GMOs',freq:'h',pyqs:5,sub:'Bt Crops, Gene Editing, CRISPR'},
+        {name:'Diseases & Vaccines',freq:'h',pyqs:5,sub:'COVID, mRNA, One Health'},
+        {name:'Defence Technology',freq:'m',pyqs:4,sub:'Missiles, DRDO, Nuclear Policy'},
+        {name:'Cyber Security & AI',freq:'m',pyqs:3,sub:'Deepfakes, AI Policy, Data'},
+      ]},
+      {id:'current_pre',icon:'📰',name:'Current Affairs',topics:[
+        {name:'Government Schemes',freq:'h',pyqs:6,sub:'PM Schemes, Flagship Programs'},
+        {name:'Awards & Personalities',freq:'h',pyqs:4,sub:'Bharat Ratna, Nobel, Padma'},
+        {name:'India Foreign Policy',freq:'m',pyqs:4,sub:'G20, QUAD, SCO, BRICS'},
+        {name:'Sports & Misc',freq:'l',pyqs:2,sub:'Olympics, CWG, Tournaments'},
+      ]},
+    ],
+  },
 };
 
 const BOOKS={
@@ -809,213 +685,179 @@ const BOOKS={
       {t:'Vision IAS Monthly CA',a:'Vision IAS',tag:'ok',r:'4.5',note:'Monthly current affairs consolidation'},
     ],
   },
-  neet:{
-    physics:[
-      {t:'Concepts of Physics Vol 1 & 2',a:'H.C. Verma',tag:'must',r:'4.9',note:'Gold standard for theory'},
-      {t:'NCERT Physics (11–12)',a:'NCERT',tag:'must',r:'4.8',note:'Questions come directly from NCERT'},
-      {t:'DC Pandey Physics for NEET',a:'DC Pandey',tag:'ok',r:'4.6',note:'Best for practice problems'},
-    ],
-    chemistry:[
-      {t:'NCERT Chemistry (11–12)',a:'NCERT',tag:'must',r:'4.8',note:'Inorganic comes directly from NCERT'},
-      {t:'Organic Chemistry',a:'MS Chauhan',tag:'ok',r:'4.7',note:'Best for reaction mechanisms'},
-    ],
-    biology:[
-      {t:'NCERT Biology (11–12)',a:'NCERT',tag:'must',r:'4.9',note:'70% questions directly from NCERT'},
-      {t:"Trueman's Biology Vol 1 & 2",a:'Trueman Publications',tag:'must',r:'4.7',note:'Detailed explanations'},
-      {t:'MTG Fingertips Biology',a:'MTG Editorial Board',tag:'ok',r:'4.5',note:'Best for quick revision'},
-    ],
-  },
-  jee:{
-    physics:[
-      {t:'Concepts of Physics',a:'H.C. Verma',tag:'must',r:'4.9',note:'Best for theory and basics'},
-      {t:'Problems in General Physics',a:'I.E. Irodov',tag:'ref',r:'4.7',note:'Advanced — JEE Advanced level'},
-    ],
-    chemistry:[
-      {t:'NCERT Chemistry (11–12)',a:'NCERT',tag:'must',r:'4.8',note:'Best base for Inorganic'},
-      {t:'Organic Chemistry',a:'Morrison & Boyd',tag:'ref',r:'4.6',note:'In-depth Organic Chemistry'},
-    ],
-    maths:[
-      {t:'Mathematics for JEE',a:'R.D. Sharma',tag:'must',r:'4.7',note:'Comprehensive coverage'},
-      {t:'Calculus',a:'Amit M. Agarwal',tag:'ok',r:'4.6',note:'Best book for Calculus'},
-    ],
-  },
-  cat:{
-    varc:[
-      {t:'How to Prepare for Verbal Ability',a:'Arun Sharma',tag:'must',r:'4.6',note:'Standard book for VA'},
-      {t:'Word Power Made Easy',a:'Norman Lewis',tag:'must',r:'4.8',note:'Vocabulary building essential'},
-    ],
-    dilr:[
-      {t:'How to Prepare for Data Interpretation',a:'Arun Sharma',tag:'must',r:'4.6',note:'Best book for DI'},
-    ],
-    qa:[
-      {t:'Quantitative Aptitude for CAT',a:'Arun Sharma',tag:'must',r:'4.7',note:'Most popular QA book'},
-    ],
-  },
-  ssc:{
-    reasoning:[
-      {t:'A Modern Approach to Verbal & Non-Verbal Reasoning',a:'R.S. Aggarwal',tag:'must',r:'4.7',note:'SSC reasoning gold standard'},
-    ],
-    quant_ssc:[
-      {t:'Quantitative Aptitude',a:'R.S. Aggarwal',tag:'must',r:'4.7',note:'Arithmetic gold standard'},
-      {t:'Fast Track Arithmetic',a:'Rajesh Verma',tag:'ok',r:'4.4',note:'Speed techniques & shortcuts'},
-    ],
-    english_ssc:[
-      {t:'Objective General English',a:'S.P. Bakshi',tag:'must',r:'4.6',note:'Standard book for SSC English'},
-    ],
-    gk_ssc:[
-      {t:"Lucent's General Knowledge",a:'Lucent Publications',tag:'must',r:'4.7',note:'Static GK gold standard'},
-    ],
-  },
-  ibps:{
-    reasoning_ibps:[
-      {t:'A Modern Approach to Verbal Reasoning',a:'R.S. Aggarwal',tag:'must',r:'4.7',note:'Essential for all bank exams'},
-    ],
-    quant_ibps:[
-      {t:'Quantitative Aptitude',a:'R.S. Aggarwal',tag:'must',r:'4.7',note:'Bank maths bible'},
-      {t:'Data Interpretation',a:'Arun Sharma',tag:'ok',r:'4.5',note:'Best for Data Interpretation'},
-    ],
-    english_ibps:[
-      {t:'Objective General English',a:'S.P. Bakshi',tag:'must',r:'4.6',note:'Best for bank exam English'},
-    ],
-    gk_ibps:[
-      {t:'Banking Awareness',a:'Arihant Publications',tag:'must',r:'4.5',note:'Must-have for Banking GK'},
-    ],
-  },
-  clat:{
-    legal:[{t:'Legal Aptitude for CLAT',a:'A.P. Bhardwaj',tag:'must',r:'4.6',note:'Legal reasoning standard book'}],
-    logical:[{t:'Logical Reasoning',a:'R.S. Aggarwal',tag:'must',r:'4.6',note:'Classic book — highly relevant'}],
-    english:[{t:'Word Power Made Easy',a:'Norman Lewis',tag:'must',r:'4.8',note:'Vocabulary must-have'}],
-  },
-  gate:{
-    core:[
-      {t:'GATE Subject Books',a:'Made Easy Publications',tag:'must',r:'4.6',note:'Choose your engineering branch'},
-      {t:'Previous Year GATE Papers',a:'ACE Engineering',tag:'must',r:'4.7',note:'10 years PYQs — absolutely essential'},
-    ],
-    engg_maths:[{t:'Higher Engineering Mathematics',a:'B.S. Grewal',tag:'must',r:'4.7',note:'Engineering mathematics bible'}],
-  },
 };
 
 const PYQS={
   upsc:{
-    polity:{
-      'Fundamental Rights & Duties':[
-        {year:2024,q:'Examine the scope of "Right to be Forgotten" in the context of Right to Privacy under Article 21.',paper:'GS II — Mains'},
-        {year:2023,q:'Examine the scope and limitations of Right to Privacy as a Fundamental Right after the Puttaswamy judgment.',paper:'GS II — Mains'},
-        {year:2022,q:'What distinguishes Fundamental Rights from Directive Principles? Can DPSPs be enforced?',paper:'GS II — Mains'},
-        {year:2021,q:'Discuss how the right to freedom of speech is subject to reasonable restrictions under Article 19(2).',paper:'GS II — Mains'},
-        {year:2020,q:'The Right to Education Act 2009 has not fully achieved its objectives. Critically examine.',paper:'GS II — Mains'},
-      ],
-      'Parliament & Legislature':[
-        {year:2024,q:'Examine the role of Parliamentary Standing Committees in making the government more accountable.',paper:'GS II — Mains'},
-        {year:2023,q:'Distinguish between the powers of Lok Sabha and Rajya Sabha with respect to Money Bills.',paper:'GS II — Mains'},
-        {year:2022,q:'Examine the role of Parliamentary Committees in strengthening democracy.',paper:'GS II — Mains'},
-        {year:2021,q:'What impact does the "Anti-Defection Law" have on the working of parliamentary democracy?',paper:'GS II — Mains'},
-      ],
-      'Constitutional Bodies':[
-        {year:2024,q:'The Election Commission of India has been facing challenges. Analyse its independence and accountability.',paper:'GS II — Mains'},
-        {year:2023,q:'Discuss the role of the Election Commission of India in ensuring free and fair elections.',paper:'GS II — Mains'},
-        {year:2022,q:'Examine the independence of constitutional bodies and challenges they face.',paper:'GS II — Mains'},
-      ],
+    mains:{
+      polity:{
+        'Fundamental Rights & Duties':[
+          {year:2024,q:'Examine the scope of "Right to be Forgotten" in the context of Right to Privacy under Article 21.',paper:'GS II'},
+          {year:2023,q:'Examine the scope and limitations of Right to Privacy as a Fundamental Right after the Puttaswamy judgment.',paper:'GS II'},
+          {year:2022,q:'What distinguishes Fundamental Rights from Directive Principles? Can DPSPs be enforced?',paper:'GS II'},
+          {year:2021,q:'Discuss how the right to freedom of speech is subject to reasonable restrictions under Article 19(2).',paper:'GS II'},
+          {year:2020,q:'The Right to Education Act 2009 has not fully achieved its objectives. Critically examine.',paper:'GS II'},
+        ],
+        'Parliament & Legislature':[
+          {year:2024,q:'Examine the role of Parliamentary Standing Committees in making the government more accountable.',paper:'GS II'},
+          {year:2023,q:'Distinguish between the powers of Lok Sabha and Rajya Sabha with respect to Money Bills.',paper:'GS II'},
+          {year:2022,q:'Examine the role of Parliamentary Committees in strengthening democracy.',paper:'GS II'},
+          {year:2021,q:'What impact does the "Anti-Defection Law" have on the working of parliamentary democracy?',paper:'GS II'},
+        ],
+        'Constitutional Bodies':[
+          {year:2024,q:'The Election Commission of India has been facing challenges. Analyse its independence and accountability.',paper:'GS II'},
+          {year:2023,q:'Discuss the role of the Election Commission of India in ensuring free and fair elections.',paper:'GS II'},
+          {year:2022,q:'Examine the independence of constitutional bodies and challenges they face.',paper:'GS II'},
+        ],
+      },
+      history:{
+        'Freedom Movement 1857–1947':[
+          {year:2023,q:"Critically examine the role of Mahatma Gandhi in shaping mass movements in India.",paper:'GS I'},
+          {year:2022,q:'How did the Non-Cooperation Movement change the nature of Indian nationalism?',paper:'GS I'},
+          {year:2021,q:"Evaluate the contribution of revolutionary nationalists in India's freedom struggle.",paper:'GS I'},
+          {year:2020,q:'Discuss the contribution of women freedom fighters who are not in the limelight.',paper:'GS I'},
+        ],
+        'British Economic Policies':[
+          {year:2023,q:'Examine the impact of de-industrialization under British rule on Indian artisans.',paper:'GS I'},
+          {year:2021,q:'How did the Permanent Settlement affect agrarian relations in Bengal?',paper:'GS I'},
+        ],
+      },
+      economy:{
+        'Inflation & Monetary Policy':[
+          {year:2024,q:'Examine the challenges faced by the Monetary Policy Committee in meeting its inflation targets.',paper:'GS III'},
+          {year:2023,q:'Examine the role of Monetary Policy Committee (MPC) in controlling inflation in India.',paper:'GS III'},
+          {year:2022,q:'What is stagflation? How is it different from normal inflation? What remedies are available?',paper:'GS III'},
+        ],
+        'Agriculture & Food Security':[
+          {year:2024,q:'What are the key reforms needed in the APMC Act to ensure better price realization for farmers?',paper:'GS III'},
+          {year:2023,q:'Analyse the challenges in implementing the Minimum Support Price (MSP) regime in India.',paper:'GS III'},
+        ],
+      },
+      environment:{
+        'Climate Change & UNFCCC':[
+          {year:2024,q:'Discuss the significance of Article 6 of the Paris Agreement for carbon markets.',paper:'GS III'},
+          {year:2023,q:'What is the "Loss and Damage" mechanism under UNFCCC? What was decided at COP28?',paper:'GS III'},
+          {year:2022,q:"Critically examine India's commitments under the Paris Agreement.",paper:'GS III'},
+        ],
+        'Biodiversity & Protected Areas':[
+          {year:2024,q:'Discuss the significance of the Kunming-Montreal Global Biodiversity Framework for India.',paper:'GS III'},
+          {year:2023,q:'Project Tiger has been a success — evaluate with evidence.',paper:'GS III'},
+        ],
+      },
+      science:{
+        'Space Technology (ISRO)':[
+          {year:2024,q:'Discuss the strategic and scientific significance of the Aditya-L1 solar mission.',paper:'GS III'},
+          {year:2023,q:"Discuss the significance of Chandrayaan-3 mission for India's space programme.",paper:'GS III'},
+          {year:2022,q:'What is the significance of the semi-cryogenic engine developed by ISRO?',paper:'GS III'},
+        ],
+        'Cyber Security & AI':[
+          {year:2024,q:'Examine the ethical and security concerns posed by AI in governance.',paper:'GS III'},
+          {year:2023,q:'Discuss the threats posed by deepfakes to democratic processes and national security.',paper:'GS III'},
+        ],
+      },
+      ethics:{
+        'Case Studies — Public Service':[
+          {year:2024,q:'You are a senior IAS officer. You find that funds meant for a welfare scheme are being siphoned off. What steps would you take?',paper:'GS IV'},
+          {year:2023,q:'A district collector faces pressure from a minister to manipulate records for a contractor. Discuss ethical dimensions.',paper:'GS IV'},
+          {year:2022,q:'A senior officer discovers financial irregularities but fears victimisation. What action should be taken?',paper:'GS IV'},
+          {year:2021,q:'As a public servant, you are asked to implement a policy you personally disagree with. How do you handle this?',paper:'GS IV'},
+        ],
+        'Emotional Intelligence':[
+          {year:2024,q:'How can emotional intelligence help a civil servant deal with public grievances more effectively?',paper:'GS IV'},
+          {year:2023,q:'What do you understand by emotional intelligence? How is it relevant to civil servants?',paper:'GS IV'},
+          {year:2022,q:'Distinguish between emotional intelligence and IQ. Which is more important for a civil servant?',paper:'GS IV'},
+        ],
+      },
+      current:{
+        'Government Schemes 2025-26':[
+          {year:2024,q:'Discuss the impact of the PM Awas Yojana (Urban) on housing for the urban poor.',paper:'GS II'},
+          {year:2023,q:'Describe the PM Vishwakarma Yojana and its significance for traditional artisans.',paper:'GS II'},
+        ],
+        'India Foreign Policy':[
+          {year:2024,q:"Evaluate India's role in the Global South and its significance for foreign policy.",paper:'GS II'},
+          {year:2023,q:"India's G20 presidency — evaluate the outcomes and India's role as a global south voice.",paper:'GS II'},
+        ],
+      },
     },
-    history:{
-      'Freedom Movement 1857–1947':[
-        {year:2023,q:"Critically examine the role of Mahatma Gandhi in shaping mass movements in India.",paper:'GS I — Mains'},
-        {year:2022,q:'How did the Non-Cooperation Movement change the nature of Indian nationalism?',paper:'GS I — Mains'},
-        {year:2021,q:"Evaluate the contribution of revolutionary nationalists in India's freedom struggle.",paper:'GS I — Mains'},
-        {year:2020,q:'Discuss the contribution of women freedom fighters who are not in the limelight.',paper:'GS I — Mains'},
-      ],
-      'British Economic Policies':[
-        {year:2023,q:'Examine the impact of de-industrialization under British rule on Indian artisans.',paper:'GS I — Mains'},
-        {year:2021,q:'How did the Permanent Settlement affect agrarian relations in Bengal?',paper:'GS I — Mains'},
-      ],
-    },
-    economy:{
-      'Inflation & Monetary Policy':[
-        {year:2024,q:'Examine the challenges faced by the Monetary Policy Committee in meeting its inflation targets.',paper:'GS III — Mains'},
-        {year:2023,q:'Examine the role of Monetary Policy Committee (MPC) in controlling inflation in India.',paper:'GS III — Mains'},
-        {year:2022,q:'What is stagflation? How is it different from normal inflation? What remedies are available?',paper:'GS III — Mains'},
-      ],
-      'Agriculture & Food Security':[
-        {year:2024,q:'What are the key reforms needed in the APMC Act to ensure better price realization for farmers?',paper:'GS III — Mains'},
-        {year:2023,q:'Analyse the challenges in implementing the Minimum Support Price (MSP) regime in India.',paper:'GS III — Mains'},
-      ],
-    },
-    environment:{
-      'Climate Change & UNFCCC':[
-        {year:2024,q:'Discuss the significance of Article 6 of the Paris Agreement for carbon markets.',paper:'GS III — Mains'},
-        {year:2023,q:'What is the "Loss and Damage" mechanism under UNFCCC? What was decided at COP28?',paper:'GS III — Mains'},
-        {year:2022,q:"Critically examine India's commitments under the Paris Agreement.",paper:'GS III — Mains'},
-      ],
-      'Biodiversity & Protected Areas':[
-        {year:2024,q:'Discuss the significance of the Kunming-Montreal Global Biodiversity Framework for India.',paper:'GS III — Mains'},
-        {year:2023,q:'Project Tiger has been a success — evaluate with evidence.',paper:'GS III — Mains'},
-      ],
-    },
-    science:{
-      'Space Technology (ISRO)':[
-        {year:2024,q:'Discuss the strategic and scientific significance of the Aditya-L1 solar mission.',paper:'GS III — Mains'},
-        {year:2023,q:"Discuss the significance of Chandrayaan-3 mission for India's space programme.",paper:'GS III — Mains'},
-        {year:2022,q:'What is the significance of the semi-cryogenic engine developed by ISRO?',paper:'GS III — Mains'},
-      ],
-      'Cyber Security & AI':[
-        {year:2024,q:'Examine the ethical and security concerns posed by AI in governance.',paper:'GS III — Mains'},
-        {year:2023,q:'Discuss the threats posed by deepfakes to democratic processes and national security.',paper:'GS III — Mains'},
-      ],
-    },
-    ethics:{
-      'Case Studies — Public Service':[
-        {year:2024,q:'You are a senior IAS officer. You find that funds meant for a welfare scheme are being siphoned off. What steps would you take?',paper:'GS IV — Mains'},
-        {year:2023,q:'A district collector faces pressure from a minister to manipulate records for a contractor. Discuss ethical dimensions.',paper:'GS IV — Mains'},
-        {year:2022,q:'A senior officer discovers financial irregularities but fears victimisation. What action should be taken?',paper:'GS IV — Mains'},
-        {year:2021,q:'As a public servant, you are asked to implement a policy you personally disagree with. How do you handle this?',paper:'GS IV — Mains'},
-      ],
-      'Emotional Intelligence':[
-        {year:2024,q:'How can emotional intelligence help a civil servant deal with public grievances more effectively?',paper:'GS IV — Mains'},
-        {year:2023,q:'What do you understand by emotional intelligence? How is it relevant to civil servants?',paper:'GS IV — Mains'},
-        {year:2022,q:'Distinguish between emotional intelligence and IQ. Which is more important for a civil servant?',paper:'GS IV — Mains'},
-      ],
-    },
-    current:{
-      'Government Schemes 2025-26':[
-        {year:2024,q:'Discuss the impact of the PM Awas Yojana (Urban) on housing for the urban poor.',paper:'GS II — Mains'},
-        {year:2023,q:'Describe the PM Vishwakarma Yojana and its significance for traditional artisans.',paper:'GS II — Mains'},
-      ],
-      'India Foreign Policy':[
-        {year:2024,q:"Evaluate India's role in the Global South and its significance for foreign policy.",paper:'GS II — Mains'},
-        {year:2023,q:"India's G20 presidency — evaluate the outcomes and India's role as a global south voice.",paper:'GS II — Mains'},
-      ],
-    },
-  },
-  neet:{
-    physics:{
-      'Mechanics & Laws of Motion':[
-        {year:2024,q:'A ball is thrown vertically upward with velocity 20 m/s. Time to reach maximum height (g=10 m/s²) is:',paper:'Physics — NEET 2024'},
-        {year:2023,q:'A block of mass 5kg on rough surface. Coefficient of friction = 0.3. Force required to just move it (g=10):',paper:'Physics — NEET 2023'},
-        {year:2022,q:'A projectile thrown at 45°. The ratio of maximum height to range is:',paper:'Physics — NEET 2022'},
-      ],
-      'Modern Physics':[
-        {year:2024,q:'In photoelectric effect, increasing the intensity of incident light causes:',paper:'Physics — NEET 2024'},
-        {year:2023,q:'Half-life of radioactive element is 20 min. After 1 hour, fraction remaining from 80g sample is:',paper:'Physics — NEET 2023'},
-      ],
-    },
-    chemistry:{
-      'Organic Reactions & Mechanisms':[
-        {year:2024,q:'Which of the following undergoes SN1 reaction most readily?',paper:'Chemistry — NEET 2024'},
-        {year:2023,q:'Which reagent converts primary alcohol to aldehyde without further oxidation?',paper:'Chemistry — NEET 2023'},
-        {year:2022,q:'Product of dehydration of 2-methylbutan-2-ol with H₂SO₄ is:',paper:'Chemistry — NEET 2022'},
-      ],
-    },
-    biology:{
-      'Human Physiology':[
-        {year:2024,q:'The enzyme that catalyses conversion of fibrinogen to fibrin during blood clotting is:',paper:'Biology — NEET 2024'},
-        {year:2023,q:'Enzyme pepsin is secreted as pepsinogen. It is activated by:',paper:'Biology — NEET 2023'},
-        {year:2022,q:'Correct sequence of events in cardiac cycle is:',paper:'Biology — NEET 2022'},
-        {year:2021,q:'Which part of nephron is impermeable to water but permeable to urea?',paper:'Biology — NEET 2021'},
-      ],
-      'Genetics & Evolution':[
-        {year:2024,q:'In Tt × Tt monohybrid cross, ratio of homozygous dominant : heterozygous : homozygous recessive is:',paper:'Biology — NEET 2024'},
-        {year:2023,q:'Hardy-Weinberg equilibrium is disturbed by:',paper:'Biology — NEET 2023'},
-      ],
+    prelims:{
+      polity:{
+        'Fundamental Rights & Duties':[
+          {year:2024,q:'Which of the following Fundamental Rights is available only to citizens and not to foreigners? (1) Equality before law (2) Freedom of speech and expression (3) Protection against discrimination (4) Right to life',paper:'Prelims'},
+          {year:2023,q:'With reference to the "Right to be forgotten", which of the following statements is/are correct? It is derived from Article 21. It is an absolute right.',paper:'Prelims'},
+          {year:2022,q:'Consider the statements about Directive Principles: (1) They are justiciable. (2) They cannot override Fundamental Rights. Which is correct?',paper:'Prelims'},
+          {year:2021,q:'Which Article of the Constitution gives Parliament the power to restrict Fundamental Rights of Armed Forces members?',paper:'Prelims'},
+        ],
+        'Parliament & Legislature':[
+          {year:2024,q:'Which of the following Committees of Parliament examines the accounts of autonomous bodies set up by Acts of Parliament?',paper:'Prelims'},
+          {year:2023,q:'Consider the following statements about a Money Bill: It can only be introduced in Lok Sabha. Rajya Sabha can reject it. Which is/are correct?',paper:'Prelims'},
+          {year:2022,q:'With reference to the Anti-Defection Law, disqualification is decided by: (A) Speaker/Chairman (B) President (C) Supreme Court (D) Election Commission',paper:'Prelims'},
+          {year:2021,q:'Which of the following is NOT a financial committee of Parliament?',paper:'Prelims'},
+        ],
+        'Constitutional Bodies':[
+          {year:2024,q:'Which of the following are constitutional bodies? (1) UPSC (2) NITI Aayog (3) Election Commission (4) CAG — Select correct:',paper:'Prelims'},
+          {year:2023,q:'The Comptroller and Auditor General of India is appointed by: (A) Prime Minister (B) President (C) Lok Sabha Speaker (D) Chief Justice',paper:'Prelims'},
+          {year:2022,q:'Consider statements about the Election Commission: (1) It has 3 members. (2) Chief Election Commissioner cannot be removed like a SC judge. Which is correct?',paper:'Prelims'},
+        ],
+      },
+      history:{
+        'Freedom Movement 1857–1947':[
+          {year:2024,q:'The Poorna Swaraj resolution was adopted at which session of the Indian National Congress?',paper:'Prelims'},
+          {year:2023,q:'With reference to the Quit India Movement, consider: (1) It was launched in 1942. (2) Gandhiji was arrested immediately. (3) It was a violent movement. Which is/are correct?',paper:'Prelims'},
+          {year:2022,q:'Who among the following was NOT associated with the Ghadar Party?',paper:'Prelims'},
+          {year:2021,q:'The "Do or Die" slogan was given during which movement?',paper:'Prelims'},
+        ],
+        'Indus Valley Civilization':[
+          {year:2024,q:'Which of the following Indus Valley sites is located in Gujarat?',paper:'Prelims'},
+          {year:2023,q:'Consider statements about Harappan civilization: (1) It had no knowledge of iron. (2) Horse was a common animal. Which is/are correct?',paper:'Prelims'},
+          {year:2022,q:'The "Great Bath" is associated with which Indus Valley site?',paper:'Prelims'},
+        ],
+      },
+      geography:{
+        'Monsoon & Climate of India':[
+          {year:2024,q:'Which of the following is/are responsible for the onset of Southwest Monsoon in India? (1) Differential heating of land and sea (2) ITCZ shifting northward (3) El Niño',paper:'Prelims'},
+          {year:2023,q:'The "Western Disturbances" that cause rainfall in northwestern India originate from which sea/ocean?',paper:'Prelims'},
+          {year:2022,q:'Consider: Tamil Nadu receives rainfall during the retreating monsoon. Which months does this cover?',paper:'Prelims'},
+        ],
+        'Rivers & Drainage System':[
+          {year:2024,q:'Which river forms the boundary between Telangana and Karnataka?',paper:'Prelims'},
+          {year:2023,q:'The Siachen Glacier is the source of which river?',paper:'Prelims'},
+          {year:2022,q:'Which of the following rivers does NOT originate from the Western Ghats?',paper:'Prelims'},
+        ],
+      },
+      environment:{
+        'Climate Change & UNFCCC':[
+          {year:2024,q:'What is "Carbon Border Adjustment Mechanism (CBAM)"? Which organization introduced it?',paper:'Prelims'},
+          {year:2023,q:'The "Loss and Damage" fund agreed at COP27 is meant for: (A) Developed nations (B) Vulnerable developing nations (C) All nations equally (D) None',paper:'Prelims'},
+          {year:2022,q:'Which of the following are part of India\'s NDC commitments? (1) 50% electricity from renewables by 2030 (2) Reduce emissions intensity of GDP (3) Create carbon sink',paper:'Prelims'},
+        ],
+        'Biodiversity & Protected Areas':[
+          {year:2024,q:'The "Kunming-Montreal Global Biodiversity Framework" targets protecting what percentage of Earth\'s land and oceans by 2030?',paper:'Prelims'},
+          {year:2023,q:'Which of the following is a Biosphere Reserve but NOT a UNESCO World Heritage Site?',paper:'Prelims'},
+          {year:2022,q:'Consider: Ramsar sites are wetlands of international importance. India has the highest number in Asia. Which is/are correct?',paper:'Prelims'},
+        ],
+      },
+      economy:{
+        'Inflation & Monetary Policy':[
+          {year:2024,q:'The Monetary Policy Committee (MPC) of RBI has how many members?',paper:'Prelims'},
+          {year:2023,q:'Which of the following is the inflation target mandated to RBI under the flexible inflation targeting framework?',paper:'Prelims'},
+          {year:2022,q:'"Open Market Operations" by RBI affect: (A) Credit availability (B) Foreign exchange (C) Both (D) Neither',paper:'Prelims'},
+        ],
+        'Agriculture & Food Security':[
+          {year:2024,q:'Which committee recommended reforms to the APMC Act to make agriculture markets more competitive?',paper:'Prelims'},
+          {year:2023,q:'The "e-NAM" platform was launched to: (A) Digitize land records (B) Create national agriculture market (C) Provide crop insurance (D) Monitor food storage',paper:'Prelims'},
+        ],
+      },
+      science:{
+        'Space Technology (ISRO)':[
+          {year:2024,q:'Aditya-L1 was placed at which Lagrange point to study the Sun?',paper:'Prelims'},
+          {year:2023,q:'Chandrayaan-3 successfully landed near which region of the Moon?',paper:'Prelims'},
+          {year:2022,q:'Which of the following ISRO missions was specifically designed to study the Earth\'s ionosphere?',paper:'Prelims'},
+        ],
+        'Biotechnology & GMOs':[
+          {year:2024,q:'CRISPR-Cas9 technology is used for: (A) Drug delivery (B) Gene editing (C) Protein synthesis (D) Vaccine production',paper:'Prelims'},
+          {year:2023,q:'Which of the following is a transgenic crop approved for commercial cultivation in India?',paper:'Prelims'},
+        ],
+      },
     },
   },
 };
@@ -1098,24 +940,33 @@ function switchTab(t){
 }
 
 // TOPICS
+let curTopicMode='mains';
+
+function switchTopicMode(mode, el){
+  curTopicMode = mode;
+  document.querySelectorAll('.topic-mode-btn').forEach(b=>{
+    b.style.background = 'var(--surface)';
+    b.style.color = 'var(--text)';
+    b.style.borderColor = 'var(--border)';
+  });
+  el.style.background = 'var(--blue)';
+  el.style.color = '#fff';
+  el.style.borderColor = 'var(--blue)';
+  renderTopics('');
+}
+
 function renderTopics(filter){
-  const subs=SUBJS[curExam]||[];
+  const subs=(SUBJS[curExam]||{})[curTopicMode]||[];
   const c=document.getElementById('topics-wrap');
   c.innerHTML=subs.map(sub=>{
     const ft=sub.topics.filter(t=>!filter||t.name.toLowerCase().includes(filter.toLowerCase()));
     if(!ft.length)return'';
-    const pct=Math.round(Math.random()*40+40);
-    const circ=2*Math.PI*13;
-    const off=circ-(pct/100)*circ;
     return`<div class="subj-sec">
-      <div class="subj-hd" onclick="toggleSubj(this)">
+      <div class="subj-hd open" onclick="toggleSubj(this)">
         <div class="shl"><span class="sh-icon">${sub.icon}</span><div><div class="sh-name">${sub.name}</div><div class="sh-cnt">${ft.length} topics</div></div></div>
-        <div class="shr">
-          <div class="prog-ring"><svg width="32" height="32" viewBox="0 0 32 32"><circle class="pt" cx="16" cy="16" r="13"/><circle class="pf" cx="16" cy="16" r="13" stroke-dasharray="${circ}" stroke-dashoffset="${off}"/></svg><div class="pl">${pct}%</div></div>
-          <span class="sh-arr">›</span>
-        </div>
+        <div class="shr"><span class="sh-arr">›</span></div>
       </div>
-      <div class="tlist">${ft.map((t,i)=>`
+      <div class="tlist open">${ft.map((t,i)=>`
         <div class="titem" onclick="openTopicPYQ('${sub.id}','${t.name.replace(/'/g,"\\'")}')">
           <div class="til"><div class="t-num">${i+1}</div><div><div class="t-name">${t.name}</div><div class="t-sub">${t.sub}</div></div></div>
           <div class="tir"><span class="fb ${t.freq==='h'?'fh':t.freq==='m'?'fm':'fl'}">${t.freq==='h'?'High':t.freq==='m'?'Medium':'Low'}</span><span class="pyqc">${t.pyqs} PYQs</span><span class="tch">›</span></div>
@@ -1139,14 +990,14 @@ function filterTopics(v){
 function openTopicPYQ(subId,topicName){
   curSubj=subId;curTopic=topicName;
   const ex=EXAMS.find(e=>e.id===curExam);
-  const sub=(SUBJS[curExam]||[]).find(s=>s.id===subId);
+  const sub=((SUBJS[curExam]||{})[curTopicMode]||[]).find(s=>s.id===subId);
   const topic=sub?.topics.find(t=>t.name===topicName);
 
   // Save last visit for Continue Preparation
   saveLastVisit(curExam, sub?.name || subId, topicName, ex?.icon || '📖');
   document.getElementById('tpyq-title').textContent=topicName;
   document.getElementById('tpyq-sub').textContent=`${ex?.name} · ${sub?.name}`;
-  const pyqs=((PYQS[curExam]||{})[subId]||{})[topicName]||[];
+  const pyqs=(((PYQS[curExam]||{})[curPYQMode]||{})[subId]||{})[topicName]||[];
   document.getElementById('tstat-count').textContent=pyqs.length||(topic?.pyqs||0);
   document.getElementById('tstat-years').textContent=pyqs.length>0?[...new Set(pyqs.map(p=>p.year))].length:'10+';
   document.getElementById('tstat-freq').textContent=topic?.freq==='h'?'High':topic?.freq==='m'?'Medium':'Low';
@@ -1160,7 +1011,7 @@ function renderBooks(filter){
   const examBooks=BOOKS[curExam]||{};
   const all=[];
   Object.entries(examBooks).forEach(([sid,bks])=>{
-    const sub=(SUBJS[curExam]||[]).find(s=>s.id===sid);
+    const sub=((SUBJS[curExam]||{}).mains||[]).find(s=>s.id===sid);
     bks.forEach(b=>all.push({...b,subject:sub?.name||sid}));
   });
   const filtered=filter==='all'?all:filter==='must'?all.filter(b=>b.tag==='must'):filter==='ncert'?all.filter(b=>b.t.toLowerCase().includes('ncert')):all.filter(b=>b.tag==='ref');
@@ -1180,32 +1031,70 @@ function renderAllBooks(){
   const all=[];
   Object.entries(BOOKS).forEach(([eid,subs])=>{
     const ex=EXAMS.find(e=>e.id===eid);
-    Object.values(subs).forEach(bks=>bks.filter(b=>b.tag==='must').forEach(b=>all.push({...b,examName:ex?.name})));
+    Object.values(subs).forEach(bks=>bks.forEach(b=>all.push({...b,examName:ex?.name})));
   });
-  document.getElementById('all-books-wrap').innerHTML=all.slice(0,20).map(b=>`<div class="bcard"><div class="bcov">📖</div><div class="binfo"><div class="bbadges"><span class="bbadge bmust">Must Read</span><span class="bbadge" style="background:var(--blue-l);color:var(--blue);font-weight:700">${b.examName}</span></div><div class="btitle">${b.t}</div><div class="bauth">by ${b.a}</div><div class="bbot"><div class="brat">★ ${b.r}</div><button class="bbuy">Buy on Amazon ↗</button></div></div></div>`).join('');
+  document.getElementById('all-books-wrap').innerHTML=all.map(b=>{
+    const badge=b.tag==='must'?'<span class="bbadge bmust">Must Read</span>':b.tag==='ref'?'<span class="bbadge bref">Reference</span>':'<span class="bbadge brec">Helpful</span>';
+    return`<div class="bcard"><div class="bcov">📖</div><div class="binfo"><div class="bbadges">${badge}<span class="bbadge" style="background:var(--blue-l);color:var(--blue);font-weight:700">${b.examName}</span></div><div class="btitle">${b.t}</div><div class="bauth">by ${b.a}</div><div style="font-size:.72rem;color:var(--muted);margin-bottom:.5rem">${b.note||''}</div><div class="bbot"><div class="brat">★ ${b.r}</div><button class="bbuy">Buy on Amazon ↗</button></div></div></div>`;
+  }).join('');
 }
 
 // PYQs
+let curPYQMode='mains';
+
+function switchPYQMode(mode, el){
+  curPYQMode = mode;
+  document.querySelectorAll('.pyq-mode-btn').forEach(b=>{
+    b.style.background = 'var(--surface)';
+    b.style.color = 'var(--text)';
+    b.style.borderColor = 'var(--border)';
+  });
+  el.style.background = 'var(--blue)';
+  el.style.color = '#fff';
+  el.style.borderColor = 'var(--blue)';
+  renderPYQs();
+}
+
 function renderPYQs(){
-  const ep=PYQS[curExam];
-  if(!ep){document.getElementById('pyq-wrap').innerHTML=`<div class="empty"><div class="empty-icon">📝</div><div class="empty-title">PYQs Coming Soon</div></div>`;return;}
+  const ep = (PYQS[curExam]||{})[curPYQMode];
+  const wrap = document.getElementById('pyq-wrap');
+  if(!ep){
+    wrap.innerHTML=`<div class="empty"><div class="empty-icon">📝</div><div class="empty-title">PYQs Coming Soon</div><div class="empty-sub">Questions will be added in the next update.</div></div>`;
+    return;
+  }
+  // Flatten all questions with topic info
   const years={};
-  Object.entries(ep).forEach(([sid,topics])=>Object.entries(topics).forEach(([tn,qs])=>qs.forEach(q=>{if(!years[q.year])years[q.year]=[];years[q.year].push({...q,topic:tn});})));
-  document.getElementById('pyq-wrap').innerHTML=Object.keys(years).sort((a,b)=>b-a).map(yr=>`
+  Object.entries(ep).forEach(([subId, topics])=>{
+    Object.entries(topics).forEach(([topicName, qs])=>{
+      qs.forEach(q=>{
+        if(!years[q.year]) years[q.year]=[];
+        years[q.year].push({...q, topic:topicName, subId});
+      });
+    });
+  });
+  wrap.innerHTML = Object.keys(years).sort((a,b)=>b-a).map(yr=>`
     <div class="pyq-yr-sec">
       <div class="pyq-yr-hd" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
-        <div><div class="pyq-yr-num">${yr}</div><div class="pyq-yr-meta">${years[yr].length} questions</div></div>
+        <div><div class="pyq-yr-num">${yr}</div><div class="pyq-yr-meta">${years[yr].length} question${years[yr].length>1?'s':''}</div></div>
         <span class="pyq-yr-arr">›</span>
       </div>
-      <div class="pyq-qs">${years[yr].map(q=>`<div class="pyq-qi"><div class="pyq-qi-meta"><span class="pyq-ptag">${q.paper.split('—')[0].trim()}</span><span class="pyq-ttag">${q.topic}</span></div><div class="pyq-qt">${q.q}</div></div>`).join('')}</div>
+      <div class="pyq-qs">${years[yr].map(q=>`
+        <div class="pyq-qi">
+          <div class="pyq-qi-meta">
+            <span class="pyq-ptag">${q.paper}</span>
+            <span class="pyq-ttag">${q.topic}</span>
+          </div>
+          <div class="pyq-qt">${q.q}</div>
+        </div>`).join('')}
+      </div>
     </div>`).join('');
 }
 
 // SEARCH
-function hSearch(v){document.getElementById('sdrop').classList.toggle('show',v.length>0);}
-function showDrop(){document.getElementById('sdrop').classList.add('show');}
-document.addEventListener('click',e=>{if(!e.target.closest('.srch-wrap'))document.getElementById('sdrop').classList.remove('show');});
-function goSearch(){const v=document.getElementById('hsearch').value;if(v){showPage('srch');document.getElementById('msearch').value=v;mSearch(v);}}
+function hSearch(v){const d=document.getElementById('sdrop');if(d)d.classList.toggle('show',v.length>0);}
+function showDrop(){const d=document.getElementById('sdrop');if(d)d.classList.add('show');}
+document.addEventListener('click',e=>{const d=document.getElementById('sdrop');if(d&&!e.target.closest('.srch-wrap'))d.classList.remove('show');});
+function goSearch(){const i=document.getElementById('hsearch');if(i&&i.value){showPage('srch');document.getElementById('msearch').value=i.value;mSearch(i.value);}}
 
 function initSearch(){
   const c=document.getElementById('srch-results');
@@ -1219,7 +1108,8 @@ function mSearch(v){
   EXAMS.forEach(ex=>{
     if(ex.name.toLowerCase().includes(v.toLowerCase())||ex.full.toLowerCase().includes(v.toLowerCase()))
       res.push({icon:ex.icon,name:ex.name,cat:ex.full,type:'EXAM',action:`openExam('${ex.id}')`});
-    (SUBJS[ex.id]||[]).forEach(sub=>sub.topics.forEach(t=>{
+    const allSubs=[...((SUBJS[ex.id]||{}).mains||[]),...((SUBJS[ex.id]||{}).prelims||[])];
+    allSubs.forEach(sub=>sub.topics.forEach(t=>{
       if(t.name.toLowerCase().includes(v.toLowerCase()))
         res.push({icon:sub.icon,name:t.name,cat:`${ex.name} · ${sub.name}`,type:'TOPIC',action:`openExam('${ex.id}');openTopicPYQ('${sub.id}','${t.name.replace(/'/g,"\\'")}');`});
     }));
@@ -1241,8 +1131,11 @@ function toggleAllExams(){
   s.style.display=s.style.display==='none'?'block':'none';
 }
 
-// INIT
+// INIT — pre-load UPSC so topics & books are ready
+curExam='upsc';
 renderTopics('');
+renderBooks('all');
+renderPYQs();
 initSearch();
 </script>
 </body>
